@@ -49,6 +49,14 @@
                     <executable>true</executable>
 				</configuration>
 			</plugin>
+			<!-- freemarker热启动 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
