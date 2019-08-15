@@ -21,7 +21,7 @@
                     </li>
                 </ul>
             <#else>
-                <ul class="list-unstyled list-inline pull-left"> <li><a href="/login" rel="nofollow" title="登录"><i class="fa fa-sign-in"></i>登录</a></li> </ul>
+                <ul class="list-unstyled list-inline pull-left"> <li><a href="/oauth/login" rel="nofollow" title="登录"><i class="fa fa-sign-in"></i>登录</a></li> </ul>
             </#if>
         </div>
     </div>

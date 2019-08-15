@@ -11,6 +11,7 @@ import me.zhyd.oauth.request.AuthRequest;
 import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,6 +87,13 @@ public class OAuthController {
     public ModelAndView logout() {
         authService.logout();
         return ResultUtil.redirect("/");
+    }
+
+
+    @RequestMapping("/login")
+    public ModelAndView login(Model model) {
+        model.addAttribute("url", "login");
+        return ResultUtil.view("login");
     }
 
 }
