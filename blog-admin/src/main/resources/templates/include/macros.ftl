@@ -46,7 +46,7 @@
                 <@shiro.user>
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img src="/assets/images/loading.gif" alt="..." class="img-circle profile_img">
+                        <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190815234750889.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span id="hello_msg">&nbsp;</span>

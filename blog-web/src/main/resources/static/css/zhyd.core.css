@@ -110,13 +110,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .nav-search-box .nav-search-btn, .nav-search, .link-info .auto-link-btn {
     color: #fff;
     background-color: #f79c52;
-    border-color: #008151;
+    /*border-color: #008151;*/
 }
 
 .nav-search-box .nav-search-btn:hover, .nav-search:hover, .link-info .auto-link-btn:hover {
     color: #fff !important;
     background-color: #006741 !important;
-    border-color: #00432a !important;
+    /*border-color: #00432a !important;*/
 }
 
 /* 搜索框 */
@@ -845,22 +845,51 @@ span.separation:AFTER {
 }
 
 .sidebar-module .sidebar-tabs {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #eee;
+    margin-left: -9px;
+    margin-right: -9px;
 }
 
 .sidebar-module .sidebar-tabs li.active {
     font-weight: 700;
 }
 
+.sidebar-module .sidebar-tabs li.hover {
+    background-color: #f79c52;
+}
+
 .sidebar-module .sidebar-tabs li a:hover {
-    color: #008151 !important;
     font-weight: 700;
-    background-color: rgba(0, 0, 0, 0) !important;
-    border-color: rgba(0, 0, 0, 0) !important;
+    background-color: #f79c52;
 }
 
 .sidebar-module .tab-content .empty-list {
     color: #898989 !important;
+}
+
+.li-icon {
+    background: #ccc;
+    font-size: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    color: #fff;
+    text-align: center;
+    font-style: normal;
+    line-height: 18px;
+}
+
+.li-icon-1 {
+    background: #e04620;
+}
+
+.li-icon-2 {
+    background: #0cf;
+}
+
+.li-icon-3 {
+    background: #5cb85c;
 }
 
 .icon {
@@ -1221,7 +1250,7 @@ article .entry-more a:hover, .tag-li a:hover {
     /* border-color: rgba(202, 206, 205, 0.08) !important; */
     color: #fff !important;
     background-color: #f79c52 !important;
-    border-color: #028103 !important;
+    /*border-color: #028103 !important;*/
     text-decoration: none !important;
 }
 
@@ -1709,7 +1738,7 @@ article .entry-more a:hover, .tag-li a:hover {
 .nav-tabs > li > a:hover {
     color: #fff !important;
     background-color: #f79c52 !important;
-    border-color: #008151 !important;
+    /*border-color: #008151 !important;*/
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
@@ -1757,7 +1786,7 @@ nav a:first-child .meta-nav {
 .c-label:hover {
     color: #fff !important;
     background-color: #f79c52 !important;
-    border-color: #008151 !important;
+    /*border-color: #008151 !important;*/
     text-decoration: none !important;
     /*background-color: #017E66!important;*/
 }

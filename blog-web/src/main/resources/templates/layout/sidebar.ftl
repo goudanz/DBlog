@@ -74,7 +74,7 @@
                             <#list recentArticles as item>
                                 <li>
                                     <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
-                                        <i class="fa fa-book fa-fw"></i> ${item.title}
+                                        <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
                             </#list>
@@ -93,7 +93,7 @@
                             <#list recommendedList as item>
                                 <li>
                                     <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
-                                        <i class="fa fa-book fa-fw"></i> ${item.title}
+                                        <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
                             </#list>
@@ -112,7 +112,7 @@
                             <#list randomList as item>
                                 <li>
                                     <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
-                                        <i class="fa fa-book fa-fw"></i> ${item.title}
+                                        <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
                             </#list>
