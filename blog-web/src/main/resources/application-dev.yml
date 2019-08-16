@@ -72,13 +72,13 @@ me:
     zhyd:
         oauth:
             gitee:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: 268e596092a7f860a52d03a10094102d5bbeca6f6a9cd6244785c5e9ac36399f
+                clientSecret: 21a009d21f4710e6e9a52482e9ab613ab81a71dc39af54e47d886ccd43eb701f
+                redirectUri: http://fei.free.idcfengye.com/oauth/callback/gitee
             github:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: 29f7aa2111ba183ea303
+                clientSecret: b7d64d61a92ce0cf85e7ed32e128180475519798
+                redirectUri: http://fei.free.idcfengye.com/oauth/callback/github
             weibo:
                 clientId:
                 clientSecret:
@@ -100,18 +100,18 @@ me:
                 clientSecret:
                 redirectUri:
             oschina:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: fZ4Il86LrdPL5BQuKvsf
+                clientSecret: 17HdDyyrizlyqThS4Vf6tKiGgwYY5RM4
+                redirectUri: http://fei.free.idcfengye.com/oauth/callback/oschina
             alipay:
                 clientId:
                 clientSecret:
                 redirectUri:
                 alipayPublicKey:
             qq:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: 101424111
+                clientSecret: b02e291a1a5368644b751c9bcbaf3ba1
+                redirectUri: http://fei.free.idcfengye.com/oauth/callback/qq
             wechat:
                 clientId:
                 clientSecret:

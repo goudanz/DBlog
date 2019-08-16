@@ -1,3 +1,4 @@
+<#include "layout/quote.ftl">
 <!doctype html>
 <html lang="en" class="login-content" data-ng-app="materialAdmin">
 <head>
@@ -17,7 +18,7 @@
 <body class="login-content" data-ng-controller="loginCtrl as lctrl">
 
 <div class="lc-block" id="l-login" data-ng-class="{'toggled':lctrl.login === 1}">
-    <h1 class="lean">Azrael</h1>
+    <h1 class="lean">dandan</h1><#--Azrael-->
 
     <div class="input-group m-b-20">
     		<span class="input-group-addon">
@@ -43,9 +44,29 @@
         <label>
             <input type="checkbox" value="" />
             <i class="input-helper">
-                Keep me signed in
+                记住我吧
             </i>
         </label>
+    </div>
+
+    <div class="oauth-login">
+    <#--qq login-->
+        <a href="${config.staticWebSite}/oauth/render/qq" title="QQ">
+            <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190816122549521.png">
+        </a>
+    <#--gitee login-->
+        <a href="${config.staticWebSite}/oauth/render/gitee" title="码云">
+            <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190816150307927.png">
+        </a>
+    <#--oschina login-->
+        <a href="${config.staticWebSite}/oauth/render/oschina" title="开源中国">
+            <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190816163920505.png">
+        </a>
+    <#--github login-->
+        <a href="${config.staticWebSite}/oauth/render/github" title="github">
+            <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190816164715303.jpg">
+        </a>
+
     </div>
 
     <a href="" class="btn btn-login btn-danger btn-float">

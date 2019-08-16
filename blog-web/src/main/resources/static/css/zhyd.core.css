@@ -1207,7 +1207,7 @@ article .entry-content .archive-content {
 
 article .entry-content .title-l {
     position: absolute;
-    background: #017E66;
+    background: #a2a2a2;
     top: 20px;
     left: -1px;
     width: 5px;
@@ -3249,4 +3249,17 @@ nav a:first-child .meta-nav {
 
 #nprogress .spinner-icon {
     border-radius: 50%!important;
+}
+
+/** login*/
+.oauth-login{
+    padding-top: 10px;
+}
+
+.oauth-login a{
+    padding-right: 5px;
+}
+
+.zmdi-arrow-forward{
+    padding-top: 7px;
 }
