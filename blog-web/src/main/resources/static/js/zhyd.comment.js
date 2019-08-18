@@ -33,10 +33,10 @@ $.extend({
         _commentReply: '',
         _simplemde: null,
         initDom: function () {
-            $.comment._commentDetailModal = $('#comment-detail-modal');
+            $.comment._commentDetailModal = $('#login-modal');
             $.comment._detailForm = $('#detail-form');
             $.comment._detailFormBtn = $('#detail-form-btn');
-            $.comment._closeBtn = $('#comment-detail-modal .close');
+            $.comment._closeBtn = $('#login-modal .close');
             $.comment._commentPid = $('#comment-pid');
             $.comment._commentPlace = $('#comment-place');
             $.comment._commentPost = $('#comment-post');
@@ -222,7 +222,9 @@ $.extend({
             var $this = $(target);
             $this.button('loading');
             var data = $("#comment-form").serialize();
+            // 检查是否有用户登录
             if(!oauthConfig.loginUserId) {
+                // 无登录 用户走这里
                 var detail = localStorage.getItem(this.detailKey);
                 if(!detail){
                 }else{

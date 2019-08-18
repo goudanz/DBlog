@@ -52,13 +52,13 @@ public class OAuthController {
     @RequestMapping("/callback/{source}")
     public ModelAndView login(@PathVariable("source") String source, AuthCallback callback, HttpSession session) {
         authService.login(source, callback);
-        return ResultUtil.redirect("/");
-//        String historyUrl = (String) session.getAttribute("historyUrl");
-//        session.removeAttribute("historyUrl");
-//        if (StringUtils.isEmpty(historyUrl)) {
-//            return ResultUtil.redirect("/");
-//        }
-//        return ResultUtil.redirect(historyUrl);
+//        return ResultUtil.redirect("/");
+        String historyUrl = (String) session.getAttribute("historyUrl");
+        session.removeAttribute("historyUrl");
+        if (StringUtils.isEmpty(historyUrl)) {
+            return ResultUtil.redirect("/");
+        }
+        return ResultUtil.redirect(historyUrl);
     }
 
     /**
@@ -90,11 +90,11 @@ public class OAuthController {
         return ResultUtil.redirect("/");
     }
 
-
-    @RequestMapping("/login")
-    public ModelAndView login(Model model) {
-        model.addAttribute("url", "login");
-        return ResultUtil.view("login");
-    }
+//
+//    @RequestMapping("/login")
+//    public ModelAndView login(Model model) {
+//        model.addAttribute("url", "login");
+//        return ResultUtil.view("login");
+//    }
 
 }

@@ -80,8 +80,8 @@ me:
                 clientSecret: b7d64d61a92ce0cf85e7ed32e128180475519798
                 redirectUri: http://fei.free.idcfengye.com/oauth/callback/github
             weibo:
-                clientId:
-                clientSecret:
+                clientId: 675615686
+                clientSecret: 283b1cd9a25ff1a59b14d9be4c4b96b2
                 redirectUri:
             dingtalk:
                 clientId:

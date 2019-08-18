@@ -25,6 +25,36 @@
             </div>
         </div>
     </#if>
+    <div class="sidebar-module">
+        <h5 class="custom-title"><i class="fa fa-handshake-o fa-fw icon"></i><strong>免注册登录</strong><small></small></h5>
+        <div class="div-quote">
+            <div>
+                <i class="fa fa-weibo"></i>
+                <a href="javascript:void(0)" onclick="openWin('https://www.baidu.com','weibo','500','500')" class="fs12 opwb pos-r">微博登录</a>
+
+                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222336862.png">
+                <a href="javascript:void(0)" onclick="openWin('https://www.oschina.net/action/oauth2/authorize?response_type=code&client_id=fZ4Il86LrdPL5BQuKvsf&redirect_uri=http://fei.free.idcfengye.com/oauth/callback/oschina&state=5f5bd1c8f093446e5aef2be59c8d302d','oschina','500','500')" class="fs12 opwb pos-r">开源中国登录</a>
+
+                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222117619.png">
+                <a href="${config.staticWebSite}/oauth/render/gitee" class="fs12 opwb pos-r">码云登录</a>
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openWin(url,name,iWidth,iHeight) {
+            var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+            window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no');
+        }
+
+    </script>
     <div class="sidebar-module article-module hide" style="top: 0;">
         <h5 class="custom-title"><i class="fa fa-book fa-fw icon"></i><strong>本文目录</strong><i class="fa fa-close pull-right close-article-menu hide pointer"></i><small></small></h5>
         <div id="article-menu">
@@ -50,10 +80,29 @@
                 <ul class="list-unstyled list-inline comments">
                 <#list recentComments as item>
                     <li>
-                        <a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}" rel="external nofollow" data-toggle="tooltip" data-placement="bottom">
+                        <div class="clearfix" style="display: block;">
+                            <span>
+                                <img alt="${item.nickname!}" src="${item.avatar!}" class="avatar" width="50" height="50" onerror="this.src='${config.staticWebSite}/img/user.png'">
+                            </span>
+                            <span class="newest_comment_author">
+                                <a id="user-271" class="users" href="">${item.nickname!}</a>
+                            </span>
+                            <span class="fr" style="float: right;">
+                                <time style="font-size: 12px;" class="comment-meta-item timeago fs12 gray" data-timeago="2019-8-18 10:32:25" itemprop="datePublished" data-tid="40">12小时前</time>
+                            </span>
+                        </div>
+                        <div style="background-color: #f5f5f5;line-height: 1.7;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">
+                            <a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}">
+                                ${item.briefContent!}
+                            </a>
+                        </div>
+                        <span class="gray fs12" style="word-break: break-all;">来自：
+                            <a href="https://www.lizenghai.com/archives/28162.html#comment-3632">${item.article.title!}</a>
+                        </span>
+                        <#--<a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}" rel="external nofollow" data-toggle="tooltip" data-placement="bottom">
                             <img alt="${item.nickname!}" src="${item.avatar!}" class="avatar auto-shake" height="64" width="64" onerror="this.src='${config.staticWebSite}/img/user.png'" />
                             <span class="comment-author">${item.nickname!}</span> ${item.briefContent!}
-                        </a>
+                        </a>-->
                     </li>
                 </#list>
                 </ul>

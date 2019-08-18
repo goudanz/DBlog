@@ -3,6 +3,7 @@ package com.zyd.blog.business.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zyd.blog.business.enums.UserTypeEnum;
+import com.zyd.blog.persistence.beans.BizArticle;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -24,6 +25,7 @@ public class BizCommentDTO {
     BizCommentDTO parentDTO;
     private Long id;
     @JsonIgnore
+    BizArticle article;
     private Date createTime;
     private Long sid;
     private Long pid;

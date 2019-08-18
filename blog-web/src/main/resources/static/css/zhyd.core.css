@@ -1822,6 +1822,25 @@ nav a:first-child .meta-nav {
 /* 文字向上冒泡 */
 .thumb-bubble {
     font-size: 2rem;
+    animation: change 10s linear 0s infinite;
+}
+
+@keyframes change {
+    0% {
+        color: red;
+    }
+    25% {
+        color: orange;
+    }
+    50% {
+        color: blue;
+    }
+    75% {
+        color: #3cff1b;
+    }
+    100% {
+        color: #ff17a1;
+    }
 }
 
 .effect-bubble-fly {
@@ -2481,7 +2500,7 @@ nav a:first-child .meta-nav {
 }*/
 .comments li {
     width: 99%;
-    height: 37px;
+    height: 125px;
     padding-bottom: 8px;
     line-height: 37px;
     _white-space: normal;
@@ -3253,7 +3272,8 @@ nav a:first-child .meta-nav {
 
 /** login*/
 .oauth-login{
-    padding-top: 10px;
+    padding-top: 1%;
+    padding-left: 41%;
 }
 
 .oauth-login a{
@@ -3262,4 +3282,261 @@ nav a:first-child .meta-nav {
 
 .zmdi-arrow-forward{
     padding-top: 7px;
+}
+
+/*login dialog*/
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.dialog__content {
+    width: 50%;
+    max-width: 340px;
+    min-width: 310px;
+    background: #fff;
+    text-align: center;
+    position: relative;
+    opacity: 1;
+}
+button.text, .button.text {
+    background: none;
+    padding: 0;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+    color: #000;
+    height: auto;
+    border: 0;
+}
+.form-close {
+    right: -50px;
+    top: 8px;
+    z-index: 6;
+}
+.pos-a {
+    position: absolute;
+}
+.form-close i {
+    font-size: 24px;
+    color: #fff;
+}
+.sign-form-input label {
+    margin-bottom: 10px;
+}
+.sign-form-input .checkcode-div div {
+    width: 60%;
+    height: 40px;
+    padding-right: 10px;
+}
+
+.mouh {
+    cursor: pointer;
+}
+.pos-r {
+    position: relative;
+}
+.fd {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.sign-form-input .submit {
+    padding: 14px;
+    font-size: 14px;
+    height: 42px;
+}
+
+.w100 {
+    width: 100% !important;
+}
+button, .button {
+    display: inline-block;
+    padding: 8px 12px;
+    line-height: 1;
+    font-size: 13px;
+    color: #fff;
+    border: 1px solid #4285f4;
+    font-weight: 400;
+    background: #4285f4;
+    background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    height: 32px;
+}
+
+button.empty, .button.empty {
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    border-radius: 2px;
+    -webkit-user-select: none;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+}
+.sign-form-input .checkcode-div input {
+    float: right;
+    width: 40%;
+    display: inline-block;
+    padding: 13px 10px;
+    height: 40px;
+}
+
+.sign-form-input .checkcode-div span {
+    height: 40px;
+    width: 100%;
+    display: block;
+    line-height: 40px;
+    background-color: #f5f5f5;
+    text-align: center;
+    background-size: 100% 100%;
+}
+.sign-form-input label {
+    display: block;
+    position: relative;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.sign-form-input .tip-icon {
+    position: absolute;
+    left: 5px;
+    top: 12px;
+}
+.sign-form-input input {
+    width: 100%;
+    display: block;
+    padding: 13px 10px 10px 35px;
+    font-size: 14px;
+    border: 0;
+    background-color: #f6f6f6;
+    border-radius: 3px;
+}
+.sign-form-input {
+    text-align: left;
+}
+.pd10 {
+    padding: 10px;
+}
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+.sign-form-pd {
+    padding: 10px 20px 0;
+}
+.pos-r {
+    position: relative;
+}
+.pd20 {
+    padding: 20px;
+}
+.fs12 {
+    font-size: 12px;
+}
+.gray {
+    color: #90949c;
+}
+.open-sign p span {
+    padding: 0 10px;
+    background-color: #fff;
+    position: relative;
+}
+.mar20-t {
+    margin-top: 20px;
+}
+.form-open .qq-ico {
+    border-color: #4285f4;
+    color: #4285f4;
+}
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+.sign-info span {
+    color: #4285f4;
+    cursor: pointer;
+}
+.form-open button, .form-open .button {
+    font-size: 12px;
+    padding: 5px 10px;
+    font-weight: 400;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+.form-open .weibo-ico {
+    border-color: #e45656;
+    color: #e45656;
+}
+
+.form-open .github-ico {
+    border-color: #0a0a0a;
+    color: #0a0a0a;
+}
+.open-sign p::before {
+    position: absolute;
+    border-top: 1px solid #ccc;
+    content: '';
+    top: 8px;
+    width: 100%;
+    left: 0;
+}
+.sign-form-input .tip-icon i {
+    font-size: 20px;
+}
+.sign-des {
+    font-size: 12px;
+    color: #cacaca;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+}
+.send-code {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    font-size: 14px;
+}
+#div_register{
+    display: none;  /* 要点：先将注册表单的盒子隐藏 */
+}
+#div_forget{
+    display: none;  /* 要点：先将忘记密码表单的盒子隐藏 */
+}
+#sendcode{
+    display: none;
+}
+.widget_newest_comment .newest_comment_content::before {
+    border-color: transparent transparent #f5f5f5;
+}
+
+.newest_comment_content::before, .newest_comment_content::after {
+    right: inherit;
+    left: 30px;
+}
+.pjt:before, .zrz-mobile-menu-drop::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: transparent transparent #f5f5f5;
+    border-width: 7px;
+    top: -14px;
+    z-index: 1;
 }
