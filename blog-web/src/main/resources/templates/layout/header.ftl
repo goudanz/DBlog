@@ -142,7 +142,7 @@
     </div>
 </div>
 <nav id="mainmenu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="menu-box">
+    <div class="menu-box" style="padding-right: 17%;padding-left: 17%;">
         <div class="navbar-header">
             <span class="pull-right nav-search toggle-search" data-toggle="modal" data-target=".nav-search-box"><i class="fa fa-search"></i></span>
             <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

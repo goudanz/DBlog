@@ -109,6 +109,7 @@ public class BizCommentServiceImpl implements BizCommentService {
             if (null != comment.getUser()) {
                 dto.setUserType(comment.getUser().getUserTypeEnum());
             }
+            dto.setTitle(comment.getArticleTitle());
             dtoList.add(dto);
         }
         return dtoList;

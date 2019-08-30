@@ -47,14 +47,6 @@
         </div>
     </div>
 
-    <script>
-        function openWin(url,name,iWidth,iHeight) {
-            var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
-            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
-            window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no');
-        }
-
-    </script>
     <div class="sidebar-module article-module hide" style="top: 0;">
         <h5 class="custom-title"><i class="fa fa-book fa-fw icon"></i><strong>本文目录</strong><i class="fa fa-close pull-right close-article-menu hide pointer"></i><small></small></h5>
         <div id="article-menu">
@@ -97,7 +89,7 @@
                             </a>
                         </div>
                         <span class="gray fs12" style="word-break: break-all;">来自：
-                            <a href="https://www.lizenghai.com/archives/28162.html#comment-3632">${item.article.title!}</a>
+                            <a href="https://www.lizenghai.com/archives/28162.html#comment-3632">${item.articleTitle!}</a>
                         </span>
                         <#--<a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}" rel="external nofollow" data-toggle="tooltip" data-placement="bottom">
                             <img alt="${item.nickname!}" src="${item.avatar!}" class="avatar auto-shake" height="64" width="64" onerror="this.src='${config.staticWebSite}/img/user.png'" />

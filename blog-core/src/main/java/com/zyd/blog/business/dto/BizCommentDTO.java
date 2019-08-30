@@ -25,7 +25,7 @@ public class BizCommentDTO {
     BizCommentDTO parentDTO;
     private Long id;
     @JsonIgnore
-    BizArticle article;
+    private String title;
     private Date createTime;
     private Long sid;
     private Long pid;

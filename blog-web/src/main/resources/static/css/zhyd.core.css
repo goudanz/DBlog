@@ -58,8 +58,8 @@ ul, ol {
     background: #fff;
     width: 100%;
     z-index: 999;
-    padding-right: 6%;
-    padding-left: 6%;
+    padding-right: 17%;
+    padding-left: 17%;
 }
 
 body {
@@ -67,7 +67,7 @@ body {
     font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
     font-size: 14px;
     color: #333;
-    background-color: #f1f1f1;
+    background-color: #f0f2f5;
     min-width: 350px;
 }
 
@@ -109,7 +109,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .nav-search-box .nav-search-btn, .nav-search, .link-info .auto-link-btn {
     color: #fff;
-    background-color: #f79c52;
+    background-color: #333;
     /*border-color: #008151;*/
 }
 
@@ -185,8 +185,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .pager > li > a.active, .pager > li > a:hover {
     color: #fff !important;
-    background-color: #f79c52;
-    border-color: #f79c52;
+    background-color: #333;
+    border-color: #333;
 }
 
 .blog-info {
@@ -410,7 +410,7 @@ a:hover {
 }
 
 a {
-    color: #f79c52;
+    color: #333;
     text-decoration: none;
 }
 
@@ -442,8 +442,8 @@ a:-webkit-any-link {
 .navbar-default .menu-box .navbar-collapse ul .active a {
     /*background-color: #c40000;
     color: #fff;*/
-    color: #f79c52 !important;
-    /*border-bottom: 4px solid #f79c52 !important;*/
+    color: #333 !important;
+    /*border-bottom: 4px solid #333 !important;*/
     font-weight: 700;
     background-color: initial !important;
 }
@@ -855,12 +855,12 @@ span.separation:AFTER {
 }
 
 .sidebar-module .sidebar-tabs li.hover {
-    background-color: #f79c52;
+    background-color: #333;
 }
 
 .sidebar-module .sidebar-tabs li a:hover {
     font-weight: 700;
-    background-color: #f79c52;
+    background-color: #333;
 }
 
 .sidebar-module .tab-content .empty-list {
@@ -999,9 +999,9 @@ span.separation:AFTER {
 
 #article-menu > ul > li:hover,
 #article-menu > ul > li.active {
-    color: #f79c52;
+    color: #333;
     background: #f3f3f3;
-    border-left: 2px solid #f79c52;
+    border-left: 2px solid #333;
     -moz-transition: all .2s ease;
     -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
@@ -1010,7 +1010,7 @@ span.separation:AFTER {
 
 #article-menu > ul > li:hover > a,
 #article-menu > ul > li.active > a {
-    color: #f79c52;
+    color: #333;
 }
 
 #article-menu > ul > li > a {
@@ -1143,7 +1143,7 @@ article .thumbnail span {
     left: 0;
     filter: alpha(opacity=70);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    background: #f79c52;
+    background: #333;
     color: #fff;
 }
 
@@ -1241,7 +1241,7 @@ article .entry-more a {
     display: block;
     border-radius: 2px 0 0 2px;
     color: #fff;
-    background-color: #f79c52;
+    background-color: #333;
 }
 
 article .entry-more a:hover, .tag-li a:hover {
@@ -1249,7 +1249,7 @@ article .entry-more a:hover, .tag-li a:hover {
     /* color: #017E66 !important; */
     /* border-color: rgba(202, 206, 205, 0.08) !important; */
     color: #fff !important;
-    background-color: #f79c52 !important;
+    background-color: #333 !important;
     /*border-color: #028103 !important;*/
     text-decoration: none !important;
 }
@@ -1737,7 +1737,7 @@ article .entry-more a:hover, .tag-li a:hover {
 
 .nav-tabs > li > a:hover {
     color: #fff !important;
-    background-color: #f79c52 !important;
+    background-color: #333 !important;
     /*border-color: #008151 !important;*/
 }
 
@@ -1785,7 +1785,7 @@ nav a:first-child .meta-nav {
 
 .c-label:hover {
     color: #fff !important;
-    background-color: #f79c52 !important;
+    background-color: #333 !important;
     /*border-color: #008151 !important;*/
     text-decoration: none !important;
     /*background-color: #017E66!important;*/
@@ -1810,7 +1810,7 @@ nav a:first-child .meta-nav {
 /*.rating > i:hover,*/
 /*.rating > i:hover ~ i,*/
 .rating > i.active {
-    color: #f79c52;
+    color: #333;
 }
 
 .rating > i.active:before {
@@ -2246,7 +2246,7 @@ nav a:first-child .meta-nav {
 
 @media (min-width: 1200px) {
     .container {
-        width: 90%;
+        width: 67%;
     }
 }
 
@@ -2742,7 +2742,7 @@ nav a:first-child .meta-nav {
 }
 
 .forbidden a {
-    color: #f79c52;
+    color: #333;
 }
 
 .forbidden .right blockquote {

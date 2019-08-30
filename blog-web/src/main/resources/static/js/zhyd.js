@@ -100,7 +100,7 @@ function initArticeMenu() {
                         if ($(document).scrollTop() >= 200) {
                             if (!$articleBox.hasClass("fixed")) {
                                 $articleBox.addClass('fixed').css({
-                                    width: '25.2%'
+                                    width: '18.5%'
                                 }).animate({top: '85px'}, 100);
                                 $('.close-article-menu').removeClass('hide');
                             }
