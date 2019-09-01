@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @date 2018/4/18 11:48
  * @since 1.0
  */
@@ -63,7 +63,7 @@ public class ZydWebsocketServer {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        log.info("[Socket] {}来自客户端的消息:{}", session.getId(), message);
+        log.info("[Socket] {}www.dancoder.cn客户端的消息:{}", session.getId(), message);
     }
 
     /**

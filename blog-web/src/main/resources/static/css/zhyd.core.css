@@ -1,7 +1,7 @@
 /**
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2017-04-01
  * @since 1.0
@@ -67,7 +67,7 @@ body {
     font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
     font-size: 14px;
     color: #333;
-    background-color: #f0f2f5;
+    background-color: #f1f1f1;
     min-width: 350px;
 }
 
@@ -443,7 +443,7 @@ a:-webkit-any-link {
     /*background-color: #c40000;
     color: #fff;*/
     color: #333 !important;
-    /*border-bottom: 4px solid #333 !important;*/
+    border-bottom: 4px solid #333 !important;
     font-weight: 700;
     background-color: initial !important;
 }
@@ -702,7 +702,7 @@ span.separation:AFTER {
 /* 滚动条 start */
 ::-webkit-scrollbar {
     border-radius: 0;
-    width: 7px;
+    width: 0px;
     height: 7px;
 }
 
@@ -982,6 +982,7 @@ span.separation:AFTER {
     display: none;
     overflow-y: scroll;
     max-height: 500px;
+    overflow: hidden;
 }
 
 #article-menu ul {
@@ -1143,7 +1144,37 @@ article .thumbnail span {
     left: 0;
     filter: alpha(opacity=70);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    background: #333;
+    background: #999;
+    /* color: #fff; */
+}
+.art-top{
+    font-size: 12px;
+    display: inline-block;
+    line-height: 20px;
+    background: #1e9fff;
+    border-radius: 2px;
+    color: #fff;
+    padding: 0 5px;
+    position: inherit;
+    float: left;
+    margin-top: 7px;
+    margin-right: 6px;
+}
+.art-type {
+    font-size: 12px;
+    display: inline-block;
+    line-height: 20px;
+    background: #f03;
+    border-radius: 2px;
+    color: #fff;
+    padding: 0 5px;
+    position: inherit;
+    float: left;
+    margin-top: 7px;
+    margin-right: 6px;
+}
+
+.art-type a{
     color: #fff;
 }
 
@@ -1240,8 +1271,8 @@ article .entry-more a {
     padding: 0 12px;
     display: block;
     border-radius: 2px 0 0 2px;
-    color: #fff;
-    background-color: #333;
+    /*color: #fff;*/
+    background-color: #f5f5f5;
 }
 
 article .entry-more a:hover, .tag-li a:hover {
@@ -1259,9 +1290,25 @@ article .entry-more a:hover, .tag-li a:hover {
     line-height: 26px;
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
+
+.fl{ float: left; }
+.fr{ float: right; }
+.tagcloud { position: relative; margin-top:50px; }
+.tagcloud a {
+    position: absolute;  top: 0; left: 0;  display: block; padding: 3px 12px; color: #333; font-size: 16px; border: 1px solid #e6e7e8; border-radius: 18px; background-color: #f2f4f8; text-decoration: none; white-space: nowrap;
+    -o-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+    -ms-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+    -moz-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+    -webkit-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+    box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135, Color='#000000')";/*兼容ie7/8*/
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=125, Strength=9);
+    /*strength是阴影大小，direction是阴影方位，单位为度，可以为负数，color是阴影颜色 （尽量使用数字）使用IE滤镜实现盒子阴影的盒子必须是行元素或以行元素显示（block或inline-block;）*/
+}
+.tagcloud a:hover{ color: #3385cf; }
 
 .simple-alert {
     margin-top: 18px;
@@ -3487,7 +3534,7 @@ img {
 }
 
 .form-open .github-ico {
-    border-color: #0a0a0a;
+    border-color: #ff0000;
     color: #0a0a0a;
 }
 .open-sign p::before {
@@ -3539,4 +3586,31 @@ img {
     border-width: 7px;
     top: -14px;
     z-index: 1;
+}
+
+/*music Switch*/
+#musicSwitch.active {
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+    transform: rotate3d(0, 1, 0, -180deg);
+}
+
+@media only screen and (min-width: 992px)
+{
+    #musicSwitch {
+        right: 21px;
+    }
+}
+
+#musicSwitch {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: sticky;
+    bottom: 50px;
+    right: 25px;
+    background-color: #F36170;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-transition: all .35s;
+    transition: all .35s;
 }

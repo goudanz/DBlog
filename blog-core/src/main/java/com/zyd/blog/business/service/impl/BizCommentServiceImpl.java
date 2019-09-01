@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @date 2018/4/16 16:26
  * @since 1.0
  */
@@ -109,7 +109,6 @@ public class BizCommentServiceImpl implements BizCommentService {
             if (null != comment.getUser()) {
                 dto.setUserType(comment.getUser().getUserTypeEnum());
             }
-            dto.setTitle(comment.getArticleTitle());
             dtoList.add(dto);
         }
         return dtoList;
@@ -324,7 +323,7 @@ public class BizCommentServiceImpl implements BizCommentService {
      * @return
      */
     @Override
-    @RedisCache
+//    @RedisCache
     public List<Comment> listRecentComment(int pageSize) {
         CommentConditionVO vo = new CommentConditionVO();
         vo.setPageSize(pageSize);

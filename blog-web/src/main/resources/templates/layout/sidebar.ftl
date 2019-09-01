@@ -29,14 +29,11 @@
         <h5 class="custom-title"><i class="fa fa-handshake-o fa-fw icon"></i><strong>免注册登录</strong><small></small></h5>
         <div class="div-quote">
             <div>
-                <i class="fa fa-weibo"></i>
-                <a href="javascript:void(0)" onclick="openWin('https://www.baidu.com','weibo','500','500')" class="fs12 opwb pos-r">微博登录</a>
-
                 <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222336862.png">
-                <a href="javascript:void(0)" onclick="openWin('https://www.oschina.net/action/oauth2/authorize?response_type=code&client_id=fZ4Il86LrdPL5BQuKvsf&redirect_uri=http://fei.free.idcfengye.com/oauth/callback/oschina&state=5f5bd1c8f093446e5aef2be59c8d302d','oschina','500','500')" class="fs12 opwb pos-r">开源中国登录</a>
-
-                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222117619.png">
-                <a href="${config.staticWebSite}/oauth/render/gitee" class="fs12 opwb pos-r">码云登录</a>
+                <a href="${config.staticWebSite}/oauth/render/oschina"  class="fs12 opwb pos-r">开源中国登录</a>
+                <a href="${config.staticWebSite}/oauth/render/github">
+                    <i class="fa fa-github fa-lg"></i> github登录
+                </a>
             </div>
             <div>
 
@@ -55,15 +52,20 @@
     </div>
     <div class="sidebar-module">
         <h5 class="custom-title"><i class="fa fa-tags fa-fw icon"></i><strong>标签云</strong><small></small></h5>
-        <@zhydTag method="tagsList" pageSize="10">
-            <#if tagsList?? && (tagsList?size > 0)>
-                <#list tagsList as item>
-                    <a style="font-size: <@zhydTag method="random" max="15" min="10">${random}</@zhydTag>px;margin: 5px;" href="${config.siteUrl}/tag/${item.id?c}" title="${item.name!}" data-toggle="tooltip" data-placement="bottom">
-                        ${item.name!}
-                    </a>
-                </#list>
-            </#if>
-        </@zhydTag>
+        <ul class="list-unstyled list-inline">
+            <@zhydTag method="tagsList" pageSize="10">
+                <#if tagsList?? && (tagsList?size > 0)>
+                    <#list tagsList as item>
+
+                            <li class="tag-li">
+                                <a class="btn btn-default btn-xs" href="${config.siteUrl}/tag/${item.id?c}" title="${item.name!}" data-toggle="tooltip" data-placement="bottom">
+                                    ${item.name!}
+                                </a>
+                            </li>
+                    </#list>
+                </#if>
+            </@zhydTag>
+        </ul>
     </div>
     <@zhydTag method="recentComments" pageSize="10">
         <#if recentComments?? && recentComments?size gt 0>
@@ -89,7 +91,7 @@
                             </a>
                         </div>
                         <span class="gray fs12" style="word-break: break-all;">来自：
-                            <a href="https://www.lizenghai.com/archives/28162.html#comment-3632">${item.articleTitle!}</a>
+                            <a href="${config.siteUrl}/article/${item.articleId}">${item.articleTitle!}</a>
                         </span>
                         <#--<a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}" rel="external nofollow" data-toggle="tooltip" data-placement="bottom">
                             <img alt="${item.nickname!}" src="${item.avatar!}" class="avatar auto-shake" height="64" width="64" onerror="this.src='${config.staticWebSite}/img/user.png'" />
@@ -182,4 +184,17 @@
             </@zhydTag>
         </ul>
     </div>
+    <#--3D标签云配置-->
+<#--    <script type="text/javascript" src="${config.staticWebSite}/js/other/tagcloud.js"></script>-->
+    <#--<script>
+        tagcloud({
+            selector: ".tagcloud",  //元素选择器
+            fontsize: 12,       //基本字体大小, 单位px
+            radius: 80,         //滚动半径, 单位px
+            mspeed: "normal",   //滚动最大速度, 取值: slow, normal(默认), fast
+            ispeed: "normal",   //滚动初速度, 取值: slow, normal(默认), fast
+            direction: 135,     //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+            keep: false          //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+        });
+    </script>-->
 </div>

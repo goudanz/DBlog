@@ -1,7 +1,7 @@
 /**
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2017-04-01
  * @since 1.0
@@ -99,9 +99,8 @@ function initArticeMenu() {
                     if ($.tool.currentPath().indexOf('/article/') !== -1) {
                         if ($(document).scrollTop() >= 200) {
                             if (!$articleBox.hasClass("fixed")) {
-                                $articleBox.addClass('fixed').css({
-                                    width: '18.5%'
-                                }).animate({top: '85px'}, 100);
+                                $articleBox.addClass('fixed').css({width: '18.5%'}).animate({top: '85px'}, 100);
+                                $articleBox.addClass('fixed').css({'box-shadow': '2px 2px 5px #8f8f8f'});
                                 $('.close-article-menu').removeClass('hide');
                             }
                         } else {
@@ -206,10 +205,9 @@ $(function () {
     initArticeMenu();
     initScrollMenu();
 
-    console.group("关于OneBlog");
-    console.log("OneBlog，一个简洁美观、功能强大并且自适应的Java博客\n欢迎进QQ交流群（190886500）");
+    console.log("屌不屌...");
     console.groupEnd();
-    console.log("%c生活真他妈好玩，因为生活老他妈玩我！", "color:green;font-size:20px;font-weight:blod");
+    console.log("%c当你凝望深渊的时候，深渊也在凝望着你！", "color:green;font-size:20px;font-weight:blod");
     console.groupEnd();
     console.log("爱谁谁...");
 

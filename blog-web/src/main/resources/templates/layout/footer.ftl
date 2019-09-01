@@ -112,6 +112,30 @@
     </div>
     <small class="font-bold"> </small>
 </div>
+<script>
+    /*div 块拖动*/
+/*    dragFunc("skPlayer");
+    function dragFunc(id) {
+        var Drag = document.getElementById(id);
+        Drag.onmousedown = function(event) {
+            var ev = event || window.event;
+            event.stopPropagation();
+            var disX = ev.clientX - Drag.offsetLeft;
+            var disY = ev.clientY - Drag.offsetTop;
+            document.onmousemove = function(event) {
+                var ev = event || window.event;
+                debugger
+                Drag.style.left = ev.clientX - disX + "px";
+                Drag.style.top = ev.clientY - disY + "px";
+                Drag.style.cursor = "move";
+            };
+        };
+        Drag.onmouseup = function() {
+            document.onmousemove = null;
+            this.style.cursor = "default";
+        };
+    };*/
+</script>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
     <div class="login-dialog" style="margin: 5% auto auto 41%">
@@ -187,8 +211,8 @@
                                    spellcheck="false" name="password" tabindex="5" placeholder="密码" class="pass">
                             <!---->
                         </label>
-                        <div id="checkcode">
-                        </div>
+                       <#-- <div id="verify">
+                        </div>-->
                         <#-- <label id="checkcode" class="checkcode-div">
                              <div class="fd mouh pos-r">
                                  <span class="bg-img"
@@ -264,9 +288,10 @@
                             <i class="fa fa-qq"></i> QQ登录
                         </button>
                     </a>
-                    <a href="${config.staticWebSite}/oauth/render/github" title="github">
+                    <a href="${config.staticWebSite}/oauth/render/gitee" title="github">
                         <button class="github-ico empty">
-                            <i class="fa fa-github fa-lg"></i> github登录
+                            <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222117619.png">
+                            码云登录
                         </button>
                     </a>
                 </div>
@@ -330,6 +355,8 @@
         </div>
     </div>
 </footer>
+<div id="skPlayer" style="float: right;position: fixed;display: block;bottom: 100px;bottom: 50px"></div>
+<#--<a id="musicSwitch" href="javascript:void(0)" class="active"></a>-->
 <a class="to-top" title="点击返回顶部" data-toggle="tooltip" data-placement="bottom"></a>
 <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@1.11.1/dist/jquery.min.js"></script>
@@ -344,6 +371,8 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xss@0.3.3/dist/xss.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mustache@2.3.0/mustache.min.js"></script>
+<script type="text/javascript" src="${config.staticWebSite}/js/login/jquery.verify.js"></script>
+<script type="text/javascript" src="${config.staticWebSite}/js/dist/skPlayer.min.js"></script>
 <script type="text/javascript">
     var appConfig = {
         siteName: '${config.siteName}',
@@ -366,7 +395,33 @@
         loginUserAvatar: '${user.avatar}'
     }
 
-    var myCaptcha = _dx.Captcha(document.getElementById('checkcode'), {
+    var player = new skPlayer({
+        autoplay: true,
+        //可选项,自动播放,默认为false,true/false
+        listshow: false,
+        //可选项,列表显示,默认为true,true/false
+        mode: 'listloop',
+        //可选项,循环模式,默认为'listloop'
+        //'listloop',列表循环
+        //'singleloop',单曲循环
+        music: {
+            //必需项,音乐配置
+            type: 'file',
+            //必需项,网易云方式指定填'cloud'，指定文件填file
+            source: [
+                {
+                    name: '来自尘埃的光',
+                    //必需项,歌名
+                    author: '蔡维泽',
+                    //必需项,歌手
+                    src: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/music/%E8%94%A1%E7%BB%B4%E6%B3%BD%20-%20%E6%9D%A5%E8%87%AA%E5%B0%98%E5%9F%83%E7%9A%84%E5%85%89%20.mp3',
+                    //必需项,音乐文件
+                    cover: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190901213812095.jpg'
+                }]//406272416
+        }
+    });
+
+/*    var myCaptcha = _dx.Captcha(document.getElementById('checkcode'), {
         appId: '08a0d823c7a6fa885cc9ef871d8941b5', //appId，在控制台中“应用管理”或“应用配置”模块获取
         style: 'inline',
         language: 'zh_cn', // 语言为英语
@@ -374,7 +429,7 @@
         success: function (token) {
             console.log('token:', token)
         }
-    })
+    })*/
 
     function sendCode(){
         debugger

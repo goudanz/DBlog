@@ -3,7 +3,7 @@
  * 项目工具类
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2017-09-02
  * @since 1.0
@@ -16,7 +16,7 @@
     $.extend({
         alert: {
             info: function (content, callback, delayTime) {
-                delayTime = delayTime ? "confirm|" + delayTime : "confirm|3000";
+                delayTime = delayTime ? "confirm|" + delayTime : "confirm|1000";
                 $.jqAlert({
                     icon: 'fa fa-info-circle',
                     title: '友情提示',
@@ -34,7 +34,7 @@
                 });
             },
             error: function (content, callback, delayTime) {
-                delayTime = delayTime ? "confirm|" + delayTime : "confirm|3000";
+                delayTime = delayTime ? "confirm|" + delayTime : "confirm|1000";
                 $.jqAlert({
                     icon: 'fa fa-exclamation-circle',
                     title: '警告',

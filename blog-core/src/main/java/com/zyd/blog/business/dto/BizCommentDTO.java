@@ -14,7 +14,7 @@ import java.util.Date;
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @date 2018/4/16 16:26
  * @since 1.0
  */
@@ -25,7 +25,6 @@ public class BizCommentDTO {
     BizCommentDTO parentDTO;
     private Long id;
     @JsonIgnore
-    private String title;
     private Date createTime;
     private Long sid;
     private Long pid;
