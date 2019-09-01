@@ -24,3 +24,6 @@ hs_err_pid*
 /blog.properties
 /blog.xml
 /module_blog.xml
+*.project
+/.settings
+.settings
