@@ -149,23 +149,23 @@
             </div>
 
             <div id="div_register" class="sign-form-pd pos-r">
-                <form class="sign-form-input">
+                <form class="sign-form-input" action="/guest/register" method="post">
                     <div class="bor-out">
                         <label>
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
                             <input type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
-                                   spellcheck="false" name="nickname" tabindex="1" placeholder="昵称" class="username">
-                            <span class="sign-des">支持中文，英文</span>
+                                   spellcheck="false" name="username" tabindex="1" placeholder="昵称" class="username">
+                            <span class="sign-des">支持中文，英文，用于登录</span>
                         </label> <!---->
                         <label>
 							<span class="tip-icon">
 								<i class="fa fa-envelope-o"></i>
 							</span>
-                            <input type="text" name="username" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" tabindex="2" placeholder="邮箱" class="phone-email">
-                            <span class="sign-des">用作登录</span>
+                            <span class="sign-des">用作找回密码</span>
                         </label> <!---->
                         <label>
 							<span class="tip-icon">
@@ -193,16 +193,24 @@
             </div>
 
             <div id="div_login" class="sign-form-pd pos-r">
-                <form class="sign-form-input">
+                <form class="sign-form-input" action="/guest/login" method="post">
                     <div class="bor-out"><!----> <!---->
-                        <label>
+                        <#--<label>
 							<span class="tip-icon">
 								<i class="fa fa-envelope-o"></i>
 							</span>
                             <input type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" name="username" tabindex="2" placeholder="邮箱" class="phone-email">
-                            <!---->
-                        </label> <!---->
+                            <!--&ndash;&gt;
+                        </label> <!--&ndash;&gt;-->
+                        <label>
+							<span class="tip-icon">
+								<i class="fa fa-user-o"></i>
+							</span>
+                            <input type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                                   spellcheck="false" name="username" tabindex="1" placeholder="昵称" class="username">
+                            <span class="sign-des">支持中文，英文</span>
+                        </label>
                         <label>
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
