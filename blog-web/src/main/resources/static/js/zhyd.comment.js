@@ -4,7 +4,7 @@
  *
  * @date 2018-01-05 10:57
  * @author zhyd(yadong.zhang0415#gmail.com)
- * @link https://www.zhyd.me
+ * @link https://www.dancoder.cn
  */
 var _form = {
     valid: function(form){
@@ -33,10 +33,10 @@ $.extend({
         _commentReply: '',
         _simplemde: null,
         initDom: function () {
-            $.comment._commentDetailModal = $('#comment-detail-modal');
+            $.comment._commentDetailModal = $('#login-modal');
             $.comment._detailForm = $('#detail-form');
             $.comment._detailFormBtn = $('#detail-form-btn');
-            $.comment._closeBtn = $('#comment-detail-modal .close');
+            $.comment._closeBtn = $('#login-modal .close');
             $.comment._commentPid = $('#comment-pid');
             $.comment._commentPlace = $('#comment-place');
             $.comment._commentPost = $('#comment-post');
@@ -44,7 +44,7 @@ $.extend({
             $.comment._commentReply = $('.comment-reply');
         },
         init: function (options) {
-            var $box = $('#comment-box');
+            var $box = $('#comment-box-default');
             if (!$box || !$box[0]) {
                 return;
             }
@@ -66,7 +66,12 @@ $.extend({
             $.comment.initDom();
             // 创建编辑框
             this._simplemde = $.comment.createEdit(op);
-            $.comment.loadCommentList($box);
+            // 加载评论列表
+            var $commentBox = $('#comment-box');
+            if (!$commentBox || !$commentBox[0]) {
+                return;
+            }
+            $.comment.loadCommentList($commentBox);
             $.comment.initValidatorPlugin();
         },
         createEdit: function (options) {
@@ -129,7 +134,7 @@ $.extend({
                             if(comment.root){
                                 adminIcon = '<img src="/img/author.png" alt="" class="author-icon" title="管理员">';
                             }
-                            var parentQuote = parent ? '<a href="#comment-' + parent.id + '" class="comment-quote">@' + parent.nickname + '</a><div style="background-color: #f5f5f5;padding: 5px;margin: 5px;border-radius: 4px;"><i class="fa fa-quote-left"></i><p></p><div style="padding-left: 10px;">' + filterXSS(parent.content) + '</div></div>' : '';
+                            var parentQuote = parent ? '<a href="#comment-' + parent.id + '" class="comment-quote">@' + parent.nickname + '</a><div style="background-color: #f9f9f9;padding: 5px;margin: 5px;border-radius: 4px;"><i class="fa fa-quote-left"></i><p></p><div style="padding-left: 10px;">' + filterXSS(parent.content) + '</div></div>' : '';
                             commentListBox += '<li>' +
                                     '    <div class="comment-body fade-in" id="comment-'+comment.id+'">' +
                                     '        <div class="cheader">' +
@@ -222,7 +227,9 @@ $.extend({
             var $this = $(target);
             $this.button('loading');
             var data = $("#comment-form").serialize();
+            // 检查是否有用户登录
             if(!oauthConfig.loginUserId) {
+                // 无登录 用户走这里
                 var detail = localStorage.getItem(this.detailKey);
                 if(!detail){
                 }else{
@@ -293,9 +300,6 @@ $.extend({
             } else {
                 submitForm(data);
             }
-
-
-
 
             function submitForm(data) {
                 console.log(data);

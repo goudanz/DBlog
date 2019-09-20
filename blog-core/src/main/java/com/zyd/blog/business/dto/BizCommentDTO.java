@@ -3,6 +3,7 @@ package com.zyd.blog.business.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zyd.blog.business.enums.UserTypeEnum;
+import com.zyd.blog.persistence.beans.BizArticle;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,7 +14,7 @@ import java.util.Date;
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @date 2018/4/16 16:26
  * @since 1.0
  */

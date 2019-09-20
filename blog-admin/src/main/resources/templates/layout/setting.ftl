@@ -8,7 +8,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="/assets/images/loading.gif" alt=""><#if user??>${user.username!}<#else>管理员</#if>
+                        <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190815234750889.png" alt=""><#if user??>${user.username!}<#else>管理员</#if>
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">

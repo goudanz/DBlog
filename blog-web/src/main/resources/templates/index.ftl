@@ -14,9 +14,6 @@
             <div class="scrolltext">
                 <ul class="list-unstyled" id="notice-box">
                     <li class="scrolltext-title">
-                        <a href="javascript:void(0)" rel="bookmark">本站正式启用新域名:<a href="https:/www.zhyd.me" target="_blank"><strong>https:/www.zhyd.me</strong></a></a>
-                    </li>
-                    <li class="scrolltext-title">
                         <a href="javascript:void(0)" rel="bookmark">活了二十多年，没能为祖国、为人民做点什么，每思及此，伤心欲绝。</a>
                     </li>
                     <li class="scrolltext-title">
@@ -37,6 +34,7 @@
                             <li data-target="#myCarousel" data-slide-to="${item_index}" class="${(item_index == 0)?string('active','')}"></li>
                             </#list>
                         </ol>
+
                         <div class="carousel-inner">
                             <#list recommendedList as item>
                             <div class="item ${(item_index == 0)?string('active','')}">
@@ -67,10 +65,13 @@
                                 <a href="${config.siteUrl}/article/${item.id?c}">
                                     <img width="150" height="150" <#if config.lazyloadPath!>data-original<#else>src</#if>="${item.coverImage}" class="img-responsive lazy-img" alt="${item.title!}">
                                 </a>
-                                <span class="cat"><a href="${config.siteUrl}/type/${item.typeId?c}">${item.type.name}</a></span>
                             </figure>
                         </#if>
                         <header class="entry-header">
+                            <span class="art-type"><a href="${config.siteUrl}/type/${item.typeId?c}">${item.type.name}</a></span>
+                            <#if item.top?? && item.top=='true'>
+                                <span class="art-top"><#if item.top =='true'>置顶</#if></span>
+                            </#if>
                             <h2 class="entry-title">
                                 <a href="${config.siteUrl}/article/${item.id?c}" rel="bookmark" title="${item.title}" data-toggle="tooltip" data-placement="bottom">${item.title}</a>
                             </h2>
@@ -79,13 +80,12 @@
                             <div class="archive-content">
                                 ${item.description!}
                             </div>
-                            <span class="title-l"></span>
                             <span class="entry-meta">
                                 <span class="date" title="文章发表日期" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clock-o fa-fw"></i>${item.createTime?string('yyyy-MM-dd')}</span>
-                                <span class="views" title="文章阅读次数" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-eye fa-fw"></i>浏览(${item.lookCount!(0)})</span>
+                                <span class="views" title="文章阅读次数" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-eye fa-fw"></i>${item.lookCount!(0)}</span>
                                 <span class="comment" title="文章评论次数" data-toggle="tooltip" data-placement="bottom">
                                     <a href="${config.siteUrl}/article/${item.id?c}#comment-box" rel="external nofollow">
-                                        <i class="fa fa-comments-o fa-fw"></i>评论(${item.commentCount!(0)})
+                                        <i class="fa fa-comments-o fa-fw"></i>${item.commentCount!(0)}
                                     </a>
                                 </span>
                             </span>
