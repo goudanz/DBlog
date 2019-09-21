@@ -363,7 +363,7 @@
         <div class="row">
             <div class="col col-xs-12 col-md-12 col-lg-12">
                 <#if url?? && (url == "index")>
-                    <div class="inline external-links" style="background-color: #f0f2f5;padding: 10px;border: 1px dashed #ccc;line-height: 1.0;">
+                    <div class="inline external-links" style="background-color: #f0f2f5;padding: 10px;border: 1px dashed #ccc;line-height: 1.8;">
                         <a>友情链接：</a>
                         <#if indexLinkList?? && (indexLinkList?size > 0)>
                             <#list indexLinkList as item>
