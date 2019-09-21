@@ -69,6 +69,6 @@ public class GuestServiceImpl implements GuestService {
         }
         user.setUserType(UserTypeEnum.USER);
         user.setUuid(UUID.randomUUID().toString());
-        userService.insert(user);
+        User nweUser = userService.insert(user);
     }
 }

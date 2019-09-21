@@ -2,6 +2,7 @@ package com.zyd.blog.controller;
 
 import com.zyd.blog.business.entity.User;
 import com.zyd.blog.business.service.GuestService;
+import com.zyd.blog.framework.object.ResponseVO;
 import com.zyd.blog.util.ResultUtil;
 import me.zhyd.oauth.model.AuthCallback;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,26 +22,20 @@ public class GuestController {
     private GuestService guestService;
 
     @RequestMapping("/register")
-    public ModelAndView register(HttpSession session, User user) {
+    public ResponseVO register(HttpSession session, User user) {
         guestService.register(user);
-
-        String historyUrl = (String) session.getAttribute("historyUrl");
-        session.removeAttribute("historyUrl");
-        if (StringUtils.isEmpty(historyUrl)) {
-            return ResultUtil.redirect("/");
-        }
-        return ResultUtil.redirect(historyUrl);
+        return ResultUtil.success("注册成功！", null);
     }
 
     @RequestMapping("/login")
-    public ModelAndView login(HttpSession session, User user) {
+    public ResponseVO login(HttpSession session, User user) {
         guestService.login(user);
 
         String historyUrl = (String) session.getAttribute("historyUrl");
         session.removeAttribute("historyUrl");
         if (StringUtils.isEmpty(historyUrl)) {
-            return ResultUtil.redirect("/");
+            return ResultUtil.success(null, historyUrl);
         }
-        return ResultUtil.redirect(historyUrl);
+        return ResultUtil.success(null, historyUrl);
     }
 }

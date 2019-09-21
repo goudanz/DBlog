@@ -114,31 +114,31 @@
 </div>
 <script>
     /*div 块拖动*/
-/*    dragFunc("skPlayer");
-    function dragFunc(id) {
-        var Drag = document.getElementById(id);
-        Drag.onmousedown = function(event) {
-            var ev = event || window.event;
-            event.stopPropagation();
-            var disX = ev.clientX - Drag.offsetLeft;
-            var disY = ev.clientY - Drag.offsetTop;
-            document.onmousemove = function(event) {
+    /*    dragFunc("skPlayer");
+        function dragFunc(id) {
+            var Drag = document.getElementById(id);
+            Drag.onmousedown = function(event) {
                 var ev = event || window.event;
-                debugger
-                Drag.style.left = ev.clientX - disX + "px";
-                Drag.style.top = ev.clientY - disY + "px";
-                Drag.style.cursor = "move";
+                event.stopPropagation();
+                var disX = ev.clientX - Drag.offsetLeft;
+                var disY = ev.clientY - Drag.offsetTop;
+                document.onmousemove = function(event) {
+                    var ev = event || window.event;
+                    debugger
+                    Drag.style.left = ev.clientX - disX + "px";
+                    Drag.style.top = ev.clientY - disY + "px";
+                    Drag.style.cursor = "move";
+                };
             };
-        };
-        Drag.onmouseup = function() {
-            document.onmousemove = null;
-            this.style.cursor = "default";
-        };
-    };*/
+            Drag.onmouseup = function() {
+                document.onmousemove = null;
+                this.style.cursor = "default";
+            };
+        };*/
 </script>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
-    <div class="login-dialog" style="margin: 5% auto auto 41%">
+    <div class="login-dialog">
         <div class="dialog__content">
             <button class="pos-a form-close text" data-dismiss="modal" aria-label="Close">
                 <i class="fa fa-times"></i>
@@ -149,13 +149,13 @@
             </div>
 
             <div id="div_register" class="sign-form-pd pos-r">
-                <form class="sign-form-input" action="/guest/register" method="post">
+                <form submit="return false" id="register-from" class="sign-form-input">
                     <div class="bor-out">
                         <label>
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
-                            <input type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" name="username" tabindex="1" placeholder="昵称" class="username">
                             <span class="sign-des">支持中文，英文，用于登录</span>
                         </label> <!---->
@@ -163,7 +163,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-envelope-o"></i>
 							</span>
-                            <input type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" tabindex="2" placeholder="邮箱" class="phone-email">
                             <span class="sign-des">用作找回密码</span>
                         </label> <!---->
@@ -171,14 +171,14 @@
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
 							</span>
-                            <input type="password" name="password" autocorrect="off" autocapitalize="off"
+                            <input disabled type="password" name="password" autocorrect="off" autocapitalize="off"
                                    autocomplete="off" spellcheck="false" tabindex="5" placeholder="密码" class="pass">
                             <span class="sign-des">6位以上</span>
                         </label> <!----> <!----> <!---->
                     </div>
                     <div class="t-c mar20-t">
-                        <button type="submit" class="submit w100"><b class=""></b>
-                            <span>提交注册</span>
+                        <button disabled class="submit w100" onclick="register();"><b class=""></b>
+                            <span id="register-btn">提交注册</span>
                         </button> <!---->
                     </div>
                     <div class="sign-info mar20-t clearfix fs12">
@@ -193,7 +193,7 @@
             </div>
 
             <div id="div_login" class="sign-form-pd pos-r">
-                <form class="sign-form-input" action="/guest/login" method="post">
+                <form id="login-from" class="sign-form-input">
                     <div class="bor-out"><!----> <!---->
                         <#--<label>
 							<span class="tip-icon">
@@ -207,20 +207,22 @@
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
-                            <input type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
-                                   spellcheck="false" name="username" tabindex="1" placeholder="昵称" class="username">
+                            <input disabled type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                                   spellcheck="false" id="username" name="username" tabindex="1" placeholder="昵称"
+                                   class="username">
                             <span class="sign-des">支持中文，英文</span>
                         </label>
                         <label>
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
 							</span>
-                            <input type="password" autocorrect="off" autocapitalize="off" autocomplete="off"
-                                   spellcheck="false" name="password" tabindex="5" placeholder="密码" class="pass">
+                            <input disabled type="password" autocorrect="off" autocapitalize="off" autocomplete="off"
+                                   spellcheck="false" id="password" name="password" tabindex="5" placeholder="密码"
+                                   class="pass">
                             <!---->
                         </label>
-                       <#-- <div id="verify">
-                        </div>-->
+                        <#--<div id="verify">
+                         </div>-->
                         <#-- <label id="checkcode" class="checkcode-div">
                              <div class="fd mouh pos-r">
                                  <span class="bg-img"
@@ -232,10 +234,13 @@
                         </label>-->
                     </div>
                     <div class="t-c mar20-t">
-                        <button type="submit" class="submit w100">
+                        <button disabled type="submit" onclick="usersLogin();" class="submit w100">
                             <b class=""></b>
                             <span>立刻登录</span>
-                        </button> <!---->
+                        </button>
+                        <div class="submit-error mar10-t mouh">
+                            <span id="fs12" class="fs12">请暂时使用社交帐号登录，谢谢</span><i class="fa fa-smile-o"></i><i class="fa fa-smile-o"></i><i class="fa fa-smile-o"></i>
+                        </div>
                     </div>
                     <div class="sign-info mar20-t clearfix fs12">
                         <div class="fl">忘记密码？
@@ -256,21 +261,22 @@
                                 <span class="tip-icon">
                                     <i class="fa fa-envelope-o"></i>
                                 </span>
-                            <input type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
-                                   spellcheck="false" name="username" tabindex="2" placeholder="邮箱" onchange="console.log(this.value);" class="phone-email">
+                            <input disabled type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                                   spellcheck="false" name="username" tabindex="2" placeholder="邮箱"
+                                   onchange="console.log(this.value);" class="phone-email">
                             <!---->
                         </label>
                         <label id="sendcode">
                                 <span class="tip-icon">
                                     <i class="iconfont zrz-icon-font-ecurityCode"></i>
                                 </span>
-                            <input type="text" name="code" tabindex="3" autocorrect="off" autocapitalize="off"
+                            <input disabled type="text" name="code" tabindex="3" autocorrect="off" autocapitalize="off"
                                    autocomplete="off" spellcheck="false" placeholder="验证码" class="code">
                             <span class="send-code button">发送验证码</span>
                         </label>
                     </div>
                     <div class="t-c mar20-t">
-                        <button type="submit" class="submit w100">
+                        <button disabled type="submit" class="submit w100">
                             <b class=""></b>
                             <span>下一步</span>
                         </button> <!---->
@@ -298,7 +304,8 @@
                     </a>
                     <a href="${config.staticWebSite}/oauth/render/gitee" title="github">
                         <button class="github-ico empty">
-                            <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222117619.png">
+                            <img style="vertical-align: sub;margin: auto 3px;"
+                                 src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222117619.png">
                             码云登录
                         </button>
                     </a>
@@ -307,6 +314,42 @@
         </div>
     </div>
 </div>
+
+<script>
+    function usersLogin() {
+        var username = $.trim($("#username").val());
+        var password = $.trim($("#password").val());
+        if (username == "") {
+            $("#fs12").innerHTML = "请输入用户名!";
+            return false;
+        } else if (password == "") {
+            $("#fs12").innerHTML = "请输入密码!";
+            return false;
+        }
+        //ajax去服务器端校验
+        var data = {username: username, password: password};
+
+        $.ajax({
+            type: "POST",
+            url: "/guest/login",
+            data: data,
+            dataType: 'json',
+            success: function (json) {
+                console.log(json);
+                alert(1);
+                if (json.status == 200) {
+                    // window.location.href = "{:U('Index/personal')}";
+                } else {
+                    alert("登录失败，请重试!");
+                }
+            },
+            error:function (json) {
+                alert(2);
+            }
+        });
+    }
+
+</script>
 
 <div id="loading">
     <div class="filter"></div>
@@ -319,30 +362,8 @@
     <div class="container">
         <div class="row">
             <div class="col col-xs-12 col-md-12 col-lg-12">
-                <p>
-                <ul class="list-unstyled list-inline">
-                    <li>其他连接：</li>
-                    <li><a href="${config.siteUrl}/sitemap.html" target="_blank" title="网站地图" data-toggle="tooltip"
-                           data-placement="bottom"><i class="fa fa-map-o fa-fw"></i>网站地图</a></li>
-                    <li><a href="${config.siteUrl}/recommended" title="站长推荐" data-toggle="tooltip"
-                           data-placement="bottom"><i class="fa fa-thumbs-o-up fa-fw"></i>站长推荐</a></li>
-                    <li><a href="${config.siteUrl}/updateLog" title="更新记录" data-toggle="tooltip"
-                           data-placement="bottom"><i class="fa fa-file-o fa-fw"></i>更新记录</a></li>
-                    <li><a href="${config.siteUrl}/archives" title="归档目录" data-toggle="tooltip" data-placement="bottom"><i
-                                    class="fa fa-folder-o fa-fw"></i>归档目录</a></li>
-                    <li><a href="${config.siteUrl}/disclaimer" title="免责声明" data-toggle="tooltip"
-                           data-placement="bottom"><i class="fa fa-file-o fa-fw"></i>免责声明</a></li>
-                </ul>
-                </p>
-                <p>托管于<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=wylo59db"
-                         target="_blank" title="阿里云-为了无法计算的价值" data-toggle="tooltip" data-placement="bottom"
-                         rel="external nofollow">阿里云</a> <#if config.recordNumber!> · <a
-                            href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank"
-                            title="查看备案信息" data-toggle="tooltip" data-placement="bottom"
-                            rel="external nofollow">${config.recordNumber}</a></#if></p>
-                <#--<p><#if config.copyright!>${config.copyright} |</#if> Powered by <a href="https://gitee.com/yadong.zhang/DBlog" title="OneBlog是一款简洁美观、自适应的Java博客系统..." data-toggle="tooltip" data-placement="right" target="_blank"><i>OneBlog</i></a>  </p>-->
                 <#if url?? && (url == "index")>
-                    <div class="inline external-links">
+                    <div class="inline external-links" style="background-color: #f0f2f5;padding: 10px;border: 1px dashed #ccc;line-height: 1.0;">
                         <a>友情链接：</a>
                         <#if indexLinkList?? && (indexLinkList?size > 0)>
                             <#list indexLinkList as item>
@@ -358,6 +379,35 @@
                         </#if>
                     </div>
                 </#if>
+                <p>
+                    <ul class="list-unstyled list-inline">
+                        <li>其他连接：</li>
+                        <li><a href="${config.siteUrl}/sitemap.html" target="_blank" title="网站地图" data-toggle="tooltip"
+                               data-placement="bottom"><i class="fa fa-map-o fa-fw"></i>网站地图</a></li>
+                        <li><a href="${config.siteUrl}/recommended" title="站长推荐" data-toggle="tooltip"
+                               data-placement="bottom"><i class="fa fa-thumbs-o-up fa-fw"></i>站长推荐</a></li>
+                        <li><a href="${config.siteUrl}/updateLog" title="更新记录" data-toggle="tooltip"
+                               data-placement="bottom"><i class="fa fa-file-o fa-fw"></i>更新记录</a></li>
+                        <li><a href="${config.siteUrl}/archives" title="归档目录" data-toggle="tooltip" data-placement="bottom"><i
+                                        class="fa fa-folder-o fa-fw"></i>归档目录</a></li>
+                        <li><a href="${config.siteUrl}/disclaimer" title="免责声明" data-toggle="tooltip"
+                               data-placement="bottom"><i class="fa fa-file-o fa-fw"></i>免责声明</a></li>
+                    </ul>
+                </p>
+                <p>托管于
+                    <a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=wylo59db"
+                         target="_blank" title="阿里云-为了无法计算的价值" data-toggle="tooltip" data-placement="bottom"
+                         rel="external nofollow">阿里云
+                    </a>
+                    <#if config.recordNumber!> ·
+                        <a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank"
+                            title="查看备案信息" data-toggle="tooltip" data-placement="bottom"
+                            rel="external nofollow">${config.recordNumber}
+                        </a>
+                    </#if>
+                    <a href="https://tongji.baidu.com/web/welcome/ico?s=16388bd2558aacf1b4e832b4feb2a061" target="_blank" title="" data-toggle="tooltip" data-placement="right" rel="external nofollow" data-original-title="点击查看蛋码农博客网站统计详情"><i class="fa fa-bar-chart-o fa-fw"></i>网站统计</a>
+                </p>
+
             </div>
             <div class="col col-md-4"></div>
         </div>
@@ -404,7 +454,7 @@
     }
 
     var player = new skPlayer({
-        autoplay: true,
+        autoplay: false,
         //可选项,自动播放,默认为false,true/false
         listshow: false,
         //可选项,列表显示,默认为true,true/false
@@ -429,22 +479,42 @@
         }
     });
 
-/*    var myCaptcha = _dx.Captcha(document.getElementById('checkcode'), {
-        appId: '08a0d823c7a6fa885cc9ef871d8941b5', //appId，在控制台中“应用管理”或“应用配置”模块获取
-        style: 'inline',
-        language: 'zh_cn', // 语言为英语
-        width: 300,
-        success: function (token) {
-            console.log('token:', token)
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
         }
-    })*/
+        return flag;
+    }
+    function ca() {
+        if (!IsPC()){
+            document.getElementById("skPlayer").style.display="none";
+        }
+    }
+    ca();
+    /*    var myCaptcha = _dx.Captcha(document.getElementById('checkcode'), {
+            appId: '08a0d823c7a6fa885cc9ef871d8941b5', //appId，在控制台中“应用管理”或“应用配置”模块获取
+            style: 'inline',
+            language: 'zh_cn', // 语言为英语
+            width: 300,
+            success: function (token) {
+                console.log('token:', token)
+            }
+        })*/
 
-    function sendCode(){
-        debugger
+    function sendCode() {
+    debugger
         var val = $(this).attr("value");
-        if (val.length > 0){
+        if (val.length > 0) {
             sendcode_div.style.display = 'block';
-        }else if (val.length == 0){
+        } else if (val.length == 0) {
             sendcode_div.style.display = 'none';
         }
     };

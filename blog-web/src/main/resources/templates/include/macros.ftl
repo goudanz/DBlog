@@ -13,6 +13,16 @@
     <meta name="description" content="${description}" id="meta_description">
     <link rel="canonical" href="${config.siteUrl}${canonical}" />
     <#include "/layout/quote.ftl">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?16388bd2558aacf1b4e832b4feb2a061";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
     <#--黑白界面
     <style>
         html {
