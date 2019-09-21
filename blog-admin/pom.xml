@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>blog-admin</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>blog-admin</name>
     <description>OneBlog 后台程序</description>

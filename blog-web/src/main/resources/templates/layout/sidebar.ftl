@@ -30,16 +30,10 @@
         <div class="div-quote">
             <div>
                 <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222336862.png">
-                <a href="${config.staticWebSite}/oauth/render/oschina"  class="fs12 opwb pos-r">开源中国登录</a>
-                <a href="${config.staticWebSite}/oauth/render/github">
+                <a href="${config.staticWebSite}/oauth/render/oschina"  class="fs12 opwb pos-r">oschina登录</a>
+                <a href="${config.staticWebSite}/oauth/render/github" class="fs12 opwb pos-r">
                     <i class="fa fa-github fa-lg"></i> github登录
                 </a>
-            </div>
-            <div>
-
-            </div>
-            <div>
-
             </div>
         </div>
     </div>

@@ -67,7 +67,7 @@ body {
     font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
     font-size: 14px;
     color: #333;
-    background-color: #f1f1f1;
+    background-color: #f0f2f5 !important;
     min-width: 350px;
 }
 
@@ -2121,6 +2121,10 @@ nav a:first-child .meta-nav {
         margin: 0 0 5px 0 !important;
     }
 
+    .login-dialog{
+        margin: 43% auto auto 10%;
+    }
+
     article header.entry-header h2 {
         padding-left: 8px;
     }
@@ -2244,6 +2248,10 @@ nav a:first-child .meta-nav {
 
     .col-sm-3 {
         width: 29.3333%;
+    }
+
+    .login-dialog{
+        margin: 5% auto auto 41%
     }
 
     .col-sm-offset-1 {
@@ -3613,4 +3621,18 @@ img {
     border-radius: 25px;
     -webkit-transition: all .35s;
     transition: all .35s;
+}
+
+.submit-error {
+    border: 1px dashed #ffbaba;
+    text-align: left;
+    font-size: 12px;
+    padding: 5px 10px;
+    color: #ff6969;
+}
+.mouh {
+    cursor: pointer;
+}
+.mar10-t {
+    margin-top: 10px;
 }
