@@ -194,6 +194,9 @@
             <#--评论-->
             <#if article.comment>
                 <div class="blog-body clear overflow-initial expansion">
+                    <div id="comment-box-default" data-id="${article.id?c}"></div>
+                </div>
+                <div class="blog-body clear overflow-initial expansion">
                     <div id="comment-box" data-id="${article.id?c}"></div>
                 </div>
             <#else>

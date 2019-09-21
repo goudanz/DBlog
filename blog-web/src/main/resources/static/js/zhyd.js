@@ -1,7 +1,7 @@
 /**
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2017-04-01
  * @since 1.0
@@ -99,9 +99,8 @@ function initArticeMenu() {
                     if ($.tool.currentPath().indexOf('/article/') !== -1) {
                         if ($(document).scrollTop() >= 200) {
                             if (!$articleBox.hasClass("fixed")) {
-                                $articleBox.addClass('fixed').css({
-                                    width: '25.2%'
-                                }).animate({top: '85px'}, 100);
+                                $articleBox.addClass('fixed').css({width: '18.5%'}).animate({top: '85px'}, 100);
+                                $articleBox.addClass('fixed').css({'box-shadow': '2px 2px 5px #8f8f8f'});
                                 $('.close-article-menu').removeClass('hide');
                             }
                         } else {
@@ -206,10 +205,9 @@ $(function () {
     initArticeMenu();
     initScrollMenu();
 
-    console.group("关于OneBlog");
-    console.log("OneBlog，一个简洁美观、功能强大并且自适应的Java博客\n欢迎进QQ交流群（190886500）");
+    console.log("屌不屌...");
     console.groupEnd();
-    console.log("%c生活真他妈好玩，因为生活老他妈玩我！", "color:green;font-size:20px;font-weight:blod");
+    console.log("%c当你凝望深渊的时候，深渊也在凝望着你！", "color:green;font-size:20px;font-weight:blod");
     console.groupEnd();
     console.log("爱谁谁...");
 
@@ -415,3 +413,110 @@ $(function () {
         });
     }
 });
+
+function userLogin() {
+    var params = serializeForm('login-from');
+    $.ajax({
+        type: "post",
+        url: "/guest/login",
+        dataType : "JSON",
+        data: params,
+        success: function (json) {
+            $.alert.ajaxSuccess(json);
+        },
+        error: function (json) {
+            alert(json.message());
+        }
+    })
+}
+
+function register(){
+    var params = serializeForm('register-from');
+    $.ajax({
+        type: "post",
+        url: "/guest/register",
+        data: params,
+        success: function (json) {
+            $.alert.ajaxSuccess(json);
+            window.location.href = "/index.ftl";
+        },
+        error: $.alert.error("注册失败！")
+    });
+}
+
+//获取指定form中的所有的<input>对象
+function getElements(formId) {
+    var form = document.getElementById(formId);
+    var elements = new Array();
+    var tagElements = form.getElementsByTagName('input');
+    for (var j = 0; j < tagElements.length; j++){
+        elements.push(tagElements[j]);
+    }
+    return elements;
+}
+
+//获取单个input中的【name,value】数组
+function inputSelector(element) {
+    if (element.checked)
+        return [element.name, element.value];
+}
+
+function input(element) {
+    switch (element.type.toLowerCase()) {
+        case 'submit':
+        case 'hidden':
+        case 'password':
+        case 'text':
+            return [element.name, element.value];
+        case 'checkbox':
+        case 'radio':
+            return inputSelector(element);
+    }
+    return false;
+}
+
+//组合URL get形式
+/*function serializeElement(element) {
+    // var method = element.tagName.toLowerCase();
+    var parameter = input(element);
+    if (parameter) {
+        var key = encodeURIComponent(parameter[0]);
+        if (key.length == 0) return;
+
+        if (parameter[1].constructor != Array)
+            parameter[1] = [parameter[1]];
+
+        var values = parameter[1];
+
+        var results = [];
+        for (var i=0; i<values.length; i++) {
+            results.push(key + '=' + encodeURIComponent(values[i]));
+        }
+        return results.join('&');
+    }
+}*/
+
+//调用方法
+function serializeForm(formId) {
+    var elements = getElements(formId);
+    var param = {};
+    for (var i = 0; i < elements.length; i++) {
+        var parameter = input(elements[i]);
+        if (parameter) {
+            var key = encodeURIComponent(parameter[0]);
+            if (key.length == 0) return;
+            param[key] = encodeURIComponent(parameter[1]);
+
+            /*if (parameter[1].constructor != Array)
+                parameter[1] = [parameter[1]];
+
+            var values = parameter[1];
+            for (var j=0; j<values.length; j++) {
+                // results.push(key + '=' + encodeURIComponent(values[i]));
+                param[key] = encodeURIComponent(values[j]);
+            }*/
+        }
+    }
+    return param;
+    // return queryComponents.join('&');
+}

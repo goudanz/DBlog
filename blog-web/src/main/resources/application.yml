@@ -15,6 +15,10 @@ server:
         uri-encoding: UTF-8
 # SPRING PROFILES
 spring:
+    devtools:
+        restart:
+            enabled: true
+            additional-paths: static/**,templates/**
     profiles:
         active: '@profileActive@'
     application:

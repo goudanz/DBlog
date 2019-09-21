@@ -8,8 +8,9 @@
         </div>
         <div class="menu-topmenu-container pull-right">
             <ul class="list-unstyled list-inline pull-left">
-                <li><a href="${config.siteUrl}/about" class="menu_a" title="关于博客" data-toggle="tooltip" data-placement="bottom">关于本站</a></li>
-                <li><a href="${config.siteUrl}/links" class="menu_a" title="友情链接" data-toggle="tooltip" data-placement="bottom">友情链接</a></li>
+                <li><audio src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/music/%E8%94%A1%E7%BB%B4%E6%B3%BD%20-%20%E6%9D%A5%E8%87%AA%E5%B0%98%E5%9F%83%E7%9A%84%E5%85%89%20.mp3" preload="auto"></audio></li>
+                <li><a href="${config.siteUrl}/about" class="menu_a" style="color: #fb0303;" title="关于博客" data-toggle="tooltip" data-placement="bottom">关于本站</a></li>
+                <li><a href="${config.siteUrl}/links" class="menu_a" style="color: #fb0303;" title="友情链接" data-toggle="tooltip" data-placement="bottom">友情链接</a></li>
             </ul>
             <#if user??>
                 <ul class="list-unstyled list-inline nav navbar-nav">
@@ -21,13 +22,17 @@
                     </li>
                 </ul>
             <#else>
-                <ul class="list-unstyled list-inline pull-left">
-                    <li><a href="javascript:;;" data-toggle="modal" data-target="#oauth" rel="nofollow" title="授权登录">登录</a></li>
-                </ul>
+                <ul class="list-unstyled list-inline pull-left"> <li><a onclick="toLogin()" rel="nofollow" title="登录"><i class="fa fa-sign-in"></i>登录</a></li> </ul>
             </#if>
         </div>
     </div>
 </nav>
+<script>
+    function toLogin(){
+        $('#login-modal').modal('show');
+    }
+</script>
+
 <div class="modal" id="oauth" tabindex="-1" role="dialog" aria-labelledby="oauthTitle">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -56,76 +61,6 @@
                                 </li>
                             </#if>
                         </@zhydTag>
-                        <#--<li>
-                            <a href="${config.siteUrl}/oauth/render/gitee" target="">
-                                <img src="https://gitee.com/logo_icon.png" alt="" class="img-circle">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/github" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/github.png" alt="" class="img-circle">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/weibo" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/weibo.png" alt="" class="img-circle">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/dingtalk" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/dingding.png" alt="" class="img-circle">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/baidu" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/baidu.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/coding" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/coding.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/tencentCloud" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/tencent_cloud.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/oschina" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/oschinas.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/alipay" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/alipay.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/qq" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/qq.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/wechat" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/wechats.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/taobao" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/taobao.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/google" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/google.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="${config.siteUrl}/oauth/render/facebook" target="">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/facebook.png" alt="">
-                            </a>
-                        </li>-->
                     </ul>
                     <div class="oauth-line">
                         <span>
@@ -150,9 +85,10 @@
             <a class="navbar-brand logo" href="#"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <div class="pull-left site-desc">
-                <h1 class="auto-shake"><a href="${config.siteUrl}" data-original-title="${config.siteDesc}" data-toggle="tooltip" data-placement="bottom">${config.siteName}</a></h1>
-                <p class="site-description">${config.siteDesc}</p>
+            <div class="pull-left site-desc" style="padding-top: 14px;">
+                <#--<h1 class="auto-shake"><a href="${config.siteUrl}" data-original-title="${config.siteDesc}" data-toggle="tooltip" data-placement="bottom">${config.siteName}</a></h1>
+                <p class="site-description">${config.siteDesc}</p>-->
+                <a href="${config.siteUrl}"><img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190817235024741.png" data-original-title="${config.siteDesc}" data-toggle="tooltip" data-placement="right"></a>
             </div>
             <ul class="nav navbar-nav ">
                 <li>

@@ -15,7 +15,7 @@ import java.util.Date;
 /**
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @date 2018/4/16 16:26
  * @since 1.0
  */
@@ -67,6 +67,12 @@ public class Comment {
             return extraCommentType.getUrl() + sid;
         }
         return extraCommentType.getUrl();
+    }
+
+    public int getArticleId(){
+        BizArticle article = this.getArticle();
+        Long id = null == article ? null :article.getId();
+        return id.intValue();
     }
 
     public String getArticleTitle() {

@@ -21,3 +21,9 @@
 hs_err_pid*
 /.idea/
 *.iml
+/blog.properties
+/blog.xml
+/module_blog.xml
+*.project
+/.settings
+.settings

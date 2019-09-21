@@ -11,6 +11,7 @@ import me.zhyd.oauth.request.AuthRequest;
 import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ import java.io.IOException;
 /**
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0
- * @website https://www.zhyd.me
+ * @website https://www.dancoder.cn
  * @date 2019/2/19 9:28
  * @since 1.8
  */
@@ -51,6 +52,7 @@ public class OAuthController {
     @RequestMapping("/callback/{source}")
     public ModelAndView login(@PathVariable("source") String source, AuthCallback callback, HttpSession session) {
         authService.login(source, callback);
+//        return ResultUtil.redirect("/");
         String historyUrl = (String) session.getAttribute("historyUrl");
         session.removeAttribute("historyUrl");
         if (StringUtils.isEmpty(historyUrl)) {
@@ -87,5 +89,12 @@ public class OAuthController {
         authService.logout();
         return ResultUtil.redirect("/");
     }
+
+//
+//    @RequestMapping("/login")
+//    public ModelAndView login(Model model) {
+//        model.addAttribute("url", "login");
+//        return ResultUtil.view("login");
+//    }
 
 }

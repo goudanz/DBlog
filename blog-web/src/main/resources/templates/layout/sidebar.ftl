@@ -8,45 +8,36 @@
         </div>
     <#else>
         <div class="sidebar-module" style="position: relative;">
-            <a href='https://gitee.com/yadong.zhang/DBlog' target="_blank" rel="external nofollow"><img src='https://gitee.com/yadong.zhang/DBlog/widgets/widget_1.svg?color=07b83f' alt='Fork me on Gitee' style="position: absolute;right: 0;"/></a>
             <h5 class="custom-title"><i class="fa fa-home fa-fw icon"></i><strong>关于我</strong><small></small></h5>
-            <div class="widget">
-                <div id="feed_widget">
-                    <div class="feed-about">
-                        <div class="about-main">
-                            <div class="about-img"><a href="${config.wxCode}" class="showImage" title="微信公众号"><img src="${config.wxCode}" alt="微信公众号"></a></div>
-                            <div class="about-name">${config.siteName}</div>
-                            <div class="about-the">${config.siteDesc!}</div>
-                        </div>
-                        <div class="clear"></div>
-                        <!-- 方案一：图标展示 -->
-                        <ul class="widget-icon">
-                            <li class="weixin auto-shake" data-container="body"
-                                data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<img src='${config.wxCode}' style='width: 130px;' alt='QR Code'>">
-                                <a class="tag-icon" title="微信" rel="external nofollow"><i class="fa fa-weixin"></i></a>
-                            </li>
-                            <li class="tqq auto-shake">
-                                <a class="tag-icon" href="javascript:window.open('tencent://message/?uin=${config.qq}&Site=www.${config.domain}&Menu=yes')" title="点击QQ联系我" target="blank" rel="external nofollow"><i class="fa fa-qq"></i></a>
-                            </li>
-                            <li class="tsina auto-shake">
-                                <a class="tag-icon" href="${config.weibo}" title="点击查看我的微博" target="_blank" rel="external nofollow"><i class="fa fa-weibo"></i></a>
-                            </li>
-                            <li class="github auto-shake">
-                                <a class="tag-icon" href="${config.github}" title="点击查看我的github" target="_blank" rel="external nofollow"><i class="fa fa-github"></i></a>
-                            </li>
-                        </ul>
-                        <!-- 方案二：列表展示 -->
-                        <#--<ul class="list-unstyled">
-                            <li><i class="fa fa-info-circle fa-fw"></i>博主：<small>张亚东</small></li>
-                            <li><i class="fa fa-user-circle fa-fw"></i>职业：<small>码农</small></li>
-                            <li><i class="fa fa-home fa-fw"></i>籍贯：<small>长白山某棵树上</small></li>
-                            <li><i class="fa fa-envelope-square fa-fw"></i>邮箱：<small>10000@qq.com</small></li>
-                        </ul>-->
+            <div class="about-author">
+                <div class="about-main">
+                    <div class="about-img col-md-4">
+                        <a href="${config.wxCode}" class="showImage" title="">
+                            <img src="${config.wxCode}" alt="微信公众号" style="border-radius: 0;">
+                        </a>
                     </div>
+                    <div class="about-site col-md-8">
+                        <div class="about-name">${config.siteName}</div>
+                        <small class="about-the">${config.siteDesc!}</small>
+                    </div>
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>
     </#if>
+    <div class="sidebar-module">
+        <h5 class="custom-title"><i class="fa fa-handshake-o fa-fw icon"></i><strong>免注册登录</strong><small></small></h5>
+        <div class="div-quote">
+            <div>
+                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222336862.png">
+                <a href="${config.staticWebSite}/oauth/render/oschina"  class="fs12 opwb pos-r">oschina登录</a>
+                <a href="${config.staticWebSite}/oauth/render/github" class="fs12 opwb pos-r">
+                    <i class="fa fa-github fa-lg"></i> github登录
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="sidebar-module article-module hide" style="top: 0;">
         <h5 class="custom-title"><i class="fa fa-book fa-fw icon"></i><strong>本文目录</strong><i class="fa fa-close pull-right close-article-menu hide pointer"></i><small></small></h5>
         <div id="article-menu">
@@ -55,15 +46,20 @@
     </div>
     <div class="sidebar-module">
         <h5 class="custom-title"><i class="fa fa-tags fa-fw icon"></i><strong>标签云</strong><small></small></h5>
-        <@zhydTag method="tagsList" pageSize="10">
-            <#if tagsList?? && (tagsList?size > 0)>
-                <#list tagsList as item>
-                    <a style="font-size: <@zhydTag method="random" max="15" min="10">${random}</@zhydTag>px;margin: 5px;" href="${config.siteUrl}/tag/${item.id?c}" title="${item.name!}" data-toggle="tooltip" data-placement="bottom">
-                        ${item.name!}
-                    </a>
-                </#list>
-            </#if>
-        </@zhydTag>
+        <ul class="list-unstyled list-inline">
+            <@zhydTag method="tagsList" pageSize="10">
+                <#if tagsList?? && (tagsList?size > 0)>
+                    <#list tagsList as item>
+
+                            <li class="tag-li">
+                                <a class="btn btn-default btn-xs" href="${config.siteUrl}/tag/${item.id?c}" title="${item.name!}" data-toggle="tooltip" data-placement="bottom">
+                                    ${item.name!}
+                                </a>
+                            </li>
+                    </#list>
+                </#if>
+            </@zhydTag>
+        </ul>
     </div>
     <@zhydTag method="recentComments" pageSize="10">
         <#if recentComments?? && recentComments?size gt 0>
@@ -72,10 +68,29 @@
                 <ul class="list-unstyled list-inline comments">
                 <#list recentComments as item>
                     <li>
-                        <a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}" rel="external nofollow" data-toggle="tooltip" data-placement="bottom">
+                        <div class="clearfix" style="display: block;">
+                            <span>
+                                <img alt="${item.nickname!}" src="${item.avatar!}" class="avatar" width="50" height="50" onerror="this.src='${config.staticWebSite}/img/user.png'">
+                            </span>
+                            <span class="newest_comment_author">
+                                <a id="user-271" class="users" href="">${item.nickname!}</a>
+                            </span>
+                            <span class="fr" style="float: right;">
+                                <time style="font-size: 12px;" class="comment-meta-item timeago fs12 gray" data-timeago="2019-8-18 10:32:25" itemprop="datePublished" data-tid="40">12小时前</time>
+                            </span>
+                        </div>
+                        <div style="background-color: #f5f5f5;line-height: 1.7;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">
+                            <a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}">
+                                ${item.briefContent!}
+                            </a>
+                        </div>
+                        <span class="gray fs12" style="word-break: break-all;">来自：
+                            <a href="${config.siteUrl}/article/${item.articleId}">${item.articleTitle!}</a>
+                        </span>
+                        <#--<a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}" rel="external nofollow" data-toggle="tooltip" data-placement="bottom">
                             <img alt="${item.nickname!}" src="${item.avatar!}" class="avatar auto-shake" height="64" width="64" onerror="this.src='${config.staticWebSite}/img/user.png'" />
                             <span class="comment-author">${item.nickname!}</span> ${item.briefContent!}
-                        </a>
+                        </a>-->
                     </li>
                 </#list>
                 </ul>
@@ -96,7 +111,7 @@
                             <#list recentArticles as item>
                                 <li>
                                     <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
-                                        <i class="fa fa-book fa-fw"></i> ${item.title}
+                                        <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
                             </#list>
@@ -115,7 +130,7 @@
                             <#list recommendedList as item>
                                 <li>
                                     <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
-                                        <i class="fa fa-book fa-fw"></i> ${item.title}
+                                        <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
                             </#list>
@@ -134,7 +149,7 @@
                             <#list randomList as item>
                                 <li>
                                     <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
-                                        <i class="fa fa-book fa-fw"></i> ${item.title}
+                                        <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
                             </#list>
@@ -163,4 +178,17 @@
             </@zhydTag>
         </ul>
     </div>
+    <#--3D标签云配置-->
+<#--    <script type="text/javascript" src="${config.staticWebSite}/js/other/tagcloud.js"></script>-->
+    <#--<script>
+        tagcloud({
+            selector: ".tagcloud",  //元素选择器
+            fontsize: 12,       //基本字体大小, 单位px
+            radius: 80,         //滚动半径, 单位px
+            mspeed: "normal",   //滚动最大速度, 取值: slow, normal(默认), fast
+            ispeed: "normal",   //滚动初速度, 取值: slow, normal(默认), fast
+            direction: 135,     //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+            keep: false          //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+        });
+    </script>-->
 </div>
