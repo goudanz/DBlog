@@ -18,5 +18,3 @@ https://www.dancoder.cn
 ![手机端](https://images.gitee.com/uploads/images/2019/0921/210124_5f1cf04e_1121074.jpeg "手机端")
 ![手机端](https://images.gitee.com/uploads/images/2019/0921/210125_9a4ee19a_1121074.jpeg "手机端")
 ![手机端](https://images.gitee.com/uploads/images/2019/0921/210125_e93e6458_1121074.jpeg "手机端")
-
->>>>>>> update README.md
