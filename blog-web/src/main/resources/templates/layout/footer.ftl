@@ -413,7 +413,10 @@
         </div>
     </div>
 </footer>
-<div id="skPlayer" style="float: right;position: fixed;display: block;bottom: 100px;bottom: 50px"></div>
+<div id="skPlayer" style="display: none;float: right;position: fixed;bottom: 120px;left: 50px;transition:1s;"></div>
+<div id="musicContainer" style="float: right;position: fixed;bottom: 100px;bottom: 50px">
+    <a id="musicSwitch" href="javascript:void(0)" onclick="clickEvent()" class="active"></a>
+</div>
 <#--<a id="musicSwitch" href="javascript:void(0)" class="active"></a>-->
 <a class="to-top" title="点击返回顶部" data-toggle="tooltip" data-placement="bottom"></a>
 <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
@@ -453,31 +456,33 @@
         loginUserAvatar: '${user.avatar}'
     }
 
-    var player = new skPlayer({
-        autoplay: false,
-        //可选项,自动播放,默认为false,true/false
-        listshow: false,
-        //可选项,列表显示,默认为true,true/false
-        mode: 'listloop',
-        //可选项,循环模式,默认为'listloop'
-        //'listloop',列表循环
-        //'singleloop',单曲循环
-        music: {
-            //必需项,音乐配置
-            type: 'file',
-            //必需项,网易云方式指定填'cloud'，指定文件填file
-            source: [
-                {
-                    name: '来自尘埃的光',
-                    //必需项,歌名
-                    author: '蔡维泽',
-                    //必需项,歌手
-                    src: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/music/%E8%94%A1%E7%BB%B4%E6%B3%BD%20-%20%E6%9D%A5%E8%87%AA%E5%B0%98%E5%9F%83%E7%9A%84%E5%85%89%20.mp3',
-                    //必需项,音乐文件
-                    cover: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190901213812095.jpg'
-                }]//406272416
+    var flag = false;
+    function clickEvent(){
+        var skplayer = document.getElementById("skPlayer");
+        if (skplayer.style.display == 'none'){
+            skplayer.style.display="block";
+            if(!$('#skPlayer').find('audio').length) {
+                var player = new skPlayer({
+                    autoplay: true,
+                    music: {
+                        type: 'file',
+                        source: [
+                            {
+                                name: '来自尘埃的光',
+                                //必需项,歌名
+                                author: '蔡维泽',
+                                //必需项,歌手
+                                src: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/music/%E8%94%A1%E7%BB%B4%E6%B3%BD%20-%20%E6%9D%A5%E8%87%AA%E5%B0%98%E5%9F%83%E7%9A%84%E5%85%89%20.mp3',
+                                //必需项,音乐文件
+                                cover: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190901213812095.jpg'
+                            }]//406272416
+                    }
+                });
+            }
+        }else if(skplayer.style.display == 'block'){
+            skplayer.style.display="none";
         }
-    });
+    }
 
     function IsPC() {
         var userAgentInfo = navigator.userAgent;

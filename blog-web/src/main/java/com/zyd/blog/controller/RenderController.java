@@ -5,10 +5,7 @@ import com.zyd.blog.business.annotation.BussinessLog;
 import com.zyd.blog.business.entity.Article;
 import com.zyd.blog.business.enums.ArticleStatusEnum;
 import com.zyd.blog.business.enums.PlatformEnum;
-import com.zyd.blog.business.service.BizArticleArchivesService;
-import com.zyd.blog.business.service.BizArticleService;
-import com.zyd.blog.business.service.SysLinkService;
-import com.zyd.blog.business.service.SysUpdateRecordeService;
+import com.zyd.blog.business.service.*;
 import com.zyd.blog.business.vo.ArticleConditionVO;
 import com.zyd.blog.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +37,8 @@ public class RenderController {
     private static final int SIDEBAR_ARTICLE_SIZE = 8;
     private static final String INDEX_URL = "index";
 
+    @Autowired
+    private EssayService essayService;
     @Autowired
     private BizArticleService bizArticleService;
     @Autowired
@@ -283,4 +282,16 @@ public class RenderController {
         return ResultUtil.view("updateLog");
     }
 
+    /**
+     * 图片分享
+     *
+     * @param model
+     * @return
+     */
+    @GetMapping("/booknote")
+    @BussinessLog(value = "进入更新记录页", platform = PlatformEnum.WEB)
+    public ModelAndView image(Model model) {
+        model.addAttribute("list", essayService.listEssay());
+        return ResultUtil.view("booknote");
+    }
 }
