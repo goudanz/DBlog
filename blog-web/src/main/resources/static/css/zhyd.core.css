@@ -3622,6 +3622,33 @@ img {
     border-radius: 25px;
     -webkit-transition: all .35s;
     transition: all .35s;
+    background-image: url(../img/music.png);
+}
+
+#musicSwitch.active {
+    background-color: #8d7edc;
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+    transform: rotate3d(0, 1, 0, -180deg);
+}
+
+#musicSwitch:hover {
+    background-color: #8d7edc;
+}
+
+#skPlayer{
+    position: fixed !important;
+    transition: .3s;
+    width: 380px;
+    height: 100px;
+    font-family: Arial,Helvetica,sans-serif;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .submit-error {
@@ -3637,3 +3664,19 @@ img {
 .mar10-t {
     margin-top: 10px;
 }
+
+/*写真集*/
+#catdiv { margin: auto; position: relative; }
+.catbox { float: left; padding: 10px; border: 1px solid #ccc; background: #f7f7f7; box-shadow: 0 0 8px #ccc; }
+.catbox:hover { box-shadow: 0 0 10px #999; }
+.catbox img { width: 240px; }
+
+#content { width: 500px; height: 170px; margin: 100px auto; }
+#imgbox-loading { position: absolute; top: 0; left: 0; cursor: pointer; display: none; z-index: 90; }
+#imgbox-loading div { background: #FFF; width: 100%; height : 100%; }
+#imgbox-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: none; z-index: 80; }
+.imgbox-wrap { position: absolute; top: 0; left: 0; background: #FFF; display: none; z-index: 90; }
+.imgbox-img { padding: 0; margin: 0; border: none; width: 100%; height: 100%; vertical-align: top; }
+.imgbox-title { padding-top: 10px; font-size: 11px; text-align: center; font-family: Arial; color: #333; display: none; }
+.imgbox-bg-wrap { position: absolute; padding: 0; margin: 0; display: none; }
+.imgbox-bg { position: absolute; width: 20px; height: 20px; }

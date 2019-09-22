@@ -31,9 +31,9 @@
             <div>
                 <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222336862.png">
                 <a href="${config.staticWebSite}/oauth/render/oschina"  class="fs12 opwb pos-r">oschina登录</a>
-                <a href="${config.staticWebSite}/oauth/render/github" class="fs12 opwb pos-r">
-                    <i class="fa fa-github fa-lg"></i> github登录
-                </a>
+                <a href="${config.staticWebSite}/oauth/render/github" class="fs12 opwb pos-r"><i class="fa fa-github fa-lg"></i> github登录</a>
+                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190922183830315.png">
+                <a href="${config.staticWebSite}/oauth/render/baidu" class="fs12 opwb pos-r">百度登录</a>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
                                 <a id="user-271" class="users" href="">${item.nickname!}</a>
                             </span>
                             <span class="fr" style="float: right;">
-                                <time style="font-size: 12px;" class="comment-meta-item timeago fs12 gray" data-timeago="2019-8-18 10:32:25" itemprop="datePublished" data-tid="40">12小时前</time>
+                                <time style="font-size: 12px;" class="comment-meta-item timeago fs12 gray" itemprop="datePublished" data-tid="40">${item.createTime?string('yyyy-MM-dd HH:mm')}</time>
                             </span>
                         </div>
                         <div style="background-color: #f5f5f5;line-height: 1.7;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">

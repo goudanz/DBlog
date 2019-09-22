@@ -95,7 +95,7 @@
                     <a href="/" class="menu_a"><i class="fa fa-home"></i>首页</a>
                 </li>
                 <li>
-                    <a href="/booknote" class="menu_a"><i class="fa fa-book"></i>随笔</a>
+                    <a href="/booknote" class="menu_a"><i class="fa fa-book"></i>写真集</a>
                 </li>
                 <@zhydTag method="types">
                     <#if types?? && types?size gt 0>
