@@ -109,8 +109,8 @@ me:
                 redirectUri:
                 alipayPublicKey:
             qq:
-                clientId: 101424111
-                clientSecret: b02e291a1a5368644b751c9bcbaf3ba1
+                clientId: 101770156
+                clientSecret: bc9723747b334b39a0415ef381e313f0
                 redirectUri: https://www.dancoder.cn/oauth/callback/qq
             wechat:
                 clientId:
