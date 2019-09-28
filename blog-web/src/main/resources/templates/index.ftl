@@ -1,6 +1,6 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
-<@header title="${config.siteName!} | 一个喜欢撸猫、溜狗的年轻码农！路还很远，努力把···"
+<@header title="${config.siteName!} | 一个码农"
     keywords="${config.homeKeywords!}"
     description="${config.homeDesc!}"
     canonical="/${url!}">
