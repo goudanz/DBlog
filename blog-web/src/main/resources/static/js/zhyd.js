@@ -143,7 +143,8 @@ function initScrollMenu() {
             topmenu.animate({opacity: '1'}, 0);
             mainmenu.removeClass('transparent');
             if (win.width() > 768) {
-                mainmenu.animate({top: '30', 'z-index': 998}, 1);
+                // mainmenu.animate({top: '30', 'z-index': 998}, 1);
+                mainmenu.animate({top: '85', 'z-index': 998}, 1);
             }
         }
     }

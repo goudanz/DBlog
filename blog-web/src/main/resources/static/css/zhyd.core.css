@@ -473,7 +473,8 @@ a:-webkit-any-link {
 }
 
 .custome-container {
-    margin-top: 65px;
+    /*margin-top: 65px;*/
+    margin-top: 115px;
 }
 
 /* 文章详情 原创、转载 start */
@@ -1264,7 +1265,7 @@ article .entry-content .entry-meta span {
 article .entry-more {
     position: absolute;
     bottom: 16px;
-    right: -1px;
+    right: 0px;
 }
 
 article .entry-more a {
@@ -1641,6 +1642,11 @@ article .entry-more a:hover, .tag-li a:hover {
 .fade-in {
     -webkit-animation: 0.5s fade-in;
     animation: 0.5s fade-in
+}
+
+/*文章列表、详细Q弹*/
+.fade-in:hover {
+    box-shadow: rgb(143, 143, 143) 3px 3px 20px;
 }
 
 /* 由下往上淡入 end */
@@ -2030,7 +2036,8 @@ nav a:first-child .meta-nav {
 /* 顶部的小导航栏 */
 #topmenu {
     z-index: 999;
-    height: 35px;
+    /*height: 35px;*/
+    height: 102px;
     opacity: 1
 }
 
@@ -2558,7 +2565,7 @@ nav a:first-child .meta-nav {
     width: 99%;
     height: 125px;
     padding-bottom: 8px;
-    line-height: 37px;
+    line-height: 30px;
     _white-space: normal;
     border-bottom: 1px dashed #dadada;
 }
