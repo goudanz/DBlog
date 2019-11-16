@@ -473,8 +473,9 @@ a:-webkit-any-link {
 }
 
 .custome-container {
+    margin-top: 15px;
     /*margin-top: 65px;*/
-    margin-top: 115px;
+    /*margin-top: 115px;*/
 }
 
 /* 文章详情 原创、转载 start */
@@ -2036,8 +2037,8 @@ nav a:first-child .meta-nav {
 /* 顶部的小导航栏 */
 #topmenu {
     z-index: 999;
-    /*height: 35px;*/
-    height: 102px;
+    height: 35px;
+    /*height: 102px;*/
     opacity: 1
 }
 
