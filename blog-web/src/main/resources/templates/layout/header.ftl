@@ -1,4 +1,7 @@
 <nav id="topmenu" class="navbar navbar-default navbar-fixed-top">
+<#--    <div>-->
+<#--        <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/14814543-dca25535f675e35b.png">-->
+<#--    </div>-->
     <div class="menu-box">
         <div class="pull-left">
             <ul class="list-unstyled list-inline">
