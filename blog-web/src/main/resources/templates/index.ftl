@@ -6,7 +6,7 @@
     canonical="/${url!}">
     </@header>
     <div>
-        <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20191115133039425.png" title="庆祝FPX夺得S英雄联盟S9全球总决赛冠军！">
+        <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/fpx.jpg" title="庆祝FPX夺得S英雄联盟S9全球总决赛冠军！">
     </div>
     <div class="container custome-container">
         <@prompt></@prompt>

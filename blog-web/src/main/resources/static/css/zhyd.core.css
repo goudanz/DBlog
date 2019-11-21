@@ -3688,3 +3688,25 @@ img {
 .imgbox-title { padding-top: 10px; font-size: 11px; text-align: center; font-family: Arial; color: #333; display: none; }
 .imgbox-bg-wrap { position: absolute; padding: 0; margin: 0; display: none; }
 .imgbox-bg { position: absolute; width: 20px; height: 20px; }
+
+/*fpx win*/
+.top-act-link {
+    -webkit-transition: bottom .6s,background .3s;
+    transition: bottom .6s,background .3s;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -77px;
+    bottom: 32px;
+    background-position: -216px -39px;
+    width: 160px;
+    height: 40px;
+    font-size: 0;
+    -webkit-transition: filter .5s;
+    transition: filter .5s;
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+    background-size: 405px 178px;
+    background-repeat: no-repeat;
+}
