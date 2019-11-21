@@ -463,20 +463,9 @@
             skplayer.style.display="block";
             if(!$('#skPlayer').find('audio').length) {
                 var player = new skPlayer({
-                    autoplay: true,
-                    music: {
-                        type: 'file',
-                        source: [
-                            {
-                                name: '来自尘埃的光',
-                                //必需项,歌名
-                                author: '蔡维泽',
-                                //必需项,歌手
-                                src: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/music/%E8%94%A1%E7%BB%B4%E6%B3%BD%20-%20%E6%9D%A5%E8%87%AA%E5%B0%98%E5%9F%83%E7%9A%84%E5%85%89%20.mp3',
-                                //必需项,音乐文件
-                                cover: 'https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190901213812095.jpg'
-                            }]//406272416
-                    }
+                    music: 706214506,
+                    theme:'red'
+                    // autoplay: true,
                 });
             }
         }else if(skplayer.style.display == 'block'){
