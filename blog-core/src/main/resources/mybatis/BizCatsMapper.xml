@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zyd.blog.persistence.mapper.BizCatsMapper">
+	<resultMap id="rm" type="com.zyd.blog.persistence.beans.BizCats">
+		<result property="id" jdbcType="BIGINT" column="id"/>
+		<result property="name" jdbcType="VARCHAR" column="name"/>
+		<result property="content" jdbcType="VARCHAR" column="content"/>
+	</resultMap>
+
+	<select id="findPageBreakByCondition" parameterType="com.zyd.blog.business.vo.CatsConditionVO" resultMap="rm">
+		SELECT
+			t.*
+		FROM
+			biz_cats t
+		WHERE
+			1 = 1
+	</select>
+</mapper>
+

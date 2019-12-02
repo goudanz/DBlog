@@ -1,0 +1,106 @@
+<#include "/include/macros.ftl">
+<@header></@header>
+<div class="">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <@breadcrumb>
+                <ol class="breadcrumb">
+                    <li><a href="/">首页</a></li>
+                    <li class="active">猫咪照片管理</li>
+                </ol>
+            </@breadcrumb>
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="<#--table-responsive-->">
+                        <div class="btn-group hidden-xs" id="toolbar">
+                            <@shiro.hasPermission name="cat:add">
+                                <button id="btn_add" type="button" class="btn btn-info" title="新增">
+                                    <i class="fa fa-plus fa-fw"></i>
+                                </button>
+                            </@shiro.hasPermission>
+                            <@shiro.hasPermission name="cat:batchDelete">
+                                <button id="btn_delete_ids" type="button" class="btn btn-danger" title="删除选中">
+                                    <i class="fa fa-trash-o fa-fw"></i>
+                                </button>
+                            </@shiro.hasPermission>
+                        </div>
+                        <table id="tablelist">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<@addOrUpdateMOdal defaultTitle="添加">
+    <input type="hidden" name="id">
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">名称 <span class="required">*</span></label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" class="form-control col-md-7 col-xs-12" name="name" id="name" required="required" placeholder="请输入照片名称"/>
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">地址 </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <textarea class="form-control col-md-7 col-xs-12" id="content" name="content" placeholder="请输入照片地址" maxlength="100"></textarea>
+        </div>
+    </div>
+</@addOrUpdateMOdal>
+<@footer>
+    <script>
+        /**
+         * 操作按钮
+         * @param code
+         * @param row
+         * @param index
+         * @returns {string}
+         */
+        function operateFormatter(code, row, index) {
+            var trId = row.id;
+            var operateBtn = [
+                '<@shiro.hasPermission name="cat:edit"><a class="btn btn-sm btn-success btn-update" data-id="' + trId + '"title="编辑"><i class="fa fa-edit fa-fw"></i></a></@shiro.hasPermission>',
+                '<@shiro.hasPermission name="cat:delete"><a class="btn btn-sm btn-danger btn-remove" data-id="' + trId + '"title="删除"><i class="fa fa-trash-o fa-fw"></i></a></@shiro.hasPermission>'
+            ];
+            return operateBtn.join('');
+        }
+
+        $(function () {
+            var options = {
+                modalName: "猫片",
+                url: "/cat/list",
+                getInfoUrl: "/cat/get/{id}",
+                updateUrl: "/cat/edit",
+                removeUrl: "/cat/remove",
+                createUrl: "/cat/add",
+                columns: [
+                    {
+                        checkbox: true
+                    }, {
+                        field: 'id',
+                        title: 'ID',
+                        width: '60px'
+                    }, {
+                        field: 'name',
+                        title: '名称',
+                        width: '150px'
+                    }, {
+                        field: 'content',
+                        title: '地址',
+                        width: '450px'
+                    }, {
+                        field: 'operate',
+                        title: '操作',
+                        align: "center",
+                        width: '100px',
+                        formatter: operateFormatter //自定义方法，添加操作按钮
+                    }
+                ]
+            };
+            // 初始化table组件
+            var table = new Table(options);
+            table.init();
+        });
+    </script>
+</@footer>

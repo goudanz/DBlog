@@ -211,4 +211,11 @@ public class RenderController {
     public ModelAndView files(Model model) {
         return ResultUtil.view("file/list");
     }
+
+    @RequiresPermissions("cats")
+    @BussinessLog("进入猫列表页")
+    @GetMapping("/cats")
+    public ModelAndView cats() {
+        return ResultUtil.view("cat/list");
+    }
 }
