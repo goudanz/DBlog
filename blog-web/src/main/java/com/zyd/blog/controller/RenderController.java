@@ -38,7 +38,7 @@ public class RenderController {
     private static final String INDEX_URL = "index";
 
     @Autowired
-    private EssayService essayService;
+    private BizCatsService bizCatsService;
     @Autowired
     private BizArticleService bizArticleService;
     @Autowired
@@ -291,7 +291,7 @@ public class RenderController {
     @GetMapping("/booknote")
     @BussinessLog(value = "进入更新记录页", platform = PlatformEnum.WEB)
     public ModelAndView image(Model model) {
-        model.addAttribute("list", essayService.listEssay());
+        model.addAttribute("list", bizCatsService.listAll());
         return ResultUtil.view("booknote");
     }
 }

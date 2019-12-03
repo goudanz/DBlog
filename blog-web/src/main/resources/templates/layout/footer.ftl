@@ -413,11 +413,11 @@
         </div>
     </div>
 </footer>
-<div id="skPlayer" style="display: none;float: right;position: fixed;bottom: 120px;left: 50px;transition:1s;"></div>
+<#--<div id="skPlayer" style="display: none;float: right;position: fixed;bottom: 120px;left: 50px;transition:1s;"></div>
 <div id="musicContainer" style="float: right;position: fixed;bottom: 100px;bottom: 50px">
     <a id="musicSwitch" href="javascript:void(0)" onclick="clickEvent()" class="active"></a>
 </div>
-<#--<a id="musicSwitch" href="javascript:void(0)" class="active"></a>-->
+<a id="musicSwitch" href="javascript:void(0)" class="active"></a>-->
 <a class="to-top" title="点击返回顶部" data-toggle="tooltip" data-placement="bottom"></a>
 <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@1.11.1/dist/jquery.min.js"></script>
@@ -457,21 +457,21 @@
     }
 
     var flag = false;
-    function clickEvent(){
-        var skplayer = document.getElementById("skPlayer");
-        if (skplayer.style.display == 'none'){
-            skplayer.style.display="block";
-            if(!$('#skPlayer').find('audio').length) {
-                var player = new skPlayer({
-                    music: 706214506,
-                    theme:'red'
-                    // autoplay: true,
-                });
-            }
-        }else if(skplayer.style.display == 'block'){
-            skplayer.style.display="none";
-        }
-    }
+    // function clickEvent(){
+    //     var skplayer = document.getElementById("skPlayer");
+    //     if (skplayer.style.display == 'none'){
+    //         skplayer.style.display="block";
+    //         if(!$('#skPlayer').find('audio').length) {
+    //             var player = new skPlayer({
+    //                 music: 706214506,
+    //                 theme:'red'
+    //                 // autoplay: true,
+    //             });
+    //         }
+    //     }else if(skplayer.style.display == 'block'){
+    //         skplayer.style.display="none";
+    //     }
+    // }
 
     function IsPC() {
         var userAgentInfo = navigator.userAgent;

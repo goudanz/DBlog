@@ -80,7 +80,7 @@ public class BizCatsServiceImpl implements BizCatsService {
         Assert.notNull(entity, "Cats不可为空！");
         Cats old = this.getByName(entity.getName());
         if (old != null && !old.getId().equals(entity.getId())) {
-            throw new ZhydException("标签修改失败，标签已存在！[" + entity.getName() + "]");
+            throw new ZhydException("猫片修改失败，猫片已存在！[" + entity.getName() + "]");
         }
         return bizCatsMapper.updateByPrimaryKeySelective(entity.getBizCats()) > 0;
     }
