@@ -11,7 +11,6 @@
         </div>
         <div class="menu-topmenu-container pull-right">
             <ul class="list-unstyled list-inline pull-left">
-                <li><audio src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/music/%E8%94%A1%E7%BB%B4%E6%B3%BD%20-%20%E6%9D%A5%E8%87%AA%E5%B0%98%E5%9F%83%E7%9A%84%E5%85%89%20.mp3" preload="auto"></audio></li>
                 <li><a href="${config.siteUrl}/about" class="menu_a" style="color: #fb0303;" title="关于博客" data-toggle="tooltip" data-placement="bottom">关于本站</a></li>
                 <li><a href="${config.siteUrl}/links" class="menu_a" style="color: #fb0303;" title="友情链接" data-toggle="tooltip" data-placement="bottom">友情链接</a></li>
             </ul>

@@ -14,6 +14,7 @@ import me.zhyd.oauth.model.AuthUser;
 import me.zhyd.oauth.request.AuthRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 /**
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
@@ -36,6 +37,9 @@ public class AuthServiceImpl implements AuthService {
         if (response.ok()) {
             AuthUser authUser = (AuthUser) response.getData();
             User newUser = BeanConvertUtil.doConvert(authUser, User.class);
+            if (!StringUtils.isEmpty(newUser.getAvatar())) {
+                newUser.setAvatar(newUser.getAvatar().replace("http","https"));
+            }
             newUser.setSource(authUser.getSource().toString());
             if (null != authUser.getGender()) {
                 newUser.setGender(authUser.getGender().getCode());

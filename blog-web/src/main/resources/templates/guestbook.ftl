@@ -21,11 +21,13 @@
                 </div>
             </div>
         </div>
+
         <#if config.comment! && config.comment == 1>
-            <div class="col-sm-12 blog-main">
-                <div class="blog-body expansion">
-                    <div id="comment-box" data-id="-1"></div>
-                </div>
+            <div class="blog-body clear overflow-initial expansion">
+                <div id="comment-box-default" data-id="-1"></div>
+            </div>
+            <div class="blog-body clear overflow-initial expansion">
+                <div id="comment-box" data-id="-1"></div>
             </div>
         <#else>
             <div class="blog-body clear overflow-initial expansion gray">

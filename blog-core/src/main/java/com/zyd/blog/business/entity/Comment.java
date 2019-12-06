@@ -73,6 +73,9 @@ public class Comment {
     public int getArticleId(){
         BizArticle article = this.getArticle();
         Long id = null == article ? null :article.getId();
+        if(null == id){
+            return 0;
+        }
         return id.intValue();
     }
 

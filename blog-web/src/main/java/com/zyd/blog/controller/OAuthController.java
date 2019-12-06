@@ -52,7 +52,6 @@ public class OAuthController {
     @RequestMapping("/callback/{source}")
     public ModelAndView login(@PathVariable("source") String source, AuthCallback callback, HttpSession session) {
         authService.login(source, callback);
-//        return ResultUtil.redirect("/");
         String historyUrl = (String) session.getAttribute("historyUrl");
         session.removeAttribute("historyUrl");
         if (StringUtils.isEmpty(historyUrl)) {
