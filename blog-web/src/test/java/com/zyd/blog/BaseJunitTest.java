@@ -12,7 +12,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 /**
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2018/4/25 11:48

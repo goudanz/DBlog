@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 模板管理
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/24 14:37

@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 /**
  * 正则表达式工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/18 11:48
@@ -44,5 +44,12 @@ public class RegexUtils {
         Matcher matcher = pattern.matcher(str);
         return matcher.find();
     }
-}  
+
+    public static boolean isSpecialChar(String str) {
+        String regEx = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(str);
+        return m.find();
+    }
+}
 

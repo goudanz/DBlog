@@ -30,7 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 /**
  * 登录相关
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/24 14:37
@@ -81,7 +81,8 @@ public class PassportController {
             SavedRequest savedRequest = WebUtils.getSavedRequest(RequestHolder.getRequest());
             String historyUrl = null;
             if(null != savedRequest) {
-                if(!savedRequest.getMethod().equals("POST")) {
+                String method = "POST";
+                if(!method.equals(savedRequest.getMethod())) {
                     historyUrl = savedRequest.getRequestUrl();
                 }
             }

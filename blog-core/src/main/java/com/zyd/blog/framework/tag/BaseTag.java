@@ -22,7 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 所有自定义标签的父类，负责调用具体的子类方法
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/9/18 16:19

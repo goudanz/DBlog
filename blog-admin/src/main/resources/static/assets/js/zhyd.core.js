@@ -2,7 +2,7 @@
  *
  * 项目核心Js类，负责项目前端模板方面的初始化等操作
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2018-04-25

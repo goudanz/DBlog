@@ -3,7 +3,7 @@ package com.zyd.blog.util;
 import com.zyd.blog.business.consts.CommonConst;
 
 /**
- * @author: yadong.zhang
+ * @author: dancoder
  * @date: 2017/12/15 17:03
  */
 public class PasswordUtil {

@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 /**
  * 日志记录、自定义注解
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2018/4/16 16:26

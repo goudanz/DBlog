@@ -28,7 +28,7 @@ import java.util.Map;
 /**
  * Shiro-权限相关的业务处理
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/25 14:37
@@ -76,7 +76,7 @@ public class ShiroServiceImpl implements ShiroService {
                 filterChainDefinitionMap.put(resources.getUrl(), permission);
             }
         }
-        // 本博客中并不存在什么特别关键的操作，所以直接使用user认证。如果有朋友是参考本博客的shiro开发其他安全功能（比如支付等）时，建议针对这类操作使用authc权限 by yadong.zhang
+        // 本博客中并不存在什么特别关键的操作，所以直接使用user认证。如果有朋友是参考本博客的shiro开发其他安全功能（比如支付等）时，建议针对这类操作使用authc权限 by dancoder
         filterChainDefinitionMap.put("/**", "user");
         return filterChainDefinitionMap;
     }

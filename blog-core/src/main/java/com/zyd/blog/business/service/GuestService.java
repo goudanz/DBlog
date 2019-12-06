@@ -6,5 +6,5 @@ public interface GuestService {
 
     User login(User user);
 
-    void register(User user);
+    User register(User user);
 }

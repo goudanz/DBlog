@@ -278,22 +278,9 @@
                 <div class="row">
                     <div class="col col-lg-4 col-sm-4 col-md-4 col-xs-4">
                         <fieldset>
-                            <legend>关注公众号</legend>
-                            <a href="https://gitee.com/yadong.zhang/static/raw/master/wx/wechat_account_500x500.jpg" class="showImage" title="关注公众号：码一码" rel="external nofollow" style="display: block;text-align: center">
-                                <img src="https://gitee.com/yadong.zhang/static/raw/master/wx/wechat_account_500x500.jpg" class="img-rounded" alt="关注公众号：码一码" width="300">
-                            </a>
-                        </fieldset>
-                    </div>
-                    <div class="col col-lg-4 col-sm-4 col-md-4 col-xs-4">
-                        <fieldset>
                             <legend>关于OneBlog</legend>
 
                             <h2>项目相关</h2>
-                            <ul>
-                                <li>开源项目地址①：<a href="https://gitee.com/yadong.zhang/DBlog" target="_blank">https://gitee.com/yadong.zhang/DBlog</a></li>
-                                <li>开源项目地址②：<a href="https://github.com/zhangyd-c/OneBlog" target="_blank">https://github.com/zhangyd-c/OneBlog</a></li>
-                                <li>博主网站首页：<a href="https://www.dancoder.cn" target="_blank">https://www.dancoder.cn</a></li>
-                            </ul>
                             <h2>Demo演示</h2>
                             <ul>
                                 <li><a href="http://dblog-admin.zhyd.me" target="_blank">后台</a>：用户名：root，密码：123456</li>

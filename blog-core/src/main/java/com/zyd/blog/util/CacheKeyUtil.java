@@ -7,7 +7,7 @@ import org.springframework.validation.support.BindingAwareModelMap;
 /**
  * 缓存key相关的工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/5/25 10:23

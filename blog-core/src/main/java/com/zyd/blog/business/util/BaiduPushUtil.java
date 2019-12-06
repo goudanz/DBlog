@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 百度站长推送工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/16 16:26

@@ -9,7 +9,7 @@ import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 /**
  * Shiro-密码凭证匹配器（验证密码有效性）
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/24 14:37

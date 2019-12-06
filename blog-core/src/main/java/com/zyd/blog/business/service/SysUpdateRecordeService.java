@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
 /**
  * 更新记录
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/16 16:26

@@ -112,30 +112,6 @@
     </div>
     <small class="font-bold"> </small>
 </div>
-<script>
-    /*div 块拖动*/
-    /*    dragFunc("skPlayer");
-        function dragFunc(id) {
-            var Drag = document.getElementById(id);
-            Drag.onmousedown = function(event) {
-                var ev = event || window.event;
-                event.stopPropagation();
-                var disX = ev.clientX - Drag.offsetLeft;
-                var disY = ev.clientY - Drag.offsetTop;
-                document.onmousemove = function(event) {
-                    var ev = event || window.event;
-                    debugger
-                    Drag.style.left = ev.clientX - disX + "px";
-                    Drag.style.top = ev.clientY - disY + "px";
-                    Drag.style.cursor = "move";
-                };
-            };
-            Drag.onmouseup = function() {
-                document.onmousemove = null;
-                this.style.cursor = "default";
-            };
-        };*/
-</script>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog">
     <div class="login-dialog">
@@ -155,7 +131,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
-                            <input disabled type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input  type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" name="username" tabindex="1" placeholder="昵称" class="username">
                             <span class="sign-des">支持中文，英文，用于登录</span>
                         </label> <!---->
@@ -163,7 +139,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-envelope-o"></i>
 							</span>
-                            <input disabled type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input  type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" tabindex="2" placeholder="邮箱" class="phone-email">
                             <span class="sign-des">用作找回密码</span>
                         </label> <!---->
@@ -171,13 +147,13 @@
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
 							</span>
-                            <input disabled type="password" name="password" autocorrect="off" autocapitalize="off"
+                            <input  type="password" name="password" autocorrect="off" autocapitalize="off"
                                    autocomplete="off" spellcheck="false" tabindex="5" placeholder="密码" class="pass">
                             <span class="sign-des">6位以上</span>
                         </label> <!----> <!----> <!---->
                     </div>
                     <div class="t-c mar20-t">
-                        <button disabled class="submit w100" onclick="register();"><b class=""></b>
+                        <button  class="submit w100" onclick="userRegister();"><b class=""></b>
                             <span id="register-btn">提交注册</span>
                         </button> <!---->
                     </div>
@@ -207,7 +183,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
-                            <input disabled type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input  type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" id="username" name="username" tabindex="1" placeholder="昵称"
                                    class="username">
                             <span class="sign-des">支持中文，英文</span>
@@ -216,7 +192,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
 							</span>
-                            <input disabled type="password" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input  type="password" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" id="password" name="password" tabindex="5" placeholder="密码"
                                    class="pass">
                             <!---->
@@ -234,7 +210,7 @@
                         </label>-->
                     </div>
                     <div class="t-c mar20-t">
-                        <button disabled type="submit" onclick="usersLogin();" class="submit w100">
+                        <button  type="submit" onclick="usersLogin();" class="submit w100">
                             <b class=""></b>
                             <span>立刻登录</span>
                         </button>
@@ -261,7 +237,7 @@
                                 <span class="tip-icon">
                                     <i class="fa fa-envelope-o"></i>
                                 </span>
-                            <input disabled type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input  type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" name="username" tabindex="2" placeholder="邮箱"
                                    onchange="console.log(this.value);" class="phone-email">
                             <!---->
@@ -270,13 +246,13 @@
                                 <span class="tip-icon">
                                     <i class="iconfont zrz-icon-font-ecurityCode"></i>
                                 </span>
-                            <input disabled type="text" name="code" tabindex="3" autocorrect="off" autocapitalize="off"
+                            <input  type="text" name="code" tabindex="3" autocorrect="off" autocapitalize="off"
                                    autocomplete="off" spellcheck="false" placeholder="验证码" class="code">
                             <span class="send-code button">发送验证码</span>
                         </label>
                     </div>
                     <div class="t-c mar20-t">
-                        <button disabled type="submit" class="submit w100">
+                        <button  type="submit" class="submit w100">
                             <b class=""></b>
                             <span>下一步</span>
                         </button> <!---->
@@ -316,6 +292,28 @@
 </div>
 
 <script>
+    function userRegister() {
+        $.ajax({
+            type: "POST",
+            url: "/guest/register",
+            data: $("#register-from").serialize(),
+            dataType: 'json',
+            success: function (json) {
+                if (json.status == 200) {
+                    var historyUrl = json.data || "/";
+                    console.log(historyUrl)
+                    window.location.href = historyUrl;
+                }else{
+                    $.alert.error(json.message);
+                }
+            },
+            debugger;
+            error:function (json) {
+                alert(2);
+            }
+        });
+    }
+
     function usersLogin() {
         var username = $.trim($("#username").val());
         var password = $.trim($("#password").val());
@@ -326,8 +324,10 @@
             $("#fs12").innerHTML = "请输入密码!";
             return false;
         }
-        //ajax去服务器端校验
-        var data = {username: username, password: password};
+        var data = {
+            username: username,
+            password: password
+        };
 
         $.ajax({
             type: "POST",

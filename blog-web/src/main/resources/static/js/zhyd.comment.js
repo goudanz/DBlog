@@ -3,7 +3,7 @@
  * 评论插件(md版)
  *
  * @date 2018-01-05 10:57
- * @author zhyd(yadong.zhang0415#gmail.com)
+ * @author dancoder
  * @link https://www.dancoder.cn
  */
 var _form = {

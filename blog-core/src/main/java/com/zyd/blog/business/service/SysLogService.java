@@ -8,7 +8,7 @@ import com.zyd.blog.business.vo.LogConditionVO;
 import com.zyd.blog.framework.object.AbstractService;
 
 /**
- * @author yadong.zhang email:yadong.zhang0415(a)gmail.com
+ * @author dancoder
  * @version 1.0
  * @date 2018/01/09 17:40
  * @since 1.0

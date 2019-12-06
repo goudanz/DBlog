@@ -6,7 +6,7 @@ import com.zyd.blog.persistence.beans.SysTemplate;
 import java.util.Date;
 
 /**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2018/4/16 16:26

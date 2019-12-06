@@ -19,7 +19,7 @@ import java.util.concurrent.Future;
 /**
  * 异步线程配置
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/28 11:04

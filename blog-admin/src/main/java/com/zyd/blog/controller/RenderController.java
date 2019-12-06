@@ -3,7 +3,7 @@ package com.zyd.blog.controller;
 /**
  * 页面渲染相关 -- 页面跳转
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/24 14:37
@@ -33,7 +33,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 页面跳转类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/24 14:37

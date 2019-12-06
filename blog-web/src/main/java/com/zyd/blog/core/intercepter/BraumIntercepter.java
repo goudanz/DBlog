@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * braum，自动识别恶意请求
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/11/19 9:24

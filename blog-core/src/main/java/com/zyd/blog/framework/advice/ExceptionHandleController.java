@@ -24,7 +24,7 @@ import java.lang.reflect.UndeclaredThrowableException;
  * 统一异常处理类<br>
  * 捕获程序所有异常，针对不同异常，采取不同的处理方式
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/24 14:37

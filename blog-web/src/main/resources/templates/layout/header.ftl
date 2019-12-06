@@ -35,7 +35,7 @@
     }
 </script>
 
-<div class="modal" id="oauth" tabindex="-1" role="dialog" aria-labelledby="oauthTitle">
+<#--<div class="modal" id="oauth" tabindex="-1" role="dialog" aria-labelledby="oauthTitle">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <nav id="mainmenu" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="menu-box">
         <div class="navbar-header">

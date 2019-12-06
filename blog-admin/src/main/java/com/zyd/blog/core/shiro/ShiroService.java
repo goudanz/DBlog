@@ -3,7 +3,7 @@ package com.zyd.blog.core.shiro;
 import java.util.Map;
 
 /**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2019/2/11 10:07

@@ -2,7 +2,7 @@
  *
  * 项目工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2017-09-02
@@ -503,10 +503,6 @@ $.extend(String.prototype, {
         return parseFloat(numberValue.toFixed(num || 2));
     }
 });
-
-/**
- * Created by yadong.zhang on 2017-03-19.
- */
 
 /**
  * 时间对象的格式化;

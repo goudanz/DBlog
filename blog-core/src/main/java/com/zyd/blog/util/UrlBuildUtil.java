@@ -7,7 +7,7 @@ import java.text.MessageFormat;
 /**
  * Url构建工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/4/18 11:48

@@ -5,7 +5,7 @@ import com.zyd.blog.file.exception.GlobalFileException;
 import java.io.*;
 
 /**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2017/7/12 10:29

@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import java.util.Date;
 
 /**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @date 2018/12/7 14:49
  * @since 1.8

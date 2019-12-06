@@ -18,7 +18,7 @@ import javax.servlet.ServletContextEvent;
 /**
  * 程序启动后通过ApplicationRunner处理一些事务
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2018/6/6 16:07

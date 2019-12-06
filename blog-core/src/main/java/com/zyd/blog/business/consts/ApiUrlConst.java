@@ -3,7 +3,7 @@ package com.zyd.blog.business.consts;
 /**
  * 各api需要的url常量类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2018/4/16 16:26

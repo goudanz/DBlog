@@ -1,7 +1,7 @@
 /**
  * 项目核心Js库，主要包含核心工具类和 相关插件
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @website https://www.dancoder.cn
  * @version 1.0
  * @date 2017-09-02

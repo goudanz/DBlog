@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * @author yadong.zhang email:yadong.zhang0415(a)gmail.com
+ * @author dancoder
  * @version 1.0
  * @date 2018/01/09 17:36
  * @since 1.0

@@ -1,7 +1,7 @@
 package com.zyd.blog.business.enums;
 
 /**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @author dancoder
  * @version 1.0
  * @website https://www.dancoder.cn
  * @date 2019/2/12 10:20
