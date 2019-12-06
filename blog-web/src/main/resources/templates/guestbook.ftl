@@ -23,16 +23,20 @@
         </div>
 
         <#if config.comment! && config.comment == 1>
+        <div class="col-sm-12 blog-main">
             <div class="blog-body clear overflow-initial expansion">
                 <div id="comment-box-default" data-id="-1"></div>
             </div>
             <div class="blog-body clear overflow-initial expansion">
                 <div id="comment-box" data-id="-1"></div>
             </div>
+        </div>
         <#else>
+        <div class="col-sm-12 blog-main">
             <div class="blog-body clear overflow-initial expansion gray">
                 <i class="fa fa-close fa-fw"></i>评论功能已被站长关闭
             </div>
+        </div>
         </#if>
     </div>
 </div>
