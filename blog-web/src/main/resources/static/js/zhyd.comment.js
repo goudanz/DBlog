@@ -59,7 +59,7 @@ $.extend({
                     + '<textarea id="comment_content" class="form-control col-md-7 col-xs-12 valid" style="display: none"></textarea>'
                     + '<textarea name="content" style="display: none"></textarea>'
                     + '<div style="position: absolute;right: 10px;bottom: 70px;font-size: 14px;color: #dbdada;z-index: 1;">' + op.wmName + '<br>' + op.wmUrl + '<br>' + op.wmDesc + '</div>'
-                    + '<a id="comment-form-btn" type="button" data-loading-text="正在提交评论..." class="btn btn-default btn-block">提交评论</a>'
+                    + '<a id="comment-form-btn" style="margin-left: 80%;" type="button" data-loading-text="正在提交评论..." class="btn btn-default btn-block">提交评论</a>'
                     + '</form></div></div>';
             $box.html(commentBox);
             // 初始化并缓存常用的dom元素

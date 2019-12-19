@@ -18,15 +18,16 @@ em {
     margin-bottom: 10px;
     margin-top: 20px;
     color: #fff;
-    background-color: #009a61;
-    border-color: #008151;
+    background-color: #f4645f;
+    border-color: #f4645f;
 }
 
-#comment-form-btn:hover {
-    color: #fff !important;
-    background-color: #006741 !important;
-    border-color: #00432a !important;
-}
+/** 取消评论按钮的悬浮样式*/
+/*#comment-form-btn:hover {*/
+    /*color: #fff !important;*/
+    /*background-color: #006741 !important;*/
+    /*border-color: #00432a !important;*/
+/*}*/
 
 /*#comment-box .commentList div, .comment-box .commentList div {
     overflow: initial !important;
