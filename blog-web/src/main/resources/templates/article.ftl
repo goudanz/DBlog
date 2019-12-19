@@ -199,6 +199,9 @@
                 <div class="blog-body clear overflow-initial expansion">
                     <div id="comment-box" data-id="${article.id?c}"></div>
                 </div>
+                <div>
+                    <div id="comment-list"></div>
+                </div>
             <#else>
                 <div class="blog-body clear overflow-initial expansion gray">
                     <i class="fa fa-close fa-fw"></i>该篇文章的评论功能已被站长关闭

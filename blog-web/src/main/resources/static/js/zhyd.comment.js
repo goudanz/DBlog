@@ -59,7 +59,10 @@ $.extend({
                     + '<textarea id="comment_content" class="form-control col-md-7 col-xs-12 valid" style="display: none"></textarea>'
                     + '<textarea name="content" style="display: none"></textarea>'
                     + '<div style="position: absolute;right: 10px;bottom: 70px;font-size: 14px;color: #dbdada;z-index: 1;">' + op.wmName + '<br>' + op.wmUrl + '<br>' + op.wmDesc + '</div>'
-                    + '<a id="comment-form-btn" style="margin-left: 80%;" type="button" data-loading-text="正在提交评论..." class="btn btn-default btn-block">提交评论</a>'
+                    + '<div>'
+                        // + '<a href="javascript:;" class="comment-form-emoji-picker"><i class="fa fa-smile-o" aria-hidden="true"></i></a>'
+                        + '<button id="comment-form-btn" style="margin-left: 80%;width: 20%" type="button" data-loading-text="正在提交评论..." class="btn btn-default btn-block"><i class="fa fa-comment-o" aria-hidden="true"></i>提交评论</button>'
+                    + '</div>'
                     + '</form></div></div>';
             $box.html(commentBox);
             // 初始化并缓存常用的dom元素
@@ -71,7 +74,9 @@ $.extend({
             if (!$commentBox || !$commentBox[0]) {
                 return;
             }
-            $.comment.loadCommentList($commentBox);
+
+            var $commentList = $('#comment-list');
+            $.comment.loadCommentList($commentList, $commentBox);
             $.comment.initValidatorPlugin();
         },
         createEdit: function (options) {
@@ -92,7 +97,7 @@ $.extend({
 
             return simplemde;
         },
-        loadCommentList: function (box, pageNumber) {
+        loadCommentList: function (commentLists, box, pageNumber) {
             var sid = box.attr("data-id");
             if(!sid){
                 throw "未指定sid！";
@@ -106,26 +111,31 @@ $.extend({
                     $.alert.ajaxSuccess(json);
                     // 加载 评论列表 start
                     var commentList = json.data.commentList;
-                    var commentListBox  = '';
+                    var commentListsBox = '';   // 评论列表
+                    var commentsNumBox  = '';   // 评论个数
                     if(!commentList){
-                        commentListBox = '<div class="commentList">'
+                        commentsNumBox = '<div class="commentList">'
                                 + '<h5 class="custom-title"><i class="fa fa-comments-o fa-fw icon"></i><strong>0 评论</strong><small></small></h5>'
                                 + '<ul class="comment">';
-                        commentListBox += '<li><div class="list-comment-empty-w fade-in">'
+                        commentsNumBox += '<li><div class="list-comment-empty-w fade-in">'
                                 +'<div class="empty-prompt-w">'
                                 +'<span class="prompt-null-w">还没有评论，快来抢沙发吧！</span>'
                                 +'</div>'
                                 +'</div></li>';
                         // 加载 评论列表 end
-                        commentListBox += '</ul></div>';
-                        $(commentListBox).appendTo(box);
+                        commentsNumBox += '</ul></div>';
+                        $(commentsNumBox).appendTo(box);
                     }else{
                         // 首次加载-刷新页面后第一次加载，此时没有点击加载更多进行分页
                         if(!pageNumber) {
-                            commentListBox = '<div class="commentList">'
-                                    + '<h5 class="custom-title"><i class="fa fa-comments-o fa-fw icon"></i><strong>' + json.data.total + ' 评论</strong><small></small></h5>'
-                                    + '<ul class="comment">';
+                            commentsNumBox = '<div class="commentList">'
+                                    + '<h5 class="custom-title"><i class="fa fa-comments-o fa-fw icon"></i><strong>评论数量：' + json.data.total + '</strong><small></small></h5></div>'
+                                    // + '<ul class="comment">';
                         }
+                        $(commentsNumBox).appendTo(box);
+
+                        // 评论列表
+                        commentListsBox += '<ul class="comment">';
                         for(var i = 0, len = commentList.length; i < len ; i ++){
                             var comment = commentList[i];
                             var userUrl = comment.url || "javascript:void(0)";
@@ -135,7 +145,7 @@ $.extend({
                                 adminIcon = '<img src="/img/author.png" alt="" class="author-icon" title="管理员">';
                             }
                             var parentQuote = parent ? '<a href="#comment-' + parent.id + '" class="comment-quote">@' + parent.nickname + '</a><div style="background-color: #f9f9f9;padding: 5px;margin: 5px;border-radius: 4px;"><i class="fa fa-quote-left"></i><p></p><div style="padding-left: 10px;">' + filterXSS(parent.content) + '</div></div>' : '';
-                            commentListBox += '<li>' +
+                            commentListsBox += '<li>' +
                                     '    <div class="comment-body fade-in" id="comment-'+comment.id+'">' +
                                     '        <div class="cheader">' +
                                     '           <div class="user-img">' + adminIcon + '<img class="userImage" src="' + filterXSS(comment.avatar) + '" onerror="this.src=\'' + appConfig.staticPath + '/img/user.png\'"></div>' +
@@ -161,9 +171,10 @@ $.extend({
                                     '    </div>' +
                                     '</li>';
                         }
+                        commentListsBox += '</ul>';
                         // 如果存在下一页，则显示加载按钮
                         if(json.data.hasNextPage){
-                            commentListBox += '<li><div class="list-comment-empty-w fade-in">'
+                            commentListsBox += '<li><div class="list-comment-empty-w fade-in">'
                                     +'<div class="empty-prompt-w">'
                                     +'<span class="prompt-null-w pointer load-more">加载更多 <i class="fa fa-angle-double-down"></i></span>'
                                     +'</div>'
@@ -173,17 +184,17 @@ $.extend({
 
                         if(!pageNumber) {
                             // 首次加载-刷新页面后第一次加载，此时没有点击加载更多进行分页
-                            commentListBox += '</ul></div>';
-                            $(commentListBox).appendTo(box);
+                            // commentsNumBox += '</ul></div>';
+                            $(commentListsBox).appendTo(commentLists);
                         }else{
                             // 点击加载更多时，列表追加到ul中
-                            $(commentListBox).appendTo($(".comment"));
+                            $(commentListsBox).appendTo($(".comment"));
                         }
 
                         // 加载更多按钮
                         $(".load-more").click(function () {
                             $(this).parents('li').hide();
-                            $.comment.loadCommentList(box, json.data.nextPage)
+                            $.comment.loadCommentList(commentLists, box, json.data.nextPage)
                         });
                     }
                 },

@@ -79,7 +79,7 @@
                                 <time style="font-size: 12px;" class="comment-meta-item timeago fs12 gray" itemprop="datePublished" data-tid="40">${item.createTime?string('yyyy-MM-dd HH:mm')}</time>
                             </span>
                         </div>
-                        <div style="background-color: #f5f5f5;line-height: 1.7;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">
+                        <div style="background-color: #f0f2f5;line-height: 1.7;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">
                             <a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}">
                                 ${item.briefContent!}
                             </a>
