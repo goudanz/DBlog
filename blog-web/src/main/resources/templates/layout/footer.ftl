@@ -307,7 +307,6 @@
                     $.alert.error(json.message);
                 }
             },
-            debugger;
             error:function (json) {
                 alert(2);
             }

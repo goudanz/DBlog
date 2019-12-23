@@ -209,6 +209,22 @@
             </#if>
         </div>
         <#include "layout/sidebar.ftl"/>
+<#--        <div  class="left-ui" id="comment">
+            <div class="ui-left-menu">
+                <a href="javascript:;" data-id="${article.id?c}" class="item like" href="javascript:;" data-html="点赞">
+                    <i class="fa fa-thumbs-up"></i>
+                    <span class="loveCnt">${article.loveCount!(0)}</span>
+                </a>
+                <a class="item" data-position="right center" data-id="34445" href="javascript:;" data-html="收藏">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    <span class="collectCnt">10</span>
+                </a>
+                <a class="item" data-position="right center" data-id="34445" href="#replies" onclick="scrollToAnchor('replies')" title="评论">
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    <span class="commentCnt">${article.commentCount!(0)}</span>
+                </a>
+            </div>
+        </div>-->
     </div>
 </div>
 <@footer>
