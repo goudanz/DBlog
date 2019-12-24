@@ -42,7 +42,7 @@
                         ${article.content}
                     </div>
                     <div class="separateline"><span>正文到此结束</span></div>
-                    <div id="social" style="margin-bottom: 45px;">
+                    <div id="social" class="social-like" style="margin-bottom: 45px;">
                         <div class="social-main">
                             <span class="like">
                                 <a href="javascript:;" data-id="${article.id?c}" title="点赞" ><i class="fa fa-thumbs-up"></i>赞 <i class="count"> ${article.loveCount!(0)}</i> </a>
@@ -209,22 +209,22 @@
             </#if>
         </div>
         <#include "layout/sidebar.ftl"/>
-<#--        <div  class="left-ui" id="comment">
+        <div class="left-ui social-like">
             <div class="ui-left-menu">
-                <a href="javascript:;" data-id="${article.id?c}" class="item like" href="javascript:;" data-html="点赞">
+                <a data-id="${article.id?c}" href="javascript:;" class="item like-text" title="点赞">
                     <i class="fa fa-thumbs-up"></i>
                     <span class="loveCnt">${article.loveCount!(0)}</span>
                 </a>
-                <a class="item" data-position="right center" data-id="34445" href="javascript:;" data-html="收藏">
+                <a class="item" href="javascript:;" title="收藏">
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    <span class="collectCnt">10</span>
+                    <span class="collectCnt">99</span>
                 </a>
-                <a class="item" data-position="right center" data-id="34445" href="#replies" onclick="scrollToAnchor('replies')" title="评论">
-                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                <a class="item" href="#replies" onclick="scrollToAnchor('replies')" title="评论">
+                    <i class="fa fa-comment" aria-hidden="true"></i>
                     <span class="commentCnt">${article.commentCount!(0)}</span>
                 </a>
             </div>
-        </div>-->
+        </div>
     </div>
 </div>
 <@footer>

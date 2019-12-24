@@ -51,19 +51,20 @@ $.extend({
             var op = $.extend({
             }, options);
             var commentBox = '<div id="comment-place">'
-                    + '<div class="comment-post" id="comment-post" style="position: relative">'
-                    + '<h5 class="custom-title"><i class="fa fa-commenting-o fa-fw icon"></i><strong>评论</strong><small></small></h5>'
-                    + '<form class="form-horizontal" role="form" id="comment-form">'
-                    + '<div class="cancel-reply" id="cancel-reply" style="display: none;"><a href="javascript:void(0);" onclick="$.comment.cancelReply(this)" rel="external nofollow"><i class="fa fa-share"></i>取消回复</a></div>'
-                    + '<input type="hidden" name="pid" id="comment-pid" value="0" size="22" tabindex="1">'
-                    + '<textarea id="comment_content" class="form-control col-md-7 col-xs-12 valid" style="display: none"></textarea>'
-                    + '<textarea name="content" style="display: none"></textarea>'
-                    + '<div style="position: absolute;right: 10px;bottom: 70px;font-size: 14px;color: #dbdada;z-index: 1;">' + op.wmName + '<br>' + op.wmUrl + '<br>' + op.wmDesc + '</div>'
-                    + '<div>'
-                        // + '<a href="javascript:;" class="comment-form-emoji-picker"><i class="fa fa-smile-o" aria-hidden="true"></i></a>'
-                        + '<button id="comment-form-btn" style="margin-left: 80%;width: 20%" type="button" data-loading-text="正在提交评论..." class="btn btn-default btn-block"><i class="fa fa-comment-o" aria-hidden="true"></i>提交评论</button>'
-                    + '</div>'
-                    + '</form></div></div>';
+                + '<div id="replies" name="replies"></div>'
+                + '<div class="comment-post" id="comment-post" style="position: relative">'
+                + '<h5 class="custom-title"><i class="fa fa-commenting-o fa-fw icon"></i><strong>评论</strong><small></small></h5>'
+                + '<form class="form-horizontal" role="form" id="comment-form">'
+                + '<div class="cancel-reply" id="cancel-reply" style="display: none;"><a href="javascript:void(0);" onclick="$.comment.cancelReply(this)" rel="external nofollow"><i class="fa fa-share"></i>取消回复</a></div>'
+                + '<input type="hidden" name="pid" id="comment-pid" value="0" size="22" tabindex="1">'
+                + '<textarea id="comment_content" class="form-control col-md-7 col-xs-12 valid" style="display: none"></textarea>'
+                + '<textarea name="content" style="display: none"></textarea>'
+                + '<div style="position: absolute;right: 10px;bottom: 70px;font-size: 14px;color: #dbdada;z-index: 1;">' + op.wmName + '<br>' + op.wmUrl + '<br>' + op.wmDesc + '</div>'
+                + '<div>'
+                // + '<a href="javascript:;" class="comment-form-emoji-picker"><i class="fa fa-smile-o" aria-hidden="true"></i></a>'
+                + '<button class="help-tip" id="comment-form-btn" style="margin-left: 80%;width: 20%" type="button" data-loading-text="正在提交评论..." class="btn btn-default btn-block">'
+                + '提交评论<p>讲文明，树新风</p></button></div>' /*<i class="fa fa-comment-o" style="position: absolute;height: 100%;width: 3em;background-color: rgba(0,0,0,.05);top: 0;left: 0;border-radius: 7px;" aria-hidden="true"></i>*/
+                + '</form></div></div>';
             $box.html(commentBox);
             // 初始化并缓存常用的dom元素
             $.comment.initDom();

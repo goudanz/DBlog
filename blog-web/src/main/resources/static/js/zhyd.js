@@ -307,11 +307,41 @@ $(function () {
     }
 
     /* 文章点赞 */
-    $("#social .like").click(function () {
+    $(".social-like .like").click(function () {
         var $this = $(this);
         var $a = $(this).find("a");
         var $count = $a.find("i.count");
         var id = $a.data("id");
+        $.bubble.unbind();
+        $.ajax({
+            type: "post",
+            url: "/api/doPraise/" + id,
+            success: function (json) {
+                $.alert.ajaxSuccess(json);
+                if (json.status === 200) {
+                    $this.effectBubble({
+                        y: -80,
+                        className: 'thumb-bubble',
+                        fontSize: 1,
+                        content: '<i class="fa fa-smile-o"></i>+1'
+                    });
+                    $count.text(parseInt($count.text()) + 1);
+                }
+                $.bubble.init();
+            },
+            error: function () {
+                $.alert.ajaxError();
+                $.bubble.init();
+            }
+        });
+    });
+
+    /* left menu 点赞*/
+    $(".social-like .like-text").click(function () {
+        var $this = $(this);
+        // var $a = $(this).find("a");
+        var $count = $this.find("span.loveCnt");
+        var id = $this.data("id");
         $.bubble.unbind();
         $.ajax({
             type: "post",
