@@ -30,6 +30,9 @@
             <div class="blog-body clear overflow-initial expansion">
                 <div id="comment-box" data-id="-1"></div>
             </div>
+            <div>
+                <div id="comment-list"></div>
+            </div>
         </div>
         <#else>
         <div class="col-sm-12 blog-main">

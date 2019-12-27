@@ -819,7 +819,7 @@ span.separation:AFTER {
 /* 右侧目录框 */
 .sidebar-module {
     z-index: 10;
-    padding: 1px 10px 15px 10px;
+    padding: 1px 10px 17px 10px;
     /*border: 1px solid #ccc;*/
     line-height: 25px;
     margin: 0 0 14px 0;
@@ -1074,7 +1074,7 @@ article {
     padding: 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     /*border-radius: 0 20px !important;*/
-    border-radius: 4px;
+    border-radius: 8px;
     height: 170px;
 }
 
@@ -3429,7 +3429,7 @@ button, .button {
     border: 1px solid #4285f4;
     font-weight: 400;
     background: #4285f4;
-    background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+    /*background: -webkit-linear-gradient(top,#4387fd,#4683ea);*/
     border-radius: 2px;
     position: relative;
     cursor: pointer;
@@ -3721,7 +3721,7 @@ img {
 }
 .ui-left-menu {
     position: fixed;
-    width: auto;
+    width: 40px;
 }
 .border-0 {
     border: 0!important;
@@ -3737,8 +3737,15 @@ img {
 .item {
     padding: 0.928571em 0.2em;
     position: relative;
-    line-height: 2.8;
+    line-height: 1.5;
     display: block;
     background-color: #fff;
     border-bottom: .05rem solid #eee;
+    display: block;
+    text-align: center;
+    color: #a5a5a5!important;
+}
+.item i{
+    display: block;
+    padding-top: 5px;
 }
