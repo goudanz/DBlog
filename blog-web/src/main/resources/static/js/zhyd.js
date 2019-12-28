@@ -451,4 +451,55 @@ $(function () {
             $.comment.submit($(this));
         });
     }
+
+    $("#onLogin").on('click',function(){
+        var $username = $.trim($("#username").val());
+        var $password = $.trim($("#password").val());
+        if($username=='' || $password==''){
+            alert("用户名及密码不能为空");
+            return false;
+        }else{
+            var data = {
+                username:$username,
+                password:$password
+            };
+            $.ajax({
+                url : "/guest/login",
+                type : 'post',
+                dataType : 'json',
+                data : data,
+                beforeSend :function(){
+                    document.getElementById("login-text").innerHTML= "登录中";
+                },
+                complete : function(){
+                },
+                success: function (json) {
+                    console.log(json)
+                    $.alert.ajaxSuccess(json);
+                }
+            })
+        }
+        return false;
+    })
+
+    function userRegister() {
+        $.ajax({
+            type: "POST",
+            url: "/guest/register",
+            data: $("#register-from").serialize(),
+            dataType: 'json',
+            success: function (json) {
+                if (json.status == 200) {
+                    var historyUrl = json.data || "/";
+                    console.log(historyUrl)
+                    window.location.href = historyUrl;
+                }else{
+                    $.alert.error(json.message);
+                }
+            },
+            error:function (json) {
+                alert(2);
+            }
+        });
+    }
 });

@@ -2,6 +2,7 @@ package com.zyd.blog.controller;
 
 import com.zyd.blog.business.entity.User;
 import com.zyd.blog.business.service.GuestService;
+import com.zyd.blog.framework.exception.ZhydException;
 import com.zyd.blog.framework.object.ResponseVO;
 import com.zyd.blog.util.ResultUtil;
 import me.zhyd.oauth.model.AuthCallback;
@@ -29,7 +30,11 @@ public class GuestController {
 
     @RequestMapping("/login")
     public ResponseVO login(HttpSession session, User user) {
-        guestService.login(user);
+        try{
+            guestService.login(user);
+        }catch (ZhydException e){
+            return ResultUtil.error(e.getMessage());
+        }
 
         String historyUrl = (String) session.getAttribute("historyUrl");
         session.removeAttribute("historyUrl");

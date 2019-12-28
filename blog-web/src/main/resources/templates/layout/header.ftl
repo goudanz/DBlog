@@ -90,7 +90,9 @@
             <div class="pull-left site-desc" style="padding-top: 14px;">
                 <#--<h1 class="auto-shake"><a href="${config.siteUrl}" data-original-title="${config.siteDesc}" data-toggle="tooltip" data-placement="bottom">${config.siteName}</a></h1>
                 <p class="site-description">${config.siteDesc}</p>-->
-                <a href="${config.siteUrl}"><img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190817235024741.png" data-original-title="${config.siteDesc}" data-toggle="tooltip" data-placement="right"></a>
+                <a href="${config.siteUrl}">
+                    <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190817235024741.png" data-original-title="${config.siteDesc}" data-toggle="tooltip" data-placement="right">
+                </a>
             </div>
             <ul class="nav navbar-nav ">
                 <li>

@@ -131,7 +131,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
-                            <input  type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled="disabled" type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" name="username" tabindex="1" placeholder="昵称" class="username">
                             <span class="sign-des">支持中文，英文，用于登录</span>
                         </label> <!---->
@@ -139,7 +139,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-envelope-o"></i>
 							</span>
-                            <input  type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled="disabled" type="text" name="email" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" tabindex="2" placeholder="邮箱" class="phone-email">
                             <span class="sign-des">用作找回密码</span>
                         </label> <!---->
@@ -147,13 +147,13 @@
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
 							</span>
-                            <input  type="password" name="password" autocorrect="off" autocapitalize="off"
+                            <input disabled="disabled" type="password" name="password" autocorrect="off" autocapitalize="off"
                                    autocomplete="off" spellcheck="false" tabindex="5" placeholder="密码" class="pass">
                             <span class="sign-des">6位以上</span>
                         </label> <!----> <!----> <!---->
                     </div>
                     <div class="t-c mar20-t">
-                        <button  class="submit w100" onclick="userRegister();"><b class=""></b>
+                        <button disabled="disabled" class="submit w100" onclick="userRegister();"><b class=""></b>
                             <span id="register-btn">提交注册</span>
                         </button> <!---->
                     </div>
@@ -183,7 +183,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-user-o"></i>
 							</span>
-                            <input  type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled="disabled" type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" id="username" name="username" tabindex="1" placeholder="昵称"
                                    class="username">
                             <span class="sign-des">支持中文，英文</span>
@@ -192,7 +192,7 @@
 							<span class="tip-icon">
 								<i class="fa fa-key"></i>
 							</span>
-                            <input  type="password" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled="disabled" type="password" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" id="password" name="password" tabindex="5" placeholder="密码"
                                    class="pass">
                             <!---->
@@ -210,9 +210,9 @@
                         </label>-->
                     </div>
                     <div class="t-c mar20-t">
-                        <button  type="submit" onclick="usersLogin();" class="submit w100">
+                        <button disabled="disabled" id="onLogin" type="submit" class="submit w100">
                             <b class=""></b>
-                            <span>立刻登录</span>
+                            <span class="login-text">立刻登录</span>
                         </button>
                         <div class="submit-error mar10-t mouh">
                             <span id="fs12" class="fs12">请暂时使用社交帐号登录，谢谢</span><i class="fa fa-smile-o"></i><i class="fa fa-smile-o"></i><i class="fa fa-smile-o"></i>
@@ -237,7 +237,7 @@
                                 <span class="tip-icon">
                                     <i class="fa fa-envelope-o"></i>
                                 </span>
-                            <input  type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
+                            <input disabled="disabled" type="text" autocorrect="off" autocapitalize="off" autocomplete="off"
                                    spellcheck="false" name="username" tabindex="2" placeholder="邮箱"
                                    onchange="console.log(this.value);" class="phone-email">
                             <!---->
@@ -246,13 +246,13 @@
                                 <span class="tip-icon">
                                     <i class="iconfont zrz-icon-font-ecurityCode"></i>
                                 </span>
-                            <input  type="text" name="code" tabindex="3" autocorrect="off" autocapitalize="off"
+                            <input disabled="disabled" type="text" name="code" tabindex="3" autocorrect="off" autocapitalize="off"
                                    autocomplete="off" spellcheck="false" placeholder="验证码" class="code">
                             <span class="send-code button">发送验证码</span>
                         </label>
                     </div>
                     <div class="t-c mar20-t">
-                        <button  type="submit" class="submit w100">
+                        <button disabled="disabled" type="submit" class="submit w100">
                             <b class=""></b>
                             <span>下一步</span>
                         </button> <!---->
@@ -290,65 +290,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    function userRegister() {
-        $.ajax({
-            type: "POST",
-            url: "/guest/register",
-            data: $("#register-from").serialize(),
-            dataType: 'json',
-            success: function (json) {
-                if (json.status == 200) {
-                    var historyUrl = json.data || "/";
-                    console.log(historyUrl)
-                    window.location.href = historyUrl;
-                }else{
-                    $.alert.error(json.message);
-                }
-            },
-            error:function (json) {
-                alert(2);
-            }
-        });
-    }
-
-    function usersLogin() {
-        var username = $.trim($("#username").val());
-        var password = $.trim($("#password").val());
-        if (username == "") {
-            $("#fs12").innerHTML = "请输入用户名!";
-            return false;
-        } else if (password == "") {
-            $("#fs12").innerHTML = "请输入密码!";
-            return false;
-        }
-        var data = {
-            username: username,
-            password: password
-        };
-
-        $.ajax({
-            type: "POST",
-            url: "/guest/login",
-            data: data,
-            dataType: 'json',
-            success: function (json) {
-                console.log(json);
-                alert(1);
-                if (json.status == 200) {
-                    // window.location.href = "{:U('Index/personal')}";
-                } else {
-                    alert("登录失败，请重试!");
-                }
-            },
-            error:function (json) {
-                alert(2);
-            }
-        });
-    }
-
-</script>
 
 <div id="loading">
     <div class="filter"></div>
