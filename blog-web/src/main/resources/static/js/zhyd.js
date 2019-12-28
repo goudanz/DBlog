@@ -421,8 +421,17 @@ $(function () {
         });
     }
 
-    /* 轮播图 */
+    /* 文章轮播图 */
     $('#myCarousel').mouseover(function () {
+        $(".carousel-control").removeClass("hide");
+    }).mouseout(function () {
+        $(".carousel-control").addClass("hide");
+    }).carousel({
+        interval: 5000
+    });
+
+    /* 热点新闻轮播图 */
+    $('#myNews').mouseover(function () {
         $(".carousel-control").removeClass("hide");
     }).mouseout(function () {
         $(".carousel-control").addClass("hide");

@@ -10,7 +10,7 @@
     <@articleTag method="BizNewsList" pageSize="5">
         <#if BizNewsList?? && (BizNewsList?size > 0)>
             <div class="blog-body expansion" style="padding: 0;top: 30px;margin-bottom: 40px;">
-                <div id="myCarousel" class="carousel slide">
+                <div id="myNews" class="carousel slide">
                     <ol class="carousel-indicators">
                         <#list BizNewsList as item>
                             <li data-target="#myCarousel" data-slide-to="${item_index}"
@@ -25,12 +25,12 @@
                             </div>
                         </#list>
                     </div>
-                    <a class="left carousel-control hide" href="#myCarousel" role="button"
+                    <a class="left carousel-control hide" href="#myNews" role="button"
                        data-slide="prev">
                         <span class="fa fa-angle-left fa-fw fa-3x" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control hide" href="#myCarousel" role="button"
+                    <a class="right carousel-control hide" href="#myNews" role="button"
                        data-slide="next">
                         <span class="fa fa-angle-right fa-fw fa-3x" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
