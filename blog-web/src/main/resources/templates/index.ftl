@@ -65,7 +65,7 @@
             <div class="col-sm-8 blog-main">
                 <@articleTag method="recommendedList" pageSize="8">
                     <#if recommendedList?? && (recommendedList?size > 0)>
-                        <div class="blog-body expansion" style="padding: 0;">
+                        <div class="blog-body expansion" style="padding: 0;margin-bottom: 2.0rem">
                             <div id="myCarousel" class="carousel slide" style="height:300px;">
                                 <ol class="carousel-indicators">
                                     <#list recommendedList as item>
