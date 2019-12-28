@@ -5,9 +5,45 @@
     description="${config.homeDesc!}"
     canonical="/${url!}">
     </@header>
-    <div>
-        <img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/fpx.jpg" title="庆祝FPX夺得S英雄联盟S9全球总决赛冠军！">
-    </div>
+
+<#--    BizNewsList-->
+    <@articleTag method="BizNewsList" pageSize="5">
+        <#if BizNewsList?? && (BizNewsList?size > 0)>
+            <div class="blog-body expansion" style="padding: 0;top: 30px;margin-bottom: 40px;">
+                <div id="myCarousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <#list BizNewsList as item>
+                            <li data-target="#myCarousel" data-slide-to="${item_index}"
+                                class="${(item_index == 0)?string('active','')}"></li>
+                        </#list>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <#list BizNewsList as item>
+                            <div class="item ${(item_index == 0)?string('active','')}">
+                                <img style="width: 100%;height: 80%" src="${item.src}" alt="${item.title}" title="${item.title}">
+                            </div>
+                        </#list>
+                    </div>
+                    <a class="left carousel-control hide" href="#myCarousel" role="button"
+                       data-slide="prev">
+                        <span class="fa fa-angle-left fa-fw fa-3x" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control hide" href="#myCarousel" role="button"
+                       data-slide="next">
+                        <span class="fa fa-angle-right fa-fw fa-3x" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </#if>
+    </@articleTag>
+
+
+<#--    <div>-->
+<#--        <img  src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/fpx.jpg" title="庆祝FPX夺得S英雄联盟S9全球总决赛冠军！">-->
+<#--    </div>-->
     <div class="container custome-container">
         <@prompt></@prompt>
         <nav class="breadcrumb">

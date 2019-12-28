@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.zyd.blog.business.entity.Article;
 import com.zyd.blog.business.enums.ArticleStatusEnum;
 import com.zyd.blog.business.service.BizArticleService;
+import com.zyd.blog.business.service.BizNewsService;
 import com.zyd.blog.business.vo.ArticleConditionVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,6 +31,9 @@ public class ArticleTags extends BaseTag {
     @Autowired
     private BizArticleService articleService;
 
+    @Autowired
+    private BizNewsService bizNewsService;
+
     public ArticleTags() {
         super(ArticleTags.class.getName());
     }
@@ -42,6 +46,11 @@ public class ArticleTags extends BaseTag {
     public Object recommendedList(Map params) {
         int pageSize = this.getPageSize(params);
         return articleService.listRecommended(pageSize);
+    }
+
+    public Object BizNewsList(Map params){
+        int pageSize = this.getPageSize(params);
+        return bizNewsService.listNews(pageSize);
     }
 
     public Object randomList(Map params) {

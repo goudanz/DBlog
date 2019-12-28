@@ -459,6 +459,7 @@ i {
 }
 
 .help-tip p{
+    z-index: 1;
     display: none;
     text-align: left;
     background-color: #1E2021;
@@ -466,10 +467,11 @@ i {
     width: 300px;
     position: absolute;
     border-radius: 3px;
-    right: -4px;
+    right: 65px;
+    top: 38px;
     color: #FFF;
     font-size: 13px;
-    /*line-height: 1.4;*/
+    line-height: 1.4;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
@@ -480,7 +482,7 @@ i {
     height: 0;
     border:6px solid transparent;
     border-bottom-color:#1E2021;
-    right:10px;
+    right:20px;
     top:-12px;
 }
 

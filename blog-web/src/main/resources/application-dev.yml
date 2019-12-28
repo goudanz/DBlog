@@ -6,6 +6,7 @@ server:
 spring:
     profiles:
         include: [center-dev]
+        active: dev
     # 指定默认MimeMessage的编码，默认为: UTF-8
     mail:
         default-encoding: UTF-8
