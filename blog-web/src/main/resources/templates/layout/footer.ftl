@@ -353,12 +353,17 @@
         </div>
     </div>
 </footer>
-<#--<div id="skPlayer" style="display: none;float: right;position: fixed;bottom: 120px;left: 50px;transition:1s;"></div>
-<div id="musicContainer" style="float: right;position: fixed;bottom: 100px;bottom: 50px">
-    <a id="musicSwitch" href="javascript:void(0)" onclick="clickEvent()" class="active"></a>
+
+<div class="back-top">
+    <div class="_3MyrRP" role="button" tabindex="-1" aria-label="回到顶部">
+        <i aria-label="icon: caret-up" class="anticon anticon-caret-up">
+            <svg viewBox="0 0 1024 1024" focusable="false" class="" data-icon="caret-up" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                <path d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"></path>
+            </svg>
+        </i>
+    </div>
 </div>
-<a id="musicSwitch" href="javascript:void(0)" class="active"></a>-->
-<a class="to-top" title="点击返回顶部" data-toggle="tooltip" data-placement="bottom"></a>
+
 <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@1.11.1/dist/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.0/dist/js/bootstrap.min.js"></script>
@@ -397,21 +402,6 @@
     }
 
     var flag = false;
-    // function clickEvent(){
-    //     var skplayer = document.getElementById("skPlayer");
-    //     if (skplayer.style.display == 'none'){
-    //         skplayer.style.display="block";
-    //         if(!$('#skPlayer').find('audio').length) {
-    //             var player = new skPlayer({
-    //                 music: 706214506,
-    //                 theme:'red'
-    //                 // autoplay: true,
-    //             });
-    //         }
-    //     }else if(skplayer.style.display == 'block'){
-    //         skplayer.style.display="none";
-    //     }
-    // }
 
     function IsPC() {
         var userAgentInfo = navigator.userAgent;
@@ -433,15 +423,6 @@
         }
     }
     ca();
-    /*    var myCaptcha = _dx.Captcha(document.getElementById('checkcode'), {
-            appId: '08a0d823c7a6fa885cc9ef871d8941b5', //appId，在控制台中“应用管理”或“应用配置”模块获取
-            style: 'inline',
-            language: 'zh_cn', // 语言为英语
-            width: 300,
-            success: function (token) {
-                console.log('token:', token)
-            }
-        })*/
 
     function sendCode() {
     debugger

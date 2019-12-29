@@ -211,11 +211,11 @@ $(function () {
     console.groupEnd();
     console.log("爱谁谁...");
 
-    $('.to-top').toTop({
+    $('.back-top').toTop({
         autohide: true,//返回顶部按钮是否自动隐藏。可以设置true或false。默认为true
         offset: 100,//页面滚动到距离顶部多少距离时隐藏返回顶部按钮。默认值为420
         speed: 500,//滚动和渐隐的持续时间，默认值为500
-        right: 25,//返回顶部按钮距离屏幕右边的距离，默认值为15
+        // right: 25,//返回顶部按钮距离屏幕右边的距离，默认值为15
         bottom: 50//返回顶部按钮距离屏幕顶部的距离，默认值为30
     });
 

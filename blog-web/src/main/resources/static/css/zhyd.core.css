@@ -583,20 +583,27 @@ a:-webkit-any-link {
 /* 首页公告通知-breadcrumb  end */
 
 /* 返回顶部 start */
-.to-top {
-    background: url(../img/back-top.png) no-repeat left top;
-    width: 55px;
-    height: 55px;
-    color: #fff;
-    padding: 15px;
-    border-radius: 4px;
-    z-index: 100;
+.back-top{
+    right: 100px;
+    bottom: 96px;
 }
 
-.to-top:hover {
-    background: url(../img/back-top.png) no-repeat left bottom;
+._3MyrRP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #8c8c8c;
+    font-size: 18px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.3);
+    background-color: #fff;
 }
 
+.anticon {
+    line-height: 0;
+}
 /* 返回顶部 end */
 
 /* 热门推荐 start */
@@ -1649,7 +1656,10 @@ article .entry-more a:hover, .tag-li a:hover {
 
 /*文章列表、详细Q弹*/
 .fade-in:hover {
-    box-shadow: rgb(143, 143, 143) 3px 3px 20px;
+    transition: all .3s ease;
+    -webkit-transform: translateY(-2px);
+    -webkit-box-shadow:-9px 10px 30px -15px rgb(0, 0, 0);
+    /*box-shadow: rgb(143, 143, 143) 3px 3px 20px;*/
 }
 
 /* 由下往上淡入 end */
@@ -2889,7 +2899,8 @@ nav a:first-child .meta-nav {
     -webkit-transform: translateY(-2px);
     -moz-transform: translateY(-2px);
     box-shadow: 10px 10px 30px -15px rgb(128, 179, 142);
-    -webkit-box-shadow: -10px 10px 30px -15px rgb(128, 179, 142);
+    /*-webkit-box-shadow: -10px 10px 30px -15px rgb(128, 179, 142);*/
+    -webkit-box-shadow:-9px 10px 30px -15px rgb(0, 0, 0);
     -moz-box-shadow: 0 15px 35px -25px rgba(0, 36, 100, .3);
     transition: all .3s ease;
 }
