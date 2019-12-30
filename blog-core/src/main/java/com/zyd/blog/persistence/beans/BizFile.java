@@ -22,6 +22,7 @@ public class BizFile extends AbstractDO {
     public Integer width;
     public Integer height;
     private Long userId;
+    private String area;
     private String originalFileName;
     private String filePath;
     private String fullFilePath;

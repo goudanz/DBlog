@@ -7,6 +7,8 @@ import com.zyd.blog.business.vo.FileConditionVO;
 import com.zyd.blog.framework.object.AbstractService;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 /**
  * @author innodev java team
  * @version 1.0
@@ -14,6 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
  * @since 1.8
  */
 public interface BizFileService extends AbstractService<File, Long> {
+
+    List<File> queryBizResourceFile(int pageSize);
 
     PageInfo<File> findPageBreakByCondition(FileConditionVO vo);
 

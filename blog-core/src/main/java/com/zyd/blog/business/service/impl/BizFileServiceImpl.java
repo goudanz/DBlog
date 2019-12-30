@@ -2,13 +2,16 @@ package com.zyd.blog.business.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zyd.blog.business.annotation.RedisCache;
 import com.zyd.blog.business.entity.File;
+import com.zyd.blog.business.entity.News;
 import com.zyd.blog.business.enums.FileUploadType;
 import com.zyd.blog.business.service.BizFileService;
 import com.zyd.blog.business.vo.FileConditionVO;
 import com.zyd.blog.file.FileUploader;
 import com.zyd.blog.file.exception.GlobalFileException;
 import com.zyd.blog.persistence.beans.BizFile;
+import com.zyd.blog.persistence.beans.BizNews;
 import com.zyd.blog.persistence.mapper.BizFileMapper;
 import com.zyd.blog.plugin.file.GlobalFileUploader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +39,30 @@ public class BizFileServiceImpl implements BizFileService {
     private BizFileMapper shopFileMapper;
 
     @Override
+    public List<File> queryBizResourceFile(int pageSize) {
+        List<BizFile> bizFiles = shopFileMapper.queryBizResourceFile(pageSize);
+        return getResourceFiles(bizFiles);
+    }
+
+    private List<File> getResourceFiles(List<BizFile> list) {
+        if (CollectionUtils.isEmpty(list)) {
+            return null;
+        }
+        List<File> resourceList = new ArrayList<>();
+        for (BizFile bizFile : list) {
+            resourceList.add(new File(bizFile));
+        }
+        return resourceList;
+    }
+
+    @Override
     public PageInfo<File> findPageBreakByCondition(FileConditionVO vo) {
         PageHelper.startPage(vo.getPageNumber(), vo.getPageSize());
         List<BizFile> list = shopFileMapper.findPageBreakByCondition(vo);
         List<File> boList = getFiles(list);
-        if (boList == null) return null;
+        if (boList == null) {
+            return null;
+        }
         PageInfo bean = new PageInfo<BizFile>(list);
         bean.setList(boList);
         return bean;

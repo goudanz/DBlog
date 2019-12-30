@@ -11,6 +11,7 @@
         </div>
         <div class="menu-topmenu-container pull-right">
             <ul class="list-unstyled list-inline pull-left">
+                <li><a href="${config.siteUrl}/resource" class="menu_a" style="color: #fb0303;" title="文档/资料" data-toggle="tooltip" data-placement="bottom">文档/资料</a></li>
                 <li><a href="${config.siteUrl}/about" class="menu_a" style="color: #fb0303;" title="关于博客" data-toggle="tooltip" data-placement="bottom">关于本站</a></li>
                 <li><a href="${config.siteUrl}/links" class="menu_a" style="color: #fb0303;" title="友情链接" data-toggle="tooltip" data-placement="bottom">友情链接</a></li>
             </ul>

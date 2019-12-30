@@ -10,6 +10,7 @@
         <result property="suffix" jdbcType="VARCHAR" column="suffix"/>
         <result property="width" jdbcType="INTEGER" column="width"/>
         <result property="height" jdbcType="INTEGER" column="height"/>
+		<result property="area" jdbcType="VARCHAR" column="area"/>
         <result property="filePath" jdbcType="VARCHAR" column="file_path"/>
         <result property="fullFilePath" jdbcType="VARCHAR" column="full_file_path"/>
         <result property="fileHash" jdbcType="VARCHAR" column="file_hash"/>
@@ -43,6 +44,33 @@
 			biz_file t
 		WHERE
 			1 = 1
+		AND area = 'pict'
+		ORDER BY t.create_time DESC
+	</select>
+
+	<select id="queryBizResourceFile" parameterType="java.lang.Integer" resultMap="rm">
+		SELECT
+			t.id,
+			t.user_id,
+			t.original_file_name,
+			t.`size`,
+			t.`suffix`,
+			t.`width`,
+			t.`height`,
+			t.file_path,
+			t.full_file_path,
+			t.file_hash,
+			t.upload_type,
+			t.upload_start_time,
+			t.upload_end_time,
+			t.storage_type,
+			t.create_time,
+			t.update_time
+		FROM
+			biz_file t
+		WHERE
+			1 = 1
+		AND area = 'resource'
 		ORDER BY t.create_time DESC
 	</select>
 </mapper>

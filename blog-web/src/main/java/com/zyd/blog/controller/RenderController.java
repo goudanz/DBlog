@@ -208,6 +208,17 @@ public class RenderController {
     }
 
     /**
+     * 图片资源
+     *
+     * @return
+     */
+    @GetMapping("/resource")
+    @BussinessLog(value = "进入关于页", platform = PlatformEnum.WEB)
+    public ModelAndView resourceFile() {
+        return ResultUtil.view("resource");
+    }
+
+    /**
      * 友情链接
      *
      * @param model

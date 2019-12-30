@@ -17,4 +17,11 @@ import java.util.List;
 public interface BizFileMapper extends BaseMapper<BizFile> {
 
     List<BizFile> findPageBreakByCondition(FileConditionVO vo);
+
+    /**
+     * 获取资源文件
+     * @param vo
+     * @return
+     */
+    List<BizFile> queryBizResourceFile(int pageSize);
 }

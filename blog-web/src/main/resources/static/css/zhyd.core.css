@@ -551,6 +551,7 @@ a:-webkit-any-link {
     margin-bottom: 10px;
     list-style: none;
     background-color: #ffffff;
+    margin-top: 3%;
 }
 
 /* 面包屑导航 */
@@ -3773,3 +3774,34 @@ img {
     display: block;
     padding-top: 5px;
 }
+
+/*resource*/
+
+.download-btn{
+    float: right;
+    margin-left: 20px;
+    padding: 2px 6px;
+    border: 0px;
+    background-color: #3286ff;
+    color: white;
+    font-size: 10px;
+    border-radius: 3px;
+    margin-top: -50px;
+    width: 60px;
+}
+
+/*.ui.horizontal.divider:after, .ui.horizontal.divider:before {*/
+    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFW…GBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC);*/
+/*}*/
+/*.ui.horizontal.divider:before {*/
+    /*background-position: right 1em top 50%;*/
+/*}*/
+
+/*.ui.horizontal.divider:after, .ui.horizontal.divider:before {*/
+    /*content: "";*/
+    /*display: table-cell;*/
+    /*position: relative;*/
+    /*top: 50%;*/
+    /*width: 50%;*/
+    /*background-repeat: no-repeat;*/
+/*}*/
