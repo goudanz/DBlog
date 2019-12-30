@@ -13,7 +13,7 @@
                 <div id="myNews" class="carousel slide">
                     <div class="carousel-inner">
                         <#list BizResourceFile as item>
-                            <div class="blog-header" style="padding: 10px 20px 1px;">
+                            <div class="blog-header resource-box">
                                 <p>${item.originalFileName}</p>
                                 <p style="color: #999;">博主上传于：${item.uploadStartTime?string('yyyy-MM-dd HH:mm')}</p>
                                 <button class="download-btn" onclick="window.open('${item.fullFilePath}')"><span class="fa fa-download"></span>下载</button>

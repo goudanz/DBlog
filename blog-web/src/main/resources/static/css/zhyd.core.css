@@ -607,7 +607,7 @@ a:-webkit-any-link {
 }
 
 ._3MyrRP:focus{
-    border: none;
+    outline: none;
 }
 
 .anticon {
@@ -764,6 +764,8 @@ span.separation:AFTER {
     background-color: #fff;
     font-size: 12px;
     font-weight: 400;
+
+    z-index: 9999;
 }
 
 .footer .external-links a {
@@ -3805,3 +3807,20 @@ img {
     /*width: 50%;*/
     /*background-repeat: no-repeat;*/
 /*}*/
+
+.resource-box {
+    padding: 10px 20px 1px;
+    /*width: 30%;*/
+    /*float: left;*/
+    /*margin-right: 40px;*/
+}
+
+.resource-box:hover{
+    /*transform: translateY(-10px);*/
+    -webkit-transform: translateY(-10px);
+    /*-moz-transform: translateY(-10px);*/
+    box-shadow: 0 15px 35px -25px rgba(0,36,100,.3);
+    /*-webkit-box-shadow: 0 15px 35px -25px rgba(0,36,100,.3);*/
+    /*-moz-box-shadow: 0 15px 35px -25px rgba(0,36,100,.3);*/
+    transition: all .3s ease;
+}
