@@ -588,6 +588,10 @@ a:-webkit-any-link {
     bottom: 96px;
 }
 
+.back-top:focus {
+    outline: none;
+}
+
 ._3MyrRP {
     display: flex;
     justify-content: center;
@@ -599,6 +603,10 @@ a:-webkit-any-link {
     font-size: 18px;
     box-shadow: 0 1px 3px rgba(26,26,26,.3);
     background-color: #fff;
+}
+
+._3MyrRP:focus{
+    border: none;
 }
 
 .anticon {
@@ -2294,6 +2302,11 @@ nav a:first-child .meta-nav {
 
     .index-links {
         padding: 5px 86px;
+    }
+
+    .biznews{
+        top: 50px;
+        margin-bottom: 60px;
     }
 }
 

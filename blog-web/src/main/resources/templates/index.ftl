@@ -9,7 +9,7 @@
 <#--    BizNewsList-->
     <@articleTag method="BizNewsList" pageSize="5">
         <#if BizNewsList?? && (BizNewsList?size > 0)>
-            <div class="blog-body expansion" style="padding: 0;top: 50px;margin-bottom: 60px;">
+            <div class="blog-body expansion biznews" style="padding: 0;">
                 <div id="myNews" class="carousel slide">
                     <ol class="carousel-indicators">
                         <#list BizNewsList as item>
