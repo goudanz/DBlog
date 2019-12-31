@@ -18,6 +18,8 @@ public interface BizFileMapper extends BaseMapper<BizFile> {
 
     List<BizFile> findPageBreakByCondition(FileConditionVO vo);
 
+    List<BizFile> findResourceByCondition(FileConditionVO vo);
+
     /**
      * 获取资源文件
      * @param vo

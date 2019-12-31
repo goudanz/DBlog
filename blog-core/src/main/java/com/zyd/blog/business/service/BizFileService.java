@@ -21,9 +21,13 @@ public interface BizFileService extends AbstractService<File, Long> {
 
     PageInfo<File> findPageBreakByCondition(FileConditionVO vo);
 
+    PageInfo<File> findResourceByCondition(FileConditionVO vo);
+
     File selectFileByPathAndUploadType(String filePath, String uploadType);
 
     void remove(Long[] ids);
 
-    int upload(MultipartFile[] file);
+    int uploadCommon(MultipartFile[] file);
+
+    int uploadFile(MultipartFile[] file);
 }

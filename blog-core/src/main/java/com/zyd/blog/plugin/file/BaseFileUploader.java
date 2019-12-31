@@ -70,7 +70,7 @@ public class BaseFileUploader {
         return res;
     }
 
-    VirtualFile saveFile(VirtualFile virtualFile, boolean save, String uploadType) {
+    VirtualFile saveFile(VirtualFile virtualFile, boolean save, String uploadType, boolean isResource) {
         if (save) {
             BizFileService fileService = SpringContextHolder.getBean(BizFileService.class);
             try {
@@ -83,6 +83,11 @@ public class BaseFileUploader {
                 fileInfo.setUserId(null == sessionUser ? null : sessionUser.getId());
                 fileInfo.setUploadType(uploadType);
                 fileInfo.setStorageType(storageType);
+
+                if (isResource) {
+
+                }
+
                 fileService.insert(new File(fileInfo));
             } catch (Exception e) {
                 e.printStackTrace();

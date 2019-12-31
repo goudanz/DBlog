@@ -9,6 +9,7 @@ package com.zyd.blog.business.enums;
  */
 public enum FileUploadType {
     COMMON("oneblog/"),
+    FILE("oneblog/file/"),
     QRCODE("oneblog/qrcode/"),
     SIMPLE("oneblog/article/"),
     COVER_IMAGE("oneblog/cover/");

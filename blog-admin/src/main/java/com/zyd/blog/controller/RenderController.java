@@ -212,6 +212,13 @@ public class RenderController {
         return ResultUtil.view("file/list");
     }
 
+    @RequiresPermissions("files")
+    @BussinessLog("进入资源文件管理页面")
+    @GetMapping("/resource")
+    public ModelAndView resource(Model model) {
+        return ResultUtil.view("file/resource");
+    }
+
     @RequiresPermissions("cats")
     @BussinessLog("进入猫列表页")
     @GetMapping("/cats")

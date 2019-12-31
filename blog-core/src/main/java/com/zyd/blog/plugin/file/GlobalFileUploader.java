@@ -23,21 +23,28 @@ public class GlobalFileUploader extends BaseFileUploader implements FileUploader
     public VirtualFile upload(InputStream is, String uploadType, String imageUrl, boolean save) {
         ApiClient apiClient = this.getApiClient(uploadType);
         VirtualFile virtualFile = apiClient.uploadImg(is, imageUrl);
-        return this.saveFile(virtualFile, save, uploadType);
+        return this.saveFile(virtualFile, save, uploadType,false);
     }
 
     @Override
     public VirtualFile upload(File file, String uploadType, boolean save) {
         ApiClient apiClient = this.getApiClient(uploadType);
         VirtualFile virtualFile = apiClient.uploadImg(file);
-        return this.saveFile(virtualFile, save, uploadType);
+        return this.saveFile(virtualFile, save, uploadType,false);
     }
 
     @Override
     public VirtualFile upload(MultipartFile file, String uploadType, boolean save) {
         ApiClient apiClient = this.getApiClient(uploadType);
         VirtualFile virtualFile = apiClient.uploadImg(file);
-        return this.saveFile(virtualFile, save, uploadType);
+        return this.saveFile(virtualFile, save, uploadType,false);
+    }
+
+    @Override
+    public VirtualFile uploadResourceFile(MultipartFile file, String uploadType, boolean save) {
+        ApiClient apiClient = this.getApiClient(uploadType);
+        VirtualFile virtualFile = apiClient.uploadImg(file);
+        return this.saveFile(virtualFile, save, uploadType,true);
     }
 
     @Override

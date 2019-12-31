@@ -56,6 +56,20 @@ public class BizFileServiceImpl implements BizFileService {
     }
 
     @Override
+    public PageInfo<File> findResourceByCondition(FileConditionVO vo) {
+        PageHelper.startPage(vo.getPageNumber(), vo.getPageSize());
+        List<BizFile> list = shopFileMapper.findResourceByCondition(vo);
+        List<File> boList = getFiles(list);
+        if (boList == null) {
+            return null;
+        }
+        PageInfo bean = new PageInfo<BizFile>(list);
+        bean.setList(boList);
+        return bean;
+    }
+
+
+    @Override
     public PageInfo<File> findPageBreakByCondition(FileConditionVO vo) {
         PageHelper.startPage(vo.getPageNumber(), vo.getPageSize());
         List<BizFile> list = shopFileMapper.findPageBreakByCondition(vo);
@@ -109,13 +123,26 @@ public class BizFileServiceImpl implements BizFileService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public int upload(MultipartFile[] file) {
+    public int uploadCommon(MultipartFile[] file) {
         if (null == file || file.length == 0) {
             throw new GlobalFileException("请至少选择一张图片！");
         }
         for (MultipartFile multipartFile : file) {
             FileUploader uploader = new GlobalFileUploader();
             uploader.upload(multipartFile, FileUploadType.COMMON.getPath(), true);
+        }
+        return file.length;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public int uploadFile(MultipartFile[] file) {
+        if (null == file || file.length == 0) {
+            throw new GlobalFileException("请至少选择一个文件！");
+        }
+        for (MultipartFile multipartFile : file) {
+            FileUploader uploader = new GlobalFileUploader();
+            uploader.uploadResourceFile(multipartFile, FileUploadType.FILE.getPath(), true);
         }
         return file.length;
     }

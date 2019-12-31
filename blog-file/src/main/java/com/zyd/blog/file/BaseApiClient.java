@@ -57,10 +57,13 @@ public abstract class BaseApiClient implements ApiClient {
             InputStream is = new BufferedInputStream(new FileInputStream(file));
             VirtualFile res = this.uploadImg(is, "temp" + FileUtil.getSuffix(file));
             VirtualFile imageInfo = ImageUtil.getInfo(file);
+
+
+
             return res.setSize(imageInfo.getSize())
                     .setOriginalFileName(file.getName())
-                    .setWidth(imageInfo.getWidth())
-                    .setHeight(imageInfo.getHeight());
+                    .setWidth(imageInfo.getWidth()== null ? null : imageInfo.getWidth())
+                    .setHeight(imageInfo.getHeight()==null ? null : imageInfo.getHeight());
         } catch (FileNotFoundException e) {
             throw new GlobalFileException("[" + this.storageType + "]文件上传失败：" + e.getMessage());
         }
@@ -68,9 +71,9 @@ public abstract class BaseApiClient implements ApiClient {
 
     void createNewFileName(String key, String pathPrefix) {
         this.suffix = FileUtil.getSuffix(key);
-        if (!FileUtil.isPicture(this.suffix)) {
-            throw new GlobalFileException("[" + this.storageType + "] 非法的图片文件[" + key + "]！目前只支持以下图片格式：[jpg, jpeg, png, gif, bmp]");
-        }
+//        if (!FileUtil.isPicture(this.suffix)) {
+//            throw new GlobalFileException("[" + this.storageType + "] 非法的图片文件[" + key + "]！目前只支持以下图片格式：[jpg, jpeg, png, gif, bmp]");
+//        }
         String fileName = DateUtil.format(new Date(), "yyyyMMddHHmmssSSS");
         this.newFileName = pathPrefix + (fileName + this.suffix);
     }

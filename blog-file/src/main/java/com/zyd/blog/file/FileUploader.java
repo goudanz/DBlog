@@ -43,6 +43,9 @@ public interface FileUploader {
      */
     VirtualFile upload(MultipartFile file, String uploadType, boolean save);
 
+
+    VirtualFile uploadResourceFile(MultipartFile file, String uploadType, boolean save);
+
     /**
      * 删除文件
      *

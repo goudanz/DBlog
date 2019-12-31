@@ -54,7 +54,27 @@ public class RestFileController {
         if (null == file || file.length == 0) {
             return ResultUtil.error("请至少选择一张图片！");
         }
-        int res = fileService.upload(file);
+        int res = fileService.uploadCommon(file);
         return ResultUtil.success("成功上传" + res + "张图片");
+    }
+
+//    resource 资源文件
+
+    @RequiresPermissions("files")
+    @PostMapping("/list/resource")
+    public PageInfo listResource(FileConditionVO vo) {
+        vo.setPageSize(20);
+        return fileService.findResourceByCondition(vo);
+    }
+
+    @RequiresPermissions("files")
+    @PostMapping(value = "/add-resource")
+    @BussinessLog("添加文件")
+    public ResponseVO addResource(MultipartFile[] file) {
+        if (null == file || file.length == 0) {
+            return ResultUtil.error("请至少选择一个文件！");
+        }
+        int res = fileService.uploadFile(file);
+        return ResultUtil.success("成功上传");
     }
 }

@@ -22,56 +22,45 @@
         <result property="updateTime" jdbcType="TIMESTAMP" column="update_time"/>
     </resultMap>
 
+	<sql id="Base_Column_List" >
+		id,user_id,original_file_name,`size`,`suffix`,`width`,`height`,
+		file_path,full_file_path,file_hash,upload_type,upload_start_time,
+		upload_end_time,storage_type,create_time,update_time
+	</sql>
+
     <select id="findPageBreakByCondition" parameterType="com.zyd.blog.business.vo.FileConditionVO" resultMap="rm">
 		SELECT
-			t.id,
-			t.user_id,
-			t.original_file_name,
-			t.`size`,
-			t.`suffix`,
-			t.`width`,
-			t.`height`,
-			t.file_path,
-			t.full_file_path,
-			t.file_hash,
-			t.upload_type,
-			t.upload_start_time,
-			t.upload_end_time,
-			t.storage_type,
-			t.create_time,
-			t.update_time
+			<include refid="Base_Column_List" />
 		FROM
-			biz_file t
+			biz_file
 		WHERE
 			1 = 1
 		AND area = 'pict'
-		ORDER BY t.create_time DESC
+		ORDER BY create_time DESC
 	</select>
 
 	<select id="queryBizResourceFile" parameterType="java.lang.Integer" resultMap="rm">
 		SELECT
-			t.id,
-			t.user_id,
-			t.original_file_name,
-			t.`size`,
-			t.`suffix`,
-			t.`width`,
-			t.`height`,
-			t.file_path,
-			t.full_file_path,
-			t.file_hash,
-			t.upload_type,
-			t.upload_start_time,
-			t.upload_end_time,
-			t.storage_type,
-			t.create_time,
-			t.update_time
+			<include refid="Base_Column_List" />
 		FROM
-			biz_file t
+			biz_file
 		WHERE
 			1 = 1
 		AND area = 'resource'
-		ORDER BY t.create_time DESC
+		ORDER BY create_time DESC
 	</select>
+
+
+	<select id="findResourceByCondition" parameterType="com.zyd.blog.business.vo.FileConditionVO" resultMap="rm">
+		SELECT
+			<include refid="Base_Column_List" />
+		FROM
+			biz_file
+		WHERE
+			1 = 1
+		AND area = 'resource'
+		ORDER BY create_time DESC
+	</select>
+
 </mapper>
 
