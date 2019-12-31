@@ -11,7 +11,7 @@
         <@articleTag method="BizResourceFile" pageSize="5">
             <#if BizResourceFile?? && (BizResourceFile?size > 0)>
                 <div id="myNews" class="carousel slide">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner resource-inner">
                         <#list BizResourceFile as item>
                             <div class="blog-header resource-box">
                                 <p>${item.originalFileName}</p>

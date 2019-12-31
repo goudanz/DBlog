@@ -2262,6 +2262,22 @@ nav a:first-child .meta-nav {
         padding: 50px 10px 0 10px;
         display: inline-block;
     }
+
+    /*resource*/
+    .resource-box {
+        margin: 10px 0;
+        padding: 10px 20px 1px;
+        box-shadow: -2px 0 8px rgba(0,0,0,.15);
+    }
+
+    .resource-inner{
+        border: 1px solid #e4e6e9;
+        padding: 10px 15px;
+        border-radius: 20px;
+        box-shadow: -2px 0 8px rgba(64,158,255,.15);
+        background-color: #fff;
+        margin-bottom: 40px;
+    }
 }
 
 /* 窗口放大到768px以上时 */
@@ -2311,6 +2327,33 @@ nav a:first-child .meta-nav {
         top: 50px;
         margin-bottom: 60px;
     }
+
+    .resource-box {
+        width: 31%;
+        float: left;
+        margin: 10px 14px;
+        padding: 10px 20px 1px;
+        box-shadow: -2px 0 8px rgba(0,0,0,.15);
+    }
+
+    .resource-box:hover{
+        /* transform: translateY(-10px); */
+        -webkit-transform: translateY(-4px);
+        /* -moz-transform: translateY(-10px); */
+        /* box-shadow: 0 15px 35px -25px rgba(0,36,100,.3); */
+        /* -webkit-box-shadow: 0 15px 35px -25px rgba(0,36,100,.3); */
+        /* -moz-box-shadow: 0 15px 35px -25px rgba(0,36,100,.3); */
+        transition: all .3s ease;
+    }
+
+    .resource-inner{
+        border: 1px solid #e4e6e9;
+        padding: 10px 15px;
+        border-radius: 20px;
+        box-shadow: -2px 0 8px rgba(64,158,255,.15);
+        background-color: #fff;
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 990px) {
@@ -2335,11 +2378,23 @@ nav a:first-child .meta-nav {
     .index-links {
         padding: 5px 145px;
     }
+
+    .resource-box {
+        width: 46%;
+        float: left;
+        margin: 10px 17px;
+    }
 }
 
 @media (min-width: 1200px) {
     .container {
         width: 67%;
+    }
+
+    .resource-box {
+        width: 31%;
+        float: left;
+        margin: 10px 14px;
     }
 }
 
@@ -3807,20 +3862,3 @@ img {
     /*width: 50%;*/
     /*background-repeat: no-repeat;*/
 /*}*/
-
-.resource-box {
-    padding: 10px 20px 1px;
-    /*width: 30%;*/
-    /*float: left;*/
-    /*margin-right: 40px;*/
-}
-
-.resource-box:hover{
-    /*transform: translateY(-10px);*/
-    -webkit-transform: translateY(-10px);
-    /*-moz-transform: translateY(-10px);*/
-    box-shadow: 0 15px 35px -25px rgba(0,36,100,.3);
-    /*-webkit-box-shadow: 0 15px 35px -25px rgba(0,36,100,.3);*/
-    /*-moz-box-shadow: 0 15px 35px -25px rgba(0,36,100,.3);*/
-    transition: all .3s ease;
-}
