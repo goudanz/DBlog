@@ -84,8 +84,9 @@ public class BaseFileUploader {
                 fileInfo.setUploadType(uploadType);
                 fileInfo.setStorageType(storageType);
 
+                fileInfo.setArea("pict");
                 if (isResource) {
-
+                    fileInfo.setArea("resource");
                 }
 
                 fileService.insert(new File(fileInfo));

@@ -20,7 +20,7 @@ public class BlogAdminApplicationTests {
     @Test
     public void uploadFile() {
         FileUploader uploader = new GlobalFileUploader();
-        File file = new File("E:\\download\\DataWork-0.5.0.xlsx");
+        File file = new File("/Users/dancoder/Documents/coding/test.pages");
 //        File file = new File("E:\\download\\echarts.png");
         VirtualFile virtualFile = uploader.upload(file, FileUploadType.FILE.getPath(), true);
         System.out.println(virtualFile);

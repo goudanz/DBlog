@@ -40,8 +40,8 @@ public abstract class BaseApiClient implements ApiClient {
             VirtualFile imageInfo = ImageUtil.getInfo(file);
             return res.setSize(imageInfo.getSize())
                     .setOriginalFileName(file.getOriginalFilename())
-                    .setWidth(imageInfo.getWidth())
-                    .setHeight(imageInfo.getHeight());
+                    .setWidth(imageInfo.getWidth()== null ? 0 : imageInfo.getWidth())
+                    .setHeight(imageInfo.getHeight()==null ? 0 : imageInfo.getHeight());
         } catch (IOException e) {
             throw new GlobalFileException("[" + this.storageType + "]文件上传失败：" + e.getMessage());
         }
@@ -62,8 +62,8 @@ public abstract class BaseApiClient implements ApiClient {
 
             return res.setSize(imageInfo.getSize())
                     .setOriginalFileName(file.getName())
-                    .setWidth(imageInfo.getWidth()== null ? null : imageInfo.getWidth())
-                    .setHeight(imageInfo.getHeight()==null ? null : imageInfo.getHeight());
+                    .setWidth(imageInfo.getWidth()== null ? 0 : imageInfo.getWidth())
+                    .setHeight(imageInfo.getHeight()==null ? 0 : imageInfo.getHeight());
         } catch (FileNotFoundException e) {
             throw new GlobalFileException("[" + this.storageType + "]文件上传失败：" + e.getMessage());
         }
