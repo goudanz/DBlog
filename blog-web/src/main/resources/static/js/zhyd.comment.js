@@ -129,8 +129,8 @@ $.extend({
                     }else{
                         // 首次加载-刷新页面后第一次加载，此时没有点击加载更多进行分页
                         if(!pageNumber) {
-                            commentsNumBox = '<div class="commentList">'
-                                    + '<h5 class="custom-title"><i class="fa fa-comments-o fa-fw icon"></i><strong>评论数量：' + json.data.total + '</strong><small></small></h5></div>'
+                            commentsNumBox = '<div class="commentList comment-horizontal" style="text-align: center;">'
+                                    + '<h5 style="padding-bottom: 18px;"><strong><i class="fa fa-comments-o fa-fw icon"></i>评论数量：' + json.data.total + '</strong><small></small></h5></div>'
                                     // + '<ul class="comment">';
                         }
                         $(commentsNumBox).appendTo(box);
