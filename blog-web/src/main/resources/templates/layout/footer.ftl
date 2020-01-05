@@ -378,7 +378,6 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xss@0.3.3/dist/xss.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mustache@2.3.0/mustache.min.js"></script>
 <script type="text/javascript" src="${config.staticWebSite}/js/login/jquery.verify.js"></script>
-<script type="text/javascript" src="${config.staticWebSite}/js/dist/skPlayer.min.js"></script>
 <script type="text/javascript">
     var appConfig = {
         siteName: '${config.siteName}',

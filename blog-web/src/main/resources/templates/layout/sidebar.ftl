@@ -1,4 +1,4 @@
-<div class="col-sm-3 blog-sidebar">
+<div class="col-sm-3 blog-sidebar" xmlns="http://www.w3.org/1999/html">
     <#if articleDetail??>
         <div class="sidebar-module">
             <h5 class="custom-title"><i class="fa fa-hand-peace-o fa-fw icon"></i><strong>说给你听</strong><small></small></h5>
@@ -28,12 +28,25 @@
     <div class="sidebar-module">
         <h5 class="custom-title"><i class="fa fa-handshake-o fa-fw icon"></i><strong>免注册登录</strong><small></small></h5>
         <div class="div-quote">
-            <div>
-                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190818222336862.png">
-                <a href="${config.staticWebSite}/oauth/render/oschina"  class="fs12 opwb pos-r">oschina登录</a>
-                <a href="${config.staticWebSite}/oauth/render/github" class="fs12 opwb pos-r"><i class="fa fa-github fa-lg"></i> github登录</a>
-                <img style="vertical-align: sub;margin: auto 3px;" src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190922183830315.png">
-                <a href="${config.staticWebSite}/oauth/render/baidu" class="fs12 opwb pos-r">百度登录</a>
+            <div class="oauth-box">
+                <a href="${config.staticWebSite}/oauth/render/oschina">
+                    <img title="osChina" alt="osChina" src="https://cdn.jsdelivr.net/gh/goudanz/cdn/svg/icon_oschina.svg" class="oauth-btn">
+                </a>
+                <a href="${config.staticWebSite}/oauth/render/github">
+                    <img title="GitHub" alt="GitHub" src="https://b-gold-cdn.xitu.io/v3/static/img/github.547dd8a.svg" class="oauth-btn">
+                </a>
+                <a href="${config.staticWebSite}/oauth/render/baidu">
+                    <img title="百度" alt="百度" class="oauth-btn" src="https://cdn.jsdelivr.net/gh/goudanz/cdn/svg/icon_baidu.svg">
+                </a>
+                <a href="${config.staticWebSite}/oauth/render/google">
+                    <img src="https://cdn.jsdelivr.net/gh/goudanz/cdn/svg/icon_google.svg" class="oauth-btn">
+                </a>
+                <#--<a href="${config.staticWebSite}/oauth/render/facebook">
+                    <img src="https://cdn.jsdelivr.net/gh/goudanz/cdn/svg/icon-facebook.svg" class="oauth-btn">
+                </a>-->
+                <a href="${config.staticWebSite}/oauth/render/wechat">
+                    <img title="微信" alt="微信" src="https://b-gold-cdn.xitu.io/v3/static/img/wechat.e0ff124.svg" class="oauth-btn">
+                </a>
             </div>
         </div>
     </div>
@@ -79,7 +92,7 @@
                                 <time style="font-size: 12px;" class="comment-meta-item timeago fs12 gray" itemprop="datePublished" data-tid="40">${item.createTime?string('yyyy-MM-dd HH:mm')}</time>
                             </span>
                         </div>
-                        <div style="background-color: #f0f2f5;line-height: 1.7;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">
+                        <div style="background-color: #f0f2f5;line-height: 1.3;border-radius: 3px;color: #333;" class="newest_comment_content pd10 mar10-t pos-r mar5-b pjt fs13">
                             <a href="${item.sourceUrl}#comment-${item.id?c}" title="${item.briefContent!}">
                                 ${item.briefContent!}
                             </a>
@@ -109,8 +122,8 @@
                     <@articleTag method="recentArticles" pageSize="10">
                         <#if recentArticles?? && (recentArticles?size > 0)>
                             <#list recentArticles as item>
-                                <li>
-                                    <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
+                                <li class="comment-li">
+                                    <a href="${config.siteUrl}/article/${item.id?c}" data-toggle="tooltip" data-placement="bottom"> <#--title="${item.title}"-->
                                         <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
@@ -128,8 +141,8 @@
                     <@articleTag method="recommendedList" pageSize="10">
                         <#if recommendedList?? && (recommendedList?size > 0)>
                             <#list recommendedList as item>
-                                <li>
-                                    <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
+                                <li class="comment-li">
+                                    <a href="${config.siteUrl}/article/${item.id?c}" data-toggle="tooltip" data-placement="bottom"> <#--title="${item.title}"-->
                                         <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>
@@ -147,8 +160,8 @@
                     <@articleTag method="randomList" pageSize="10">
                         <#if randomList?? && (randomList?size > 0)>
                             <#list randomList as item>
-                                <li>
-                                    <a href="${config.siteUrl}/article/${item.id?c}" title="${item.title}" data-toggle="tooltip" data-placement="bottom">
+                                <li class="comment-li">
+                                    <a href="${config.siteUrl}/article/${item.id?c}" data-toggle="tooltip" data-placement="bottom"> <#--title="${item.title}"-->
                                         <span class="li-icon li-icon-${item?index+1}">${item?index+1}</span> ${item.title}
                                     </a>
                                 </li>

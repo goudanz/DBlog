@@ -46,7 +46,7 @@
 <#--    </div>-->
     <div class="container custome-container">
         <@prompt></@prompt>
-        <nav class="breadcrumb">
+        <nav class="breadcrumb" style="background-color: #ffffff;">
             <div class="notify"><i class="fa fa-bullhorn fa-fw"></i></div>
             <div id="scrolldiv">
                 <div class="scrolltext">

@@ -74,7 +74,7 @@ public class CustomTags extends BaseTag {
 
     public Object recentComments(Map params) {
 //        int pageSize = this.getPageSize(params);
-        return commentService.listRecentComment(6);
+        return commentService.listRecentComment(5);
     }
 
     public Object siteInfo(Map params) {

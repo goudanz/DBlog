@@ -67,7 +67,7 @@ body {
     font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
     font-size: 14px;
     color: #333;
-    background-color: #f0f2f5 !important;
+    background-color: #f4f4f4 !important;
     min-width: 350px;
 }
 
@@ -550,8 +550,8 @@ a:-webkit-any-link {
     padding: 4px;
     margin-bottom: 10px;
     list-style: none;
-    background-color: #ffffff;
-    margin-top: 43px;
+    /*background-color: #ffffff;*/
+    margin-top: 40px;
 }
 
 /* 面包屑导航 */
@@ -839,8 +839,8 @@ span.separation:AFTER {
     z-index: 10;
     padding: 1px 10px 11px 10px;
     /*border: 1px solid #ccc;*/
-    line-height: 25px;
-    margin: 0 0 14px 0;
+    line-height: 20px;
+    margin: 0 0 16px 0;
     background: #fff;
     border-radius: 8px;
 }
@@ -1089,11 +1089,11 @@ article {
     position: relative;
     background: #fff;
     margin: 0 0 14px 0;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
-    /*border-radius: 0 20px !important;*/
-    border-radius: 8px;
-    height: 170px;
+    border-radius: 0 20px !important;
+    /*border-radius: 8px;*/
+    height: 139px;
 }
 
 article .thumbnail {
@@ -1669,7 +1669,7 @@ article .entry-more a:hover, .tag-li a:hover {
 .fade-in:hover {
     transition: all .3s ease;
     -webkit-transform: translateY(-2px);
-    -webkit-box-shadow:-9px 10px 30px -15px rgb(0, 0, 0);
+    -webkit-box-shadow: 1px 1px 15px -10px rgb(0, 0, 0);
     /*box-shadow: rgb(143, 143, 143) 3px 3px 20px;*/
 }
 
@@ -2655,7 +2655,7 @@ nav a:first-child .meta-nav {
 }*/
 .comments li {
     width: 99%;
-    height: 125px;
+    height: 110px;
     padding-bottom: 8px;
     line-height: 30px;
     _white-space: normal;
@@ -2663,7 +2663,12 @@ nav a:first-child .meta-nav {
 }
 
 .comments li a {
-    color: #545c63 !important;
+    /*color: #545c63 !important;*/
+}
+
+.comment-li:hover {
+     -webkit-transform: translateY(-4px);
+    transition: all .3s ease;
 }
 
 .comments .comment-author {
@@ -3436,6 +3441,13 @@ nav a:first-child .meta-nav {
     padding-right: 5px;
 }
 
+.oauth-box .oauth-btn {
+    margin-left: 1.0rem;
+    height: 1.5rem;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
 .zmdi-arrow-forward{
     padding-top: 7px;
 }
@@ -3826,7 +3838,7 @@ img {
 .item {
     padding: 0.928571em 0.2em;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.2;
     display: block;
     background-color: #fff;
     border-bottom: .05rem solid #eee;
