@@ -36,45 +36,6 @@
     }
 </script>
 
-<#--<div class="modal" id="oauth" tabindex="-1" role="dialog" aria-labelledby="oauthTitle">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <ul class="list-inline">
-                    <li><h4 class="modal-title" id="oauthTitle">登录</h4></li>
-                    <li><a href="javascript:$.alert.info('没用，别点了！我就没打算开发这个功能。Just to show you~~');"><h4 class="modal-title" id="myModalLabel">注册</h4></a></li>
-                </ul>
-            </div>
-            <div class="modal-body">
-                <div class="oauth">
-                    <ul class="list-unstyled list-inline oauth-list">
-                        <@zhydTag method="listAvailableOAuthPlatforms">
-                            <#if listAvailableOAuthPlatforms?? && listAvailableOAuthPlatforms?size gt 0>
-                                <#list listAvailableOAuthPlatforms as item>
-                                    <li>
-                                        <a href="${config.siteUrl}/oauth/render/${item}" target="">
-                                            <img src="https://gitee.com/yadong.zhang/static/raw/master/JustAuth/${item}.png" alt="" class="img-circle">
-                                        </a>
-                                    </li>
-                                </#list>
-                            <#else>
-                                <li>
-                                    稍等一下， 博主正在快马加鞭的配置~~
-                                </li>
-                            </#if>
-                        </@zhydTag>
-                    </ul>
-                    <div class="oauth-line">
-                        <span>
-                            Powered by <a href="https://gitee.com/yadong.zhang/JustAuth" target="_blank">JustAuth</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
 <nav id="mainmenu" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="menu-box">
         <div class="navbar-header">

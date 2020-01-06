@@ -122,9 +122,9 @@ me:
                 clientSecret:
                 redirectUri:
             google:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: 807321176340-bnp3kkgu3ovbvq12cd1hd6nsgq0c7pp5.apps.googleusercontent.com
+                clientSecret: 7YaukxMzQUyVRwSNYcbQokrS
+                redirectUri: https://www.dancoder.cn/oauth/callback/google
             facebook:
                 clientId:
                 clientSecret:

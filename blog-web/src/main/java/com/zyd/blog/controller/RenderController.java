@@ -213,7 +213,7 @@ public class RenderController {
      * @return
      */
     @GetMapping("/resource")
-    @BussinessLog(value = "进入关于页", platform = PlatformEnum.WEB)
+    @BussinessLog(value = "进入resource页", platform = PlatformEnum.WEB)
     public ModelAndView resourceFile() {
         return ResultUtil.view("resource");
     }
@@ -304,5 +304,17 @@ public class RenderController {
     public ModelAndView image(Model model) {
         model.addAttribute("list", bizCatsService.listAll());
         return ResultUtil.view("booknote");
+    }
+
+    /**
+     * 诗词
+     *
+     * @param model
+     * @return
+     */
+    @GetMapping("/poetry")
+    @BussinessLog(value = "进入诗词页", platform = PlatformEnum.WEB)
+    public ModelAndView poetry(Model model) {
+        return ResultUtil.view("poetry");
     }
 }

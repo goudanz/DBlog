@@ -62,12 +62,13 @@ braum:
             interval: 5000
 
 ####################################自定义配置##########################################
+
 app:
     # 是否启用kaptcha验证码
     enableKaptcha: false
     # 启用后，项目在启动时会打印数据库（Mysql和Redis）链接信息（包含密码）
     # 代码请参考
-    enabledConfigLog: false
+    enabledConfigLog: true
 
 me:
     zhyd:
@@ -75,23 +76,23 @@ me:
             gitee:
                 clientId: 268e596092a7f860a52d03a10094102d5bbeca6f6a9cd6244785c5e9ac36399f
                 clientSecret: 21a009d21f4710e6e9a52482e9ab613ab81a71dc39af54e47d886ccd43eb701f
-                redirectUri: http://fei.free.idcfengye.com/oauth/callback/gitee
+                redirectUri: https://www.dancoder.cn/oauth/callback/gitee
             github:
                 clientId: 29f7aa2111ba183ea303
                 clientSecret: b7d64d61a92ce0cf85e7ed32e128180475519798
-                redirectUri: http://fei.free.idcfengye.com/oauth/callback/github
+                redirectUri: https://www.dancoder.cn/oauth/callback/github
             weibo:
-                clientId:
-                clientSecret:
+                clientId: 675615686
+                clientSecret: 283b1cd9a25ff1a59b14d9be4c4b96b2
                 redirectUri:
             dingtalk:
                 clientId:
                 clientSecret:
                 redirectUri:
             baidu:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: oYuu0vHhrzsQHcgGo3sOu94U
+                clientSecret: NMk75Mch7tzQmBgjlwgk1RIsv4djjgXS
+                redirectUri: https://www.dancoder.cn/oauth/callback/baidu
             coding:
                 clientId:
                 clientSecret:
@@ -103,16 +104,16 @@ me:
             oschina:
                 clientId: fZ4Il86LrdPL5BQuKvsf
                 clientSecret: 17HdDyyrizlyqThS4Vf6tKiGgwYY5RM4
-                redirectUri: http://fei.free.idcfengye.com/oauth/callback/oschina
+                redirectUri: https://www.dancoder.cn/oauth/callback/oschina
             alipay:
                 clientId:
                 clientSecret:
                 redirectUri:
                 alipayPublicKey:
             qq:
-                clientId: 101424111
-                clientSecret: b02e291a1a5368644b751c9bcbaf3ba1
-                redirectUri: http://fei.free.idcfengye.com/oauth/callback/qq
+                clientId: 101770156
+                clientSecret: bc9723747b334b39a0415ef381e313f0
+                redirectUri: https://www.dancoder.cn/oauth/callback/qq
             wechat:
                 clientId:
                 clientSecret:
@@ -122,9 +123,9 @@ me:
                 clientSecret:
                 redirectUri:
             google:
-                clientId:
-                clientSecret:
-                redirectUri:
+                clientId: 807321176340-bnp3kkgu3ovbvq12cd1hd6nsgq0c7pp5.apps.googleusercontent.com
+                clientSecret: 7YaukxMzQUyVRwSNYcbQokrS
+                redirectUri: https://www.dancoder.cn/oauth/callback/google
             facebook:
                 clientId:
                 clientSecret:
