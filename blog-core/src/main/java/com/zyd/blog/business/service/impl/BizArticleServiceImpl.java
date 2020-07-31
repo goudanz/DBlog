@@ -74,6 +74,7 @@ public class BizArticleServiceImpl implements BizArticleService {
     @Override
     public PageInfo<Article> findPageBreakByCondition(ArticleConditionVO vo) {
         PageHelper.startPage(vo.getPageNumber(), vo.getPageSize());
+        // 查出已发布的文章
         List<BizArticle> list = bizArticleMapper.findPageBreakByCondition(vo);
         if (CollectionUtils.isEmpty(list)) {
             return null;

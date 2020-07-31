@@ -8,11 +8,9 @@ import com.zyd.blog.business.entity.Comment;
 import com.zyd.blog.business.entity.Link;
 import com.zyd.blog.business.enums.CommentStatusEnum;
 import com.zyd.blog.business.enums.PlatformEnum;
-import com.zyd.blog.business.service.BizArticleService;
-import com.zyd.blog.business.service.BizCommentService;
-import com.zyd.blog.business.service.SysLinkService;
-import com.zyd.blog.business.service.SysNoticeService;
+import com.zyd.blog.business.service.*;
 import com.zyd.blog.business.vo.CommentConditionVO;
+import com.zyd.blog.business.vo.PoetryConditionVO;
 import com.zyd.blog.framework.exception.ZhydArticleException;
 import com.zyd.blog.framework.exception.ZhydCommentException;
 import com.zyd.blog.framework.exception.ZhydLinkException;
@@ -54,6 +52,8 @@ public class RestApiController {
     private BizArticleService articleService;
     @Autowired
     private SysNoticeService noticeService;
+    @Autowired
+    private BizPoetryService bizPoetryService;
 
     @PostMapping("/autoLink")
     @BussinessLog(value = "自助申请友链", platform = PlatformEnum.WEB)
@@ -155,6 +155,18 @@ public class RestApiController {
     @BussinessLog(value = "公告列表", platform = PlatformEnum.WEB, save = false)
     public ResponseVO listNotice() {
         return ResultUtil.success("", noticeService.listRelease());
+    }
+
+    @PostMapping("/listPoetry")
+    @BussinessLog(value = "诗词列表", platform = PlatformEnum.WEB, save = false)
+    public ResponseVO listPoetry(PoetryConditionVO vo) {
+        return ResultUtil.success("", bizPoetryService.listPoetryByType(vo));
+    }
+
+    @PostMapping("/getPoetry/{title}")
+    @BussinessLog(value = "诗词列表", platform = PlatformEnum.WEB, save = false)
+    public ResponseVO getPoetry(@PathVariable("title") String title) {
+        return ResultUtil.success("", bizPoetryService.getByTitle(title));
     }
 
 }

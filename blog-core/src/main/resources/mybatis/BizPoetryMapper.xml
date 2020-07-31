@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zyd.blog.persistence.mapper.BizPoetryMapper">
+	<resultMap id="rm" type="com.zyd.blog.persistence.beans.BizPoetry">
+		<result property="id" jdbcType="BIGINT" column="id"/>
+		<result property="title" jdbcType="VARCHAR" column="title"/>
+		<result property="paragraphs" jdbcType="VARCHAR" column="paragraphs"/>
+		<result property="author" jdbcType="VARCHAR" column="author"/>
+		<result property="type" jdbcType="VARCHAR" column="type"/>
+		<result property="tags" jdbcType="VARCHAR" column="tags"/>
+		<result property="idStr" jdbcType="VARCHAR" column="id_str"/>
+		<result property="notes" jdbcType="VARCHAR" column="notes"/>
+	</resultMap>
+
+	<select id="findPageBreakByCondition" parameterType="com.zyd.blog.business.vo.CatsConditionVO" resultMap="rm">
+		SELECT
+			t.*
+		FROM
+			biz_poetry t
+		where
+			t.type = #{type}
+	</select>
+</mapper>
+

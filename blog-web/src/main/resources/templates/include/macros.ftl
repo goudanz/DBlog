@@ -12,6 +12,7 @@
     <meta name="keywords" content="${keywords}"/>
     <meta name="description" content="${description}" id="meta_description">
     <link rel="canonical" href="${config.siteUrl}${canonical}" />
+    <meta name="msvalidate.01" content="F3A88651BE513BB4DDD50E84A623F6DC" />
     <#include "/layout/quote.ftl">
     <script>
         var _hmt = _hmt || [];
@@ -22,6 +23,17 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173304159-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173304159-1');
+    </script>
+
 
     <#--黑白界面
     <style>

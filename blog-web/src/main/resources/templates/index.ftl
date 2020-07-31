@@ -140,7 +140,7 @@
                             </span>
                                 <div class="clear"></div>
                                 <span class="entry-more">
-                                <a href="${config.siteUrl}/article/${item.id?c}" rel="bookmark" title="点击查看文章详情"
+                                <a href="${config.siteUrl}/article/${item.id?c}" rel="bookmark"
                                    data-toggle="tooltip" data-placement="bottom">阅读全文</a>
                             </span>
                             </div>
