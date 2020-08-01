@@ -3869,7 +3869,7 @@ img {
 /* poetry */
 .poetry ul {
     width:180px;
-    margin:0 332px;
+    margin:0px 0px 0px 310px;
     background:#fff;
     position:relative;
     z-index:0;
@@ -3892,6 +3892,13 @@ img {
 
 .poetry ul li a.hover {
     color:#FF5F3E;
+}
+
+.poetry .content{
+    width: 29%;
+    float: left;
+    padding-bottom: 30px;
+    text-align: center;
 }
 
 #lanPos{

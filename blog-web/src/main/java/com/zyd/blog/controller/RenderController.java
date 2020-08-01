@@ -7,6 +7,7 @@ import com.zyd.blog.business.enums.ArticleStatusEnum;
 import com.zyd.blog.business.enums.PlatformEnum;
 import com.zyd.blog.business.service.*;
 import com.zyd.blog.business.vo.ArticleConditionVO;
+import com.zyd.blog.business.vo.PoetryConditionVO;
 import com.zyd.blog.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -47,6 +47,8 @@ public class RenderController {
     private SysLinkService sysLinkService;
     @Autowired
     private SysUpdateRecordeService updateRecordeService;
+    @Autowired
+    private BizPoetryService bizPoetryService;
 
     /**
      * 加载首页的数据
@@ -314,7 +316,8 @@ public class RenderController {
      */
     @GetMapping("/poetry")
     @BussinessLog(value = "进入诗词页", platform = PlatformEnum.WEB)
-    public ModelAndView poetry(Model model) {
+    public ModelAndView poetry(Model model, PoetryConditionVO vo) {
+        model.addAttribute("page", bizPoetryService.listPoetryByType(vo));
         return ResultUtil.view("poetry");
     }
 }

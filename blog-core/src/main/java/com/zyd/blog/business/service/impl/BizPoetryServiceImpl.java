@@ -24,6 +24,9 @@ public class BizPoetryServiceImpl implements BizPoetryService {
     @Override
     public PageInfo<Poetry> listPoetryByType(PoetryConditionVO vo) {
         PageHelper.startPage(vo.getPageNumber(), vo.getPageSize());
+        if (StringUtils.isEmpty(vo.getType())) {
+            vo.setType("唐诗");
+        }
         List<BizPoetry> list = bizPoetryMapper.findPageBreakByCondition(vo);
         List<Poetry> boList = getPoetries(list);
         if (boList == null) return null;
