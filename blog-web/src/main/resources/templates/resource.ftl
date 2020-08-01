@@ -1,6 +1,6 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
-    <@header title="关于 | ${config.siteName}" description="关于${config.siteName}" canonical="/resource"></@header>
+    <@header title="文档/资料 | ${config.siteName}" description="文档/资料${config.siteName}" canonical="/resource"></@header>
 
 <div class="container custome-container">
     <#--BizResourceFile-->
