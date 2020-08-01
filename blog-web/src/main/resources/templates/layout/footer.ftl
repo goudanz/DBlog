@@ -120,10 +120,9 @@
                 <i class="fa fa-times"></i>
             </button>
             <div class="form-title pd10">
-                <h2><img src="https://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/20190817235024741.png"
-                         class="sign-header"></h2>
+                <h2><img src="http://dancoder.oss-cn-shanghai.aliyuncs.com/oneblog/logo.jpg"
+                         class="sign-header" style="width: 150px;"></h2>
             </div>
-
             <div id="div_register" class="sign-form-pd pos-r">
                 <form submit="return false" id="register-from" class="sign-form-input">
                     <div class="bor-out">
