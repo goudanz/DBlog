@@ -19,17 +19,18 @@
         </ul>
 
         <div style="overflow:hidden;width: 64%;">
-            <#list page.list as item>
-                <div class="content">
-                    <div>
-                        <h4>${item.title}</h4>
-                        <span>${item.author}</span>
-                    </div>
-                    <div>
-                        ${item.paragraphs}
-                    </div>
-                </div>
-            </#list>
+<#--            <#list page.list as item>-->
+<#--                <div class="content">-->
+<#--                    <div>-->
+<#--                        <h4>${item.title}</h4>-->
+<#--                        <span>${item.author}</span>-->
+<#--                    </div>-->
+<#--                    <div>-->
+<#--                        ${item.paragraphs}-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--            </#list>-->
+            <div id="poetryContent"></div>
         </div>
     </div>
 
@@ -40,7 +41,7 @@
             type: object.textContent
         };
         $.ajax({
-            type: "POST",
+            type: "post",
             url: "/api/listPoetry",
             data: data,
             success: function (json) {

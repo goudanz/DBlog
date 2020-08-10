@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -314,9 +315,17 @@ public class RenderController {
      * @param model
      * @return
      */
+    @PostMapping("/poetry")
+    @BussinessLog(value = "进入诗词页", platform = PlatformEnum.WEB)
+    public ModelAndView poetry(String type, Model model, PoetryConditionVO vo) {
+        vo.setType(type);
+        model.addAttribute("page", bizPoetryService.listPoetryByType(vo));
+        return ResultUtil.view("poetry");
+    }
+
     @GetMapping("/poetry")
     @BussinessLog(value = "进入诗词页", platform = PlatformEnum.WEB)
-    public ModelAndView poetry(Model model, PoetryConditionVO vo) {
+    public ModelAndView poetrypost(Model model, PoetryConditionVO vo) {
         model.addAttribute("page", bizPoetryService.listPoetryByType(vo));
         return ResultUtil.view("poetry");
     }
